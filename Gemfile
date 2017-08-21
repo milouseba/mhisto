@@ -17,7 +17,7 @@ gem 'jquery-rails'
 gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'
-
+gem 'carrierwave', '~> 0.11.2'
 gem 'pundit'
 
 group :development, :test do
