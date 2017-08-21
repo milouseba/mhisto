@@ -26,4 +26,6 @@ def self.find_for_facebook_oauth(auth)
     return user
   end
 
+  mount_uploader :photo, PhotoUploader
+
 end
