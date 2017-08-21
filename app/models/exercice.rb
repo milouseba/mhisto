@@ -1,5 +1,6 @@
 class Exercice < ApplicationRecord
   belongs_to :user
+
   has_many :comments through: :users
   has_many :likes through: :users
   has_many :answers
@@ -8,4 +9,7 @@ class Exercice < ApplicationRecord
   validates :beginning_story, presence: true
   validates :end_story, presence: true
   validates :user_id, presence: true
+
+  mount_uploader :photo, PhotoUploader
+
 end

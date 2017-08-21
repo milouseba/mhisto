@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 ruby '2.3.4'
 
 gem 'devise'
+gem 'cloudinary'
 gem 'figaro'
 gem 'jbuilder', '~> 2.0'
 gem 'pg'
@@ -16,7 +17,8 @@ gem 'jquery-rails'
 gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'
-
+gem 'carrierwave', '~> 0.11.2'
+gem 'omniauth-facebook'
 gem 'pundit'
 
 group :development, :test do
