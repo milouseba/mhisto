@@ -5,8 +5,21 @@ class ExercicesController < ApplicationController
     authorize @exercice
   end
 
-  def product_params
-    params.require(:exercice).permit(:title, :photo, :photo_cache)
+  def create
+    @exercice = Exercice.new(exercice_params)
+    authorize @exercice
+    @exercice.user = current_user
+    if @exercice.save
+      redirect_to root_path
+    else
+      render :new
+    end
+  end
+
+  private
+
+  def exercice_params
+    params.require(:exercice).permit(:title, :beginning_story, :end_story, :photo, :photo_cache)
   end
 
 end
