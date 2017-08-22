@@ -2,26 +2,45 @@
   <div class="instructions">
     <div class="photo-exercice">
       <%= image_tag @exercice.photo %>
+        <div class="photo-exercice-filter">
+        <h3><%= @exercice.title %></h3>
+        </div>
+      </div>
+      <div class="exercice-info">
+        <p><%= @exercice.beginning_story %></p>
+        <button class= "btn btn-success">A toi de jouer</button>
+        <p><%= @exercice.end_story %></p>
+      </div>
     </div>
-    <div class="exercice-info">
-      <h1><%= @exercice.title %></h1>
-      <p><%= @exercice.beginning_story %></p>
-      <button class= "btn btn-success">A toi de jouer</button>
-      <p><%= @exercice.end_story %></p>
-    </div>
-  </div>
 
   <div class="answers">
-    <div class="user-answer">
-      <%= simple_form_for [@exercice, @answer] do |a| %>
-        <%= a.input :content %>
-        <%= a.submit %>
-      <% end %>
-    </div>
-    <div class="answer-info">
-      <% @exercice.answers.each do |answer| %>
-      <%= answer.content %>
-      <% end %>
+    <% unless @exercice.answers.where(user: current_user).count >= 1 %>
+      <div class="user-answer">
+        <%= simple_form_for [@exercice, @answer] do |a| %>
+          <%= a.input :content %>
+          <%= a.submit %>
+        <% end %>
+      </div>
+    <% end %>
+    <div class="other-answers">
+      <ul>
+        <% @exercice.answers.each do |answer| %>
+          <div class="answer">
+            <div class="answer-content">
+              <li><%= answer.content %></li>
+            </div>
+            <div class="answer-infos">
+              <div class="avatar-username">
+                <p>maxou</p>
+              </div>
+              <div class="likes-comments">
+                <i class="fa fa-heart" aria-hidden="true"></i>
+                <i class="fa fa-comments" aria-hidden="true"></i>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </ul>
     </div>
   </div>
 </div>

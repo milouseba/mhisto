@@ -1,5 +1,5 @@
 class AnswersController < ApplicationController
-
+  after_action :verify_authorized, :except => :create
   def index
     @answers = Answer.all
   end
@@ -9,10 +9,10 @@ class AnswersController < ApplicationController
   end
 
   def create
-    # raise
     @answer = Answer.new(answer_params)
     set_exercice
     @answer.exercice = @exercice
+    @answer.user = current_user
     if @answer.save
       redirect_to exercice_path(@exercice)
     else
