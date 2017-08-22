@@ -155,7 +155,7 @@
 # Tu es un cas désespéré. C’est bien fait pour moi. Une illusion de moins.
 
 
-#DONE DONE DONE DONE DONE DONE DONE DONE #DONE DONE DONE DONE #DONE DONE DONE DONE #DONE DONE DONE DONE
+
 
 
 # 9 Vaclav Havel, LARGO DESOLATO
@@ -383,6 +383,7 @@ puts "database clean..."
 
 puts "Creating users database..."
 10.times do
+
   users = User.new(
   first_name: Faker::Name.first_name,
   last_name: Faker::Name.last_name,
@@ -392,6 +393,7 @@ puts "Creating users database..."
   users.save
 end
 puts "Users created..."
+
 
 exercices = [
 {title: "L'attente", beginning_story: "Quand j'arrive à la gare de l'Est, j'espère toujours secrètement qu'il y aura quelqu'un pour m'attendre.",
@@ -447,7 +449,9 @@ Il froissa la dépêche dans sa main et tapota la petite boulette de papier.",
 end_story: "Ah ! si seulement Hercule Poirot n’avait pas pris sa retraite, et n’était pas venu chez nous cultiver des courges !"}
 ]
 
+
 puts "Creating exercices..."
+
 exercices.each do |exercice|
   exo = Exercice.new(
   title: exercice[:title],
@@ -706,6 +710,7 @@ answers.each do |answer|
     )
 end
 puts "Answers created..."
+
 
 
 
