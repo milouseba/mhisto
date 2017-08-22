@@ -1,5 +1,16 @@
 class ExercicesController < ApplicationController
 
+  def index
+    @exercices = Exercice.all
+  end
+
+  def show
+    set_exercice
+    authorize @exercice
+    @answers = Answer.where(exercice:@exercice)
+    @answer = Answer.new
+  end
+
   def new
     @exercice = Exercice.new
     authorize @exercice
@@ -20,6 +31,10 @@ class ExercicesController < ApplicationController
 
   def exercice_params
     params.require(:exercice).permit(:title, :beginning_story, :end_story, :photo, :photo_cache)
+  end
+
+  def set_exercice
+    @exercice = Exercice.find(params[:id])
   end
 
 end
