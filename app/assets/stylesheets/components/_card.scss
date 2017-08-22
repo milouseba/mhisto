@@ -6,7 +6,7 @@
 $break-small: 770px;
 $break-medium: 1100px;
 
-.card, .card-add {
+.card, .card-first {
 
   @media screen and (max-width: $break-small) {
     min-width: 220px;
@@ -24,6 +24,39 @@ $break-medium: 1100px;
   margin-left: 5px;
   opacity: 1;
 }
+
+.card-banner {
+  margin: 20px;
+}
+
+.card-first {
+  height: 60vh;
+}
+
+.card-image-first {
+  position: absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+}
+
+.exo-title {
+  border-bottom-style: solid;
+  border-bottom-width: thin;
+
+}
+
+
+
+
+
+
+
+
+
+
+
 
 .card-image {
   position: absolute;
