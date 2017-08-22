@@ -1,11 +1,22 @@
+$break-small: 600px;
+$break-medium: 720px;
+
+
 .instructions {
-  width: 375px;
+  width: 30%;
   height: 100vh;
   position: sticky !important;
   top: 0 !important;
   border: 2px solid lightgray;
   background-color: white;
   border-radius: 4px;
+
+  @media screen and (max-width: $break-small) {
+    display: none;
+  }
+  @media screen and (max-width: $break-medium) {
+    flex: 0 1 auto;
+  }
 }
 
 .photo-exercice{
@@ -13,8 +24,8 @@
 }
 
 .photo-exercice img{
-  height: 200px;
-  width: 371px;
+  max-height: 200px;
+  width: 100%;
   border-radius: 4px;
 }
 
@@ -42,12 +53,26 @@
   padding: 15px;
 }
 
+.beginning-story{
+  text-align: center;
+}
+
+.button-exercice{
+  text-align: center;
+}
+
+.end-story{
+  text-align: center;
+  margin-top: 15px;
+}
+
 .other-answers ul{
   list-style: none;
   padding: 0px;
 }
 
 .answers{
+  width: 70%;
   flex: 1 0 auto;
 }
 
