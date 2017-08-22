@@ -8,6 +8,10 @@
 
 # source textes : http://otheatre.over-blog.org/article-les-26-plus-celebres-monologues-classiques-115014490.html
 
+require 'open-uri'
+require 'json'
+
+
 
 
 
@@ -372,6 +376,7 @@
 # Ah ! si seulement Hercule Poirot n’avait pas pris sa retraite, et n’était pas venu chez nous cultiver
 # des courges !…"
 
+
 puts "destroying old data..."
   Like.destroy_all
   Comment.destroy_all
@@ -392,7 +397,34 @@ puts "Creating users database..."
   users.password = users.first_name
   users.save
 end
-puts "Users created..."
+
+puts "Team users created..."
+
+url = 'https://randomuser.me/api/'
+user_serialized = open(url).read
+users_list = JSON.parse(user_serialized)
+User.create(email: "sebastien@gmail.com", password: "sebastien", first_name: "sebastien", last_name: "milou",
+            avatar: users_list["results"][0]["picture"]["large"])
+
+url = 'https://randomuser.me/api/'
+user_serialized = open(url).read
+users_list = JSON.parse(user_serialized)
+User.create(email: "thomas@gmail.com", password: "thomas", first_name: "thomas", last_name: "chekaiban",
+            avatar: users_list["results"][0]["picture"]["large"])
+
+url = 'https://randomuser.me/api/'
+user_serialized = open(url).read
+users_list = JSON.parse(user_serialized)
+User.create(email: "maxime@gmail.com", password: "maxime", first_name: "maxime", last_name: "guillemain",
+            avatar: users_list["results"][0]["picture"]["large"])
+
+url = 'https://randomuser.me/api/'
+user_serialized = open(url).read
+users_list = JSON.parse(user_serialized)
+User.create(email: "ariane@gmail.com", password: "ariane", first_name: "ariane", last_name: "decolle",
+            avatar: users_list["results"][0]["picture"]["large"])
+
+puts "Team users added"
 
 
 exercices = [
@@ -698,7 +730,6 @@ nécessaire pour cacher le dictaphone, une sacoche noire par exemple. Enfin une 
 restée seule dans le cabinet de travail pendant quelques minutes après la découverte du crime, au
 moment où Parker téléphonait à la police… Je n’en vois qu’une : le Dr Sheppard !", exercice_id: 22}
 ]
-
 
 puts "Creating answers..."
 answers.each do |answer|
