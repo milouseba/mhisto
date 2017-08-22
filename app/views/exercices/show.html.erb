@@ -7,9 +7,15 @@
         </div>
       </div>
       <div class="exercice-info">
-        <p><%= @exercice.beginning_story %></p>
-        <button class= "btn btn-success">A toi de jouer</button>
-        <p><%= @exercice.end_story %></p>
+        <p class="beginning-story"><%= @exercice.beginning_story %></p>
+        <div class="button-exercice">
+          <% if @exercice.answers.where(user: current_user).count >= 1 %>
+            <button class= "btn btn-warning">Exercice fait</button>
+          <% else %>
+            <button class= "btn btn-success">A toi de jouer</button>
+          <% end %>
+        </div>
+        <p class="end-story"><%= @exercice.end_story %></p>
       </div>
     </div>
 
@@ -31,7 +37,7 @@
             </div>
             <div class="answer-infos">
               <div class="avatar-username">
-                <p>maxou</p>
+                <p><%= answer.user.username %></p>
               </div>
               <div class="likes-comments">
                 <i class="fa fa-heart" aria-hidden="true"></i>

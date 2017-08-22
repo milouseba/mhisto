@@ -1,0 +1,119 @@
+$break-small: 500px;
+$break-medium: 600px;
+
+.btn-start {
+  color: white;
+  padding: 10px 15px;
+  border-radius: 20px;
+  font-weight: thinner;
+  background: #b57800;
+  transition: background 0.3s ease;
+  border-style: none;
+  margin: 0px;
+  box-shadow: 1px 1px 10px rgba(0,0,0,0.4);
+  position: absolute;
+  top: 350px;
+  font-size: 25px;
+  left: 90px;
+
+  @media screen and (max-width: $break-medium) {
+    color: white;
+    padding: 10px 15px;
+    border-radius: 20px;
+    font-weight: thinner;
+    background: #b57800;
+    transition: background 0.3s ease;
+    border-style: none;
+    margin: 0px;
+    box-shadow: 1px 1px 10px rgba(0,0,0,0.4);
+    position: absolute;
+    top: 300px;
+    font-size: 25px;
+    left: 90px;
+  }
+
+  @media screen and (max-width: $break-small) {
+    color: white;
+    padding: 10px 15px;
+    border-radius: 20px;
+    font-weight: thinner;
+    background: #b57800;
+    transition: background 0.3s ease;
+    border-style: none;
+    margin: 0px;
+    box-shadow: 1px 1px 10px rgba(0,0,0,0.4);
+    position: absolute;
+    top: 400px;
+    font-size: 25px;
+    left: 70px;
+  }
+}
+.btn-start:hover {
+  opacity: 1;
+  background: #e09600;
+  text-decoration: none;
+  color: white;
+}
+
+.banner {
+  color: white;
+  text-align: center;
+  height: 400px;
+  height: calc(100vh - 70px);
+  background-size: cover !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  // margin-bottom: -30px;
+}
+.banner h1 {
+  font-size: 80px;
+  font-weight: 300;
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.9);
+  padding: 0px;
+  margin: 0px;
+  position: absolute;
+  top: 130px;
+  left: 90px;
+  width: 700px;
+  text-align: left;
+
+  @media screen and (max-width: $break-medium) {
+    font-size: 60px;
+    font-weight: 300;
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.9);
+    padding: 0px;
+    margin: 0px;
+    position: absolute;
+    top: 130px;
+    left: 90px;
+    width: 500px;
+    text-align: left;
+  }
+
+  @media screen and (max-width: $break-small) {
+    font-size: 50px;
+    font-weight: 300;
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.9);
+    padding: 0px;
+    margin: 0px;
+    position: absolute;
+    top: 130px;
+    left: 50px;
+    width: 300px;
+    text-align: center;
+  }
+}
+
+
+.banner p {
+  font-size: 30px;
+  font-weight: lighter;
+  color: white;
+  text-align: 1px 1px rgba(0,0,0,0.1);
+  opacity: 0.9;
+  margin-bottom: 30px;
+}
+
+
