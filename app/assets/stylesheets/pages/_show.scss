@@ -1,0 +1,24 @@
+.instructions {
+  width: 375px;
+  height: 100vh;
+  position: sticky !important;
+  top: 0 !important;
+  border: 2px solid lightgray;
+  background-color: white;
+  border-radius: 4px;
+}
+
+.photo-exercice img {
+  height: 200px;
+  width: 371px;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.exercice-content {
+  display: flex
+}
+
+.exercice-info {
+  padding: 15px;
+}
