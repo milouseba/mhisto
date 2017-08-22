@@ -1,8 +1,12 @@
 class ExercicePolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      scope
+      scope.all
     end
+  end
+
+  def index?
+    true
   end
 
   def new?
@@ -10,6 +14,10 @@ class ExercicePolicy < ApplicationPolicy
   end
 
   def create?
+    true
+  end
+
+  def show?
     true
   end
 end

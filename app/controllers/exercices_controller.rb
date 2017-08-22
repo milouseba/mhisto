@@ -1,5 +1,17 @@
 class ExercicesController < ApplicationController
 
+  def index
+    @exercices = policy_scope(Exercice).order(created_at: :desc)
+    # authorize @exercices
+  end
+
+  def show
+    set_exercice
+    authorize @exercice
+    @answers = Answer.where(exercice:@exercice)
+    @answer = Answer.new
+  end
+
   def new
     @exercice = Exercice.new
     authorize @exercice
@@ -20,6 +32,10 @@ class ExercicesController < ApplicationController
 
   def exercice_params
     params.require(:exercice).permit(:title, :beginning_story, :end_story, :photo, :photo_cache)
+  end
+
+  def set_exercice
+    @exercice = Exercice.find(params[:id])
   end
 
 end
