@@ -7,6 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 # source textes : http://otheatre.over-blog.org/article-les-26-plus-celebres-monologues-classiques-115014490.html
+require 'open-uri'
+
+
 puts "destroying old data..."
   Like.destroy_all
   Comment.destroy_all
@@ -26,7 +29,33 @@ puts "Creating users database..."
   users.password = users.first_name
   users.save
 end
-puts "Users created..."
+
+puts "Real users created..."
+
+url = 'https://randomuser.me/api/'
+user_serialized = open(url).read
+users_list = JSON.parse(user_serialized)
+User.create(email: "sebastien@gmail.com", password: "sebastien", first_name: "sebastien", last_name: "milou",
+            url_avatar: users_list["results"][0]["picture"]["large"])
+
+url = 'https://randomuser.me/api/'
+user_serialized = open(url).read
+users_list = JSON.parse(user_serialized)
+User.create(email: "thomas@gmail.com", password: "thomas", first_name: "thomas", last_name: "chekaiban",
+            url_avatar: users_list["results"][0]["picture"]["large"])
+
+url = 'https://randomuser.me/api/'
+user_serialized = open(url).read
+users_list = JSON.parse(user_serialized)
+User.create(email: "maxime@gmail.com", password: "maxime", first_name: "maxime", last_name: "guillemain",
+            url_avatar: users_list["results"][0]["picture"]["large"])
+
+url = 'https://randomuser.me/api/'
+user_serialized = open(url).read
+users_list = JSON.parse(user_serialized)
+User.create(email: "ariane@gmail.com", password: "ariane", first_name: "ariane", last_name: "decolle",
+            url_avatar: users_list["results"][0]["picture"]["large"])
+
 
 exercices = [
 {title: "L'attente", beginning_story: "Quand j'arrive à la gare de l'Est, j'espère toujours secrètement qu'il y aura quelqu'un pour m'attendre.",
