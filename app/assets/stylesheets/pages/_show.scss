@@ -1,0 +1,76 @@
+.instructions {
+  width: 375px;
+  height: 100vh;
+  position: sticky !important;
+  top: 0 !important;
+  border: 2px solid lightgray;
+  background-color: white;
+  border-radius: 4px;
+}
+
+.photo-exercice{
+  position: relative;
+}
+
+.photo-exercice img{
+  height: 200px;
+  width: 371px;
+  border-radius: 4px;
+}
+
+.photo-exercice-filter{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: black;
+  opacity: 0.4;
+}
+
+.photo-exercice h3{
+  color: white;
+  opacity: 1;
+  z-index: 500;
+}
+
+.exercice-content {
+  display: flex;
+}
+
+.exercice-info {
+  padding: 15px;
+}
+
+.other-answers ul{
+  list-style: none;
+  padding: 0px;
+}
+
+.answers{
+  flex: 1 0 auto;
+}
+
+.user-answer {
+  padding: 20px;
+  border-radius: 3px;
+  transition: all 0.15s ease;
+}
+
+.answer {
+  padding: 15px;
+  border: 2px solid lightgray;
+  margin: 10px;
+  border-radius: 4px;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3)
+}
+
+.answer-infos{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.avatar-username p{
+  margin-bottom: 0px;
+}
