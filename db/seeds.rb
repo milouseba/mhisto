@@ -10,6 +10,7 @@
 
 
 
+
 # propisition de texte exo + answer
 # 1 Inconnu **************************************************************************************
 # Quand j'arrive à la gare de l'Est, j'espère toujours secrètement qu'il y aura quelqu'un pour m'attendre.
@@ -692,7 +693,6 @@ prendre le poignard dans la vitrine avant l’arrivée de miss Flora et qui disp
 nécessaire pour cacher le dictaphone, une sacoche noire par exemple. Enfin une personne qui est
 restée seule dans le cabinet de travail pendant quelques minutes après la découverte du crime, au
 moment où Parker téléphonait à la police… Je n’en vois qu’une : le Dr Sheppard !", exercice_id: 22}
-
 ]
 
 
