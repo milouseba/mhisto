@@ -13,3 +13,11 @@
 @import "layouts/index";
 @import "components/index";
 @import "pages/index";
+
+.wrapper {
+  min-height: calc(100vh - #{$navbar_height} - #{$footer_height});
+}
+
+.content-footer {
+  margin: 0px 50px;
+}
