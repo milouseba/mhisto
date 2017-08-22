@@ -1,11 +1,11 @@
 class ExercicePolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      scope
+      scope.all
     end
   end
 
-  def index
+  def index?
     true
   end
 

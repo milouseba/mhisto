@@ -1,8 +1,8 @@
 class ExercicesController < ApplicationController
 
   def index
-    @exercices = Exercice.all
-    authorize @exercice
+    @exercices = policy_scope(Exercice).order(created_at: :desc)
+    # authorize @exercices
   end
 
   def show
