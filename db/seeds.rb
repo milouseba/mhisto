@@ -143,7 +143,77 @@
 
 
 
+puts "Creating users database..."
+10.times do
+users = User.create(
+  first_name: Faker::Name.first_name
+  last_name: Faker::Name.last_name
+  username: user.first_name
+  email: Faker::Internet.email
+  avatar: Faker::Avatar.image)
+end
 
+exercices = [
+{title: "L'attente", beginning_story: "Quand j'arrive à la gare de l'Est, j'espère toujours secrètement qu'il y aura quelqu'un pour m'attendre.",
+end_story: "Je voudrais que quelqu'un m'attende quelque part... C'est quand même pas compliqué."},
+{title: "Les Carnets du sous-sol", beginning_story: "Je suis un homme malade.Je suis un homme méchant. Un homme repoussoir.",
+end_story: "J’ai mal au foie. Tant mieux, qu’il me fasse encore mal!"},
+{title: "Le Gai Savoir", beginning_story: "Mais comment pouvons-nous nous permettre de blâmer ou louer l’univers ?",
+end_story: "Quand pourrons-nous, nous autres hommes, redevenir nature ?"},
+{title: "Battle Royale", beginning_story: " Comment peut-on tuer ses camarades de classe ?",
+end_story: " C'est bien pour cette raison qu'avec Yukiko elles s'étaient éloignées de l'école et s'étaient enfermées ici."},
+{title: "Antigone", beginning_story: "Comprendre… Vous n’avez que ce mot-là à la bouche, tous, depuis que je suis toute petite.",
+end_story: "Comprendre… Vous n’avez que ce mot-là à la bouche, tous, depuis que je suis toute petite."},
+{title: "Menace de mort", beginning_story: "Vous m’insultez ! Je suis un homme honnête, moi !",
+end_story: "Eh oui !"},
+{title: "Les Liaisons dangereuses", beginning_story: "Mais, on ne me dit rien, de sorte que, dans l’ignorance où je suis, je commets bien des gaucheries.",
+end_story: "Je ne peux pas vous rendre combien j’ai été honteuse."},
+{title: "Largo Desolato", beginning_story: "C’est du baratin, tout ça. Quand tu voulais me séduire, au début, tu ne parlais pas comme ça.",
+end_story: "Tu es un cas désespéré. C’est bien fait pour moi. Une illusion de moins."},
+{title: "Exercice de style", beginning_story: "Vers le milieu de la journée et à midi, je me trouvai et montai sur la plate-forme et la terrasse arrière d'un
+autobus", end_story: "Deux heures après et cent vingt minutes plus tard, je le rencontre et le revois cour de Rome et devant la
+gare Saint-Lazare."},
+{title: "Salammbô", beginning_story: "C'était à Mégara, faubourg de Carthage, dans les jardins d'Hamilcar.",
+end_story: "Les soldats ivres ronflaient la bouche ouverte à côté des cadavres ; et ceux qui ne dormaient pas baissaient leur tête, éblouis par le jour.
+#Le sol piétiné disparaissait sous des flaques rouges."},
+{title: "Nuit sans date rue Saint Jacques", beginning_story: "La rue tombe noire, noire, la noire rue noire tombe là.",
+end_story: "La rue tombe. La noire rue noire. Noire tombe noire. Là."},
+{title: "Femme", beginning_story: "Dans un sursaut je me réveille. Il est 9h10, je suis en retard.",
+end_story: "Je suis un femme. Je suis une femme. Je suis une FEMME.'
+#Et j'ai beau le répéter, je ne peux rien y faire."},
+{title: "Mauvaise Surprise", beginning_story: "J'ouvre les yeux. Tout de suite, je remarque que mes jambes sont anormalement courtes.",
+end_story: "Je caresse mes cheveux courts et gras. Fébrile, je met mon bicorne. C'est pas mal d'être empereur."},
+{title: "Partir", beginning_story: "C'est un matin classique. Ma femme est dans la cuisine, mes enfants crient dans la salle de bain.",
+end_story: "La ville s'étale, minuscule, sous l'avion. Je ne reviendrai jamais."},
+{title: "Brûler Rome", beginning_story: "J'entend le brouhaha quotidien. Rome, sous mes yeux, s'étale avec majesté.",
+end_story: "Je ne pensais pas que la voir brûler me donnerait autant de satisfaction. Je me ressers du vin et mon rire se mêle au hurlement des victimes."},
+{title: "La malédiction", beginning_story: "Sur un ordre d’Alain de Pareilles, les archers éteignirent leurs torches dans l’herbe, et la nuit ne fut plus éclairée que par le brasier.",
+end_story: "Les flammes entrèrent dans la bouche du grand-maître, et y étouffèrent son dernier cri. Puis, pendant un temps qui parut interminable, il se battit contre la mort."},
+{title: "Enfance", beginning_story: "On est là. Je suis là deux fois. Je me fixe. C'est moi à huit ans, qui me sourit. De lourdes larmes coulent le long de mes joues.",
+end_story: "Je me dis adieu. Le moi enfant meurt silencieusement, paisible, en souriant."},
+{title: "Hommage", beginning_story: "Le roi a décidé pour le jour d'aujourd'hui, Qu'en vers de douze pieds vous devrez vous comprendre, Depuis l'aube levée et ce jusqu'à la nuit, Ainsi célébrerez le trépas d'Alexandre",
+end_story: "Dois-je comprendre que je suis dispensé ?"},
+{title: "Britannicus", beginning_story: "Narcisse, c'en est fait, Néron est amoureux.",
+end_story: "Voilà comme, occupé de mon nouvel amour, Mes yeux sans se fermer, ont attendu le jour."},
+{title: "Les nourritures terrestres", beginning_story: "Nathanaël, tu regarderas tout en passant, et tu ne
+t’arrêteras nulle part. Dis-toi bien que Dieu seul n’est pas provisoire. Que l’importance soit dans ton regard, non dans la chose regardée.",
+end_story: "Nathanaël, je t’enseignerai la ferveur. Nos actes s’attachent à nous comme sa lueur au phosphore. Ils nous consument, il est vrai, mais ils nous font notre splendeur."},
+{title: "Madame Bovary", beginning_story: "En effet, elle regarda tout autour d’elle, lentement, comme quelqu’un qui se réveille d’un songe ; puis, d’une voix distincte, elle demanda son miroir,
+et elle resta penchée dessus quelque temps,jusqu’au moment où de grosses larmes lui découlèrent des yeux. Alors elle se renversa la tête en poussant un soupir et retomba sur l’oreiller.",
+end_story: "Une convulsion la rabattit sur le matelas. Tous s’approchèrent. Elle n’existait plus."},
+{title: "Le meurtre de Roger Ackroyd", beginning_story: "Le meurtrier est l’un d’entre nous, dites-vous ? Et… vous savez qui ? Poirot avait lu le message.
+Il froissa la dépêche dans sa main et tapota la petite boulette de papier.",
+end_story: "Ah ! si seulement Hercule Poirot n’avait pas pris sa retraite, et n’était pas venu chez nous cultiver des courges !"}
+]
+
+exercices.each do |exo|
+  exercice = Exercice.new(
+  title: exercice.title
+  beginning_story: exercice.beginning_story
+  end_story: exercice.end_story
+  user_id: User.all.sample.id
+  )
+end
 
 
 

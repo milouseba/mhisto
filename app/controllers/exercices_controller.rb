@@ -2,6 +2,7 @@ class ExercicesController < ApplicationController
 
   def index
     @exercices = Exercice.all
+    authorize @exercice
   end
 
   def show
