@@ -1,8 +1,9 @@
 /* Style the tab */
 div.tab {
     overflow: hidden;
-    border: 1px solid #ccc;
-    background-color: #f1f1f1;
+    border-bottom: 1px solid #ccc;
+    margin: 0 120px;
+    // background-color: #f1f1f1;
 }
 
 /* Style the buttons inside the tab */
@@ -12,24 +13,27 @@ div.tab button {
     border: none;
     outline: none;
     cursor: pointer;
-    padding: 14px 16px;
-    transition: 0.3s;
+    padding: 2px 16px;
+    transition: 0.1s;
 }
 
 /* Change background color of buttons on hover */
 div.tab button:hover {
-    background-color: #ddd;
+    // background-color: #ddd;
+    font-weight: bold;
 }
 
 /* Create an active/current tablink class */
 div.tab button.active {
-    background-color: #ccc;
+    // background-color: #ccc;
+    font-weight: bold;
+    border-bottom: 2px solid rgba(0,0,0,0.1);
 }
 
 /* Style the tab content */
 .tabcontent {
     display: none;
-    padding: 6px 12px;
-    border: 1px solid #ccc;
+    padding: 6px 150px;
+    // border: 1px solid #ccc;
     border-top: none;
 }
