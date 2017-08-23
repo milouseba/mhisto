@@ -23,11 +23,12 @@
     <% unless @exercice.answers.where(user: current_user).count >= 1 %>
       <div class="user-answer">
         <%= simple_form_for [@exercice, @answer] do |a| %>
-          <%= a.input :content %>
-          <%= a.submit %>
+          <%= a.input :content, label: 'Votre réponse' %>
+          <%= a.submit 'Répondre' %>
         <% end %>
       </div>
     <% end %>
+
     <div class="other-answers">
       <ul>
         <% @exercice.answers.each do |answer| %>
@@ -49,10 +50,8 @@
                   </div>
                 <% else %>
                   <div class="liked">
-                    <%= link_to answers_like_path(answer) do %>
                       <i class="fa fa-heart" aria-hidden="true"></i>
                       <%= answer.votes_for.size %>
-                    <% end %>
                   </div>
                 <% end %>
                 <div class="comments">
@@ -61,14 +60,33 @@
                 </div>
               </div>
             </div>
-            <div class="answer-comments">
-              <% answer.comments.each do |comment| %>
-                <%= comment.content %>
-              <% end %>
+            <div id="show-comments">
+              Show comments
             </div>
+            <div id="hide-comments">
+              Hide comments
+            </div>
+            <div class="answer-comments">
+            <ul>
+              <% answer.comments.each do |comment| %>
+                <div class="comment-content">
+                  <li><%= comment.content %></li>
+                  <li>par <%= comment.user.username %></li>
+                </div>
+              <% end %>
+            </ul>
+          </div>
+          <div class="new-comment">
+            <%= simple_form_for [answer, @comment] do |c| %>
+              <%= c.input :content, label: 'Votre commentaire'  %>
+              <%= c.submit 'Commenter' %>
+            <% end %>
           </div>
         <% end %>
       </ul>
     </div>
   </div>
 </div>
+
+
+
