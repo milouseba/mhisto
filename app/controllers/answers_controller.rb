@@ -1,7 +1,11 @@
 class AnswersController < ApplicationController
-  after_action :verify_authorized, :except => :create
+  after_action :verify_authorized, :except => [:create, :index, :like]
+
   def index
-    @answers = Answer.all
+    @answers = Answer.where(user_id: current_user.id)
+    # @answers = policy_scope(Answer).where(user_id: current_user.id).order(created_at: :desc)
+    # @exercices = Exercice.where(user_id: current_user.id)
+    @exercices = policy_scope(Exercice).where(user_id: current_user.id).order(created_at: :desc)
   end
 
   def new
@@ -20,7 +24,11 @@ class AnswersController < ApplicationController
     end
   end
 
-
+  def like
+    @answer = Answer.find(params[:id])
+    @answer.liked_by current_user
+    redirect_to exercice_path(@answer.exercice)
+  end
 
   private
   def set_exercice

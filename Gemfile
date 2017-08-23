@@ -21,6 +21,7 @@ gem 'uglifier'
 gem 'carrierwave', '~> 0.11.2'
 gem 'omniauth-facebook'
 gem 'pundit'
+gem 'acts_as_votable', '~> 0.10.0'
 
 group :development, :test do
   gem 'pry-byebug'

@@ -1,7 +1,31 @@
-<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,36,61, 0.1) 0%, rgba(255,144,15,0.1) 50%), url('http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503407636/MhistO/thomas-martinsen-2443_1.jpg');">
+<!-- <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,36,61, 0.1) 0%, rgba(255,144,15,0.1) 50%), url('http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503407636/MhistO/thomas-martinsen-2443_1.jpg');">
   <div class="banner-content">
     <div><h1>A toi d'écrire ton histoire</h1></div>
-    <div><%= link_to "Commence à écrire", "file.html", class: "btn-start" %></div>
+    <div><%# link_to "Commence à écrire", "file.html", class: "btn-start" %></div>
   </div>
-</div>
+</div> -->
 
+
+<div class="container">
+
+  <div class="row home-banner">
+        <div class="col-xs-12">
+          <div class="home-card-first ">
+
+            <div class="home-card-image" style="background-image: linear-gradient(-225deg, rgba(0,36,61, 0.1) 0%, rgba(255,144,15,0.1) 50%), url('http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503407636/MhistO/thomas-martinsen-2443_1.jpg');">
+            </div>
+
+            <div class="home-card-title"><h1>A toi d'écrire ton histoire</h1></div>
+
+            <div class="home-card-btn"><%= link_to "Commence à écrire", "file.html", class: "btn-start" %></div>
+
+          </div>
+        </div>
+        <div class="exo-title">
+          <h1>Les exos</h1>
+        </div>
+    </div>
+
+  <%= render 'exercices/form' %>
+
+</div>

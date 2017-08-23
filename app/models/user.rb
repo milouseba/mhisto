@@ -33,6 +33,8 @@ has_many :comments
 has_many :likes
 has_many :answers
 
+acts_as_voter
+
 
 # validates :first_name, presence: true, uniqueness: true
 # validates :last_name, presence: true, uniqueness: true

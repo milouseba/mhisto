@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="tab">
+    <button class="tablinks active" onclick="openDashTab(event, 'MyAnswers')">Mes answers</button>
+    <button class="tablinks" onclick="openDashTab(event, 'MyExercices')">Mes exercices</button>
+  </div>
+
+  <div id="MyAnswers" class="tabcontent" style="display:block;">
+    <% @answers.each do |answer|%>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="dash-answer">
+            <div class="dash-answer-exercice-title"><h3><%= answer.exercice.title %></h3></div>
+            <div class="dash-answer-exercice-date"> créé le <%= answer.exercice.created_at %></div>
+            <div class="dash-answer-all">
+              <div class="dash-answer-exercice-begin"><p><%= answer.exercice.beginning_story %></p></div>
+              <div class="dash-answer-content"><p><%= answer.content %></p></div>
+              <div class="dash-answer-exercice-end"><p><%= answer.exercice.end_story %></p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <div id="MyExercices" class="tabcontent">
+    <% @exercices.each do |exercice|%>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="dash-exercice">
+            <div class="dash-answer-exercice-title"><h3><%= exercice.title %></h3></div>
+            <div class="dash-answer-exercice-date"> créé le <%= exercice.created_at %></div>
+            <div class="dash-exercice-all">
+              <div class="dash-answer-titre-debut"><h6>Début:</h6></div>
+              <div class="dash-answer-exercice-begin"><p><%= exercice.beginning_story %></p></div>
+              <div class="dash-answer-titre-debut"><h6>Fin:</h6></div>
+              <div class="dash-answer-exercice-end"><p><%= exercice.end_story %></p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
