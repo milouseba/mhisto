@@ -1,0 +1,29 @@
+<h1>dashboard</h1>
+
+<div class="tab">
+  <button class="tablinks active" onclick="openDashTab(event, 'MyAnswers')">Mes answers</button>
+  <button class="tablinks" onclick="openDashTab(event, 'MyExercices')">Mes exercices</button>
+</div>
+
+<div id="MyAnswers" class="tabcontent" style="display:block;">
+  <h2>Mes answers</h2>
+  <% @answers.each do |answer|%>
+    <ul>
+      <li><%= answer.content %></li>
+      <li><%= answer.status %></li>
+    </ul>
+  <% end %>
+</div>
+
+<div id="MyExercices" class="tabcontent">
+  <h2>Mes exercices</h2>
+  <% @exercices.each do |exercice|%>
+    <ul>
+      <li><%= exercice.title %></li>
+      <li><%= exercice.status %></li>
+    </ul>
+  <% end %>
+</div>
+
+
+

@@ -11,10 +11,10 @@ $break-medium: 600px;
   border-style: none;
   margin: 0px;
   box-shadow: 1px 1px 10px rgba(0,0,0,0.4);
-  position: absolute;
-  top: 350px;
+  // position: absolute;
+  // top: 350px;
   font-size: 25px;
-  left: 90px;
+  // left: 90px;
 
   @media screen and (max-width: $break-medium) {
     color: white;
@@ -26,10 +26,10 @@ $break-medium: 600px;
     border-style: none;
     margin: 0px;
     box-shadow: 1px 1px 10px rgba(0,0,0,0.4);
-    position: absolute;
-    top: 300px;
+    // position: absolute;
+    // top: 300px;
     font-size: 25px;
-    left: 90px;
+    // left: 90px;
   }
 
   @media screen and (max-width: $break-small) {
@@ -42,10 +42,10 @@ $break-medium: 600px;
     border-style: none;
     margin: 0px;
     box-shadow: 1px 1px 10px rgba(0,0,0,0.4);
-    position: absolute;
-    top: 400px;
+    // position: absolute;
+    // top: 400px;
     font-size: 25px;
-    left: 70px;
+    // left: 70px;
   }
 }
 .btn-start:hover {

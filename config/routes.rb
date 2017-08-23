@@ -12,4 +12,5 @@ Rails.application.routes.draw do
   end
   get '/answers/:id/like', to: 'answers#like', as: 'answers_like'
 
+  resources :answers, only: [:index]
 end

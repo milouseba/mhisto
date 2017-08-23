@@ -1,9 +1,5 @@
 
-
-<!-- <div class="cards"> -->
 <div class="container">
-
-
 
   <div class="row card-banner">
         <div class="col-xs-12">
@@ -37,46 +33,6 @@
         </div>
     </div>
 
-
-
-
-
-
-
-
-
-<div class="cards">
-    <div class="row">
-      <% @exercices.each do |exercice|%>
-        <div class="col-xs-12 col-sm-6">
-          <div class="card">
-
-            <div class="card-image" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%),
-             url('http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503326204/q5ugc6xjyp8c3vdsjfmi.jpg')">
-            </div>
-
-            <div class="card-category">
-              <p><%= exercice.title %></p>
-            </div>
-
-            <div class="card-user">
-              <p>by <%= User.find(exercice.user_id).username %></p>
-            </div>
-
-            <div class="card-details">
-              <div class="card-beginning">
-                <p><%= exercice.beginning_story %></p>
-              </div>
-              <div class="card-end">
-                <p><%= exercice.end_story %></p>
-              </div>
-            </div>
-            <%= link_to "", exercice_path(exercice), class: "card-link" %>
-          </div>
-        </div>
-        <% end %>
-    </div>
-  </div>
-
+  <%= render 'form' %>
 
 </div>
