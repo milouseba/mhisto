@@ -15,6 +15,3 @@ $( "#hide-comments" ).click(function() {
   $( this ).hide();
   $( "#show-comments" ).show();
 });
-
-
-
