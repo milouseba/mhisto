@@ -1,6 +1,5 @@
 .cards {
   flex-grow: 1;
-  margin: 10px;
 }
 
 $break-small: 770px;
@@ -12,51 +11,75 @@ $break-medium: 1100px;
     min-width: 220px;
   }
   height: 175px;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   background-size: cover !important;
   background-position: center;
   color: white;
   position: relative;
-  box-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.1);
   border-radius: 3px;
   margin-bottom: 20px;
-  margin-right: 5px;
-  margin-left: 5px;
+  margin-top: 20px;
+  margin-right: 0px;
+  margin-left: 0px;
   opacity: 1;
+  border-radius: 2px;
+  border: 1px solid rgba(0,0,0,0.2)
 }
 
 .card-banner {
-  margin: 20px;
+  padding: 10px;
+  margin: 10px;
 }
 
 .card-first {
   height: 60vh;
+  margin: 0px;
+  margin-top: 20px;
+  padding: 0px;
+  border-radius: 2px;
+  margin-bottom: 20px;
 }
 
 .card-image-first {
   position: absolute;
   top:0;
   left:0;
-  width:100%;
+  width:50%;
   height:100%;
+  border-bottom-left-radius: 1px;
+  border-top-left-radius: 1px;
 }
 
 .exo-title {
   border-bottom-style: solid;
   border-bottom-width: thin;
+  border-bottom-color: #c9c9c9;
+  position: relative;
+  height: 40px;
+  width: 100%;
+}
 
+.exo-title h5 {
+  font-weight: 400;
+  display: inline-block;
+  border-bottom-style: solid;
+  border-bottom-width: thin;
+  margin-bottom: 0px;
+  padding-bottom: 15px;
+  position: absolute;
+  left: 0px;
+  bottom: -1px;
 }
 
 
-
-
-
-
-
-
-
-
-
+#exercices-title {
+  border-bottom-style: solid;
+  border-bottom-width: thin;
+  border-bottom-color: #c9c9c9;
+  position: relative;
+  height: 75px;
+  width: 100%;
+}
 
 .card-image {
   position: absolute;
@@ -64,6 +87,7 @@ $break-medium: 1100px;
   left:0;
   width:50%;
   height:100%;
+  border-radius: 1px;
 }
 
 .card-details {
@@ -92,19 +116,6 @@ $break-medium: 1100px;
   left: 10px;
   font-size: 14px;
 }
-// .card-user {
-//   @media screen and (min-width: $break-small) and (max-width: $break-medium) {
-//     display: none;
-//   }
-//   position: absolute;
-//   right: 10px;
-//   top: 10px;
-//   width: 40px;
-//   height: 40px;
-//   border-radius: 50%;
-//   box-shadow: 1px 1px 10px rgba(0,0,0,0.3);
-//   border: 0.5px solid black;
-// }
 
 .card-category {
   position: absolute;
@@ -121,68 +132,3 @@ $break-medium: 1100px;
   right: 0;
   width: 100%;
 }
-
-// a.card-link:hover {
-//   opacity: 1;
-//   background-color: white;
-//   border-radius: 3px;
-//   -webkit-transition: all 0.3s ease-in-out;
-//   transition: all 0.3s ease-in-out;
-//   padding: 10px;
-//   border: 2px solid $super-green;
-//   color: $gray;
-//   text-decoration: none;
-//   text-shadow: none;
-//   font-weight: 300;
-//   font-size: 20px;
-// }
-
-// .icon-wrapper {
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   height: 100%;
-// }
-
-// #filter_box {
-//   font-weight: 300;
-//   margin-right: 20px;
-// }
-
-// .search_plus_add {
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: center;
-//   padding: 3px;
-//   padding-bottom: 15px;
-// }
-
-// .card-price {
-//   position: absolute;
-//   text-align: center;
-//   top: 60px;
-//   width: 100%;
-// }
-
-// #add_button {
-//   background-color: $super-green;
-//   border-color: $super-green;
-//   box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-
-//   &:hover {
-//     background-color: $green;
-//     border-color: $green;
-//   }
-// }
-
-// #add_button a {
-//   color: white;
-//   text-decoration: none;
-// }
-
-// #da-search p {
-//   font-weight: 300;
-//   color: $green;
-//   margin-left: 20px;
-// }
-
