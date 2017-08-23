@@ -12,7 +12,7 @@ require 'open-uri'
 require 'json'
 
 puts "destroying old data..."
-  Like.destroy_all
+  # Like.destroy_all
   Comment.destroy_all
   Answer.destroy_all
   Exercice.destroy_all
@@ -185,10 +185,11 @@ exercices.each do |exercice|
   title: exercice[:title],
   beginning_story: exercice[:beginning_story],
   end_story: exercice[:end_story],
-  user_id: User.all.sample.id)
+  user_id: User.all.sample.id,
+  status: "draft")
   exo.remote_photo_url = array_url.sample
 
-  exo.save
+  exo.save!
 end
 
 
