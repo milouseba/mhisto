@@ -1,5 +1,5 @@
 class AnswersController < ApplicationController
-  after_action :verify_authorized, :except => :create
+  after_action :verify_authorized, :except => [:create, :like]
   def index
     @answers = Answer.all
   end
@@ -20,7 +20,11 @@ class AnswersController < ApplicationController
     end
   end
 
-
+  def like
+    @answer = Answer.find(params[:id])
+    @answer.liked_by current_user
+    redirect_to exercice_path(@answer.exercice)
+  end
 
   private
   def set_exercice

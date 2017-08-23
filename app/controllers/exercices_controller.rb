@@ -10,6 +10,8 @@ class ExercicesController < ApplicationController
     authorize @exercice
     @answers = Answer.where(exercice:@exercice)
     @answer = Answer.new
+    @comments = Comment.where(answer:@answer)
+    @comment = Comment.new
   end
 
   def new
