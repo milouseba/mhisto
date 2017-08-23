@@ -7,5 +7,10 @@ Rails.application.routes.draw do
     resources :answers, only: [:create]
   end
 
+  resources :answers, only: [] do
+    resources :comments, only: [:create]
+  end
+  get '/answers/:id/like', to: 'answers#like', as: 'answers_like'
+
   resources :answers, only: [:index]
 end

@@ -1,5 +1,6 @@
 class AnswersController < ApplicationController
-  after_action :verify_authorized, :except => [:create, :index]
+  after_action :verify_authorized, :except => [:create, :index, :like]
+
   def index
     @answers = Answer.where(user_id: current_user.id)
     # @answers = policy_scope(Answer).where(user_id: current_user.id).order(created_at: :desc)
@@ -23,7 +24,11 @@ class AnswersController < ApplicationController
     end
   end
 
-
+  def like
+    @answer = Answer.find(params[:id])
+    @answer.liked_by current_user
+    redirect_to exercice_path(@answer.exercice)
+  end
 
   private
   def set_exercice
