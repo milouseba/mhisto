@@ -37,25 +37,25 @@ puts "Team users created..."
 url = 'https://randomuser.me/api/'
 user_serialized = open(url).read
 users_list = JSON.parse(user_serialized)
-User.create(email: "sebastien@gmail.com", password: "sebastien", first_name: "sebastien", last_name: "milou", username: "Seseb"
+User.create(email: "sebastien@gmail.com", password: "sebastien", first_name: "sebastien", last_name: "milou", username: "Seseb",
             avatar: users_list["results"][0]["picture"]["large"])
 
 url = 'https://randomuser.me/api/'
 user_serialized = open(url).read
 users_list = JSON.parse(user_serialized)
-User.create(email: "thomas@gmail.com", password: "thomas", first_name: "thomas", last_name: "chekaiban", username: "Tom"
+User.create(email: "thomas@gmail.com", password: "thomas", first_name: "thomas", last_name: "chekaiban", username: "Tom",
             avatar: users_list["results"][0]["picture"]["large"])
 
 url = 'https://randomuser.me/api/'
 user_serialized = open(url).read
 users_list = JSON.parse(user_serialized)
-User.create(email: "maxime@gmail.com", password: "maxime", first_name: "maxime", last_name: "guillemain", username: "Mamax"
+User.create(email: "maxime@gmail.com", password: "maxime", first_name: "maxime", last_name: "guillemain", username: "Mamax",
             avatar: users_list["results"][0]["picture"]["large"])
 
 url = 'https://randomuser.me/api/'
 user_serialized = open(url).read
 users_list = JSON.parse(user_serialized)
-User.create(email: "ariane@gmail.com", password: "ariane", first_name: "ariane", last_name: "decolle", username: "Ari"
+User.create(email: "ariane@gmail.com", password: "ariane", first_name: "ariane", last_name: "decolle", username: "Ari",
             avatar: users_list["results"][0]["picture"]["large"])
 
 puts "Team users added"
@@ -116,61 +116,61 @@ end_story: "Ah ! si seulement Hercule Poirot n’avait pas pris sa retraite, et 
 ]
 
 
-url1 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478574/Stories/Stories_1.jpg"
-url2 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478574/Stories/Stories_2.jpg"
-url3 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478574/Stories/Stories_3.jpg"
-url4 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478574/Stories/Stories_4.jpg"
-url5 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478574/Stories/Stories_5.jpg"
-url6 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478574/Stories/Stories_6.jpg"
-url7 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478575/Stories/Stories_7.jpg"
-url8 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478575/Stories/Stories_8.jpg"
-url9 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478575/Stories/Stories_9.jpg"
-url10 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478576/Stories/Stories_10.jpg"
-url11 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478575/Stories/Stories_11.jpg"
-url12 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478575/Stories/Stories_12.jpg"
-url13 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478576/Stories/Stories_13.jpg"
-url14 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478576/Stories/Stories_14.jpg"
-url15 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478576/Stories/Stories_15.jpg"
-url16 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478577/Stories/Stories_16.jpg"
-url17 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478576/Stories/Stories_17.jpg"
-url18 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478577/Stories/Stories_18.jpg"
-url19 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478578/Stories/Stories_19.jpg"
-url20 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478578/Stories/Stories_20.jpg"
-url21 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478578/Stories/Stories_21.jpg"
-url22 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478579/Stories/Stories_22.jpg"
-url23 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478578/Stories/Stories_23.jpg"
-url24 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478578/Stories/Stories_24.jpg"
-url25 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478574/Stories/Stories_25.jpg"
-url26 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478574/Stories/Stories_26.jpg"
-url27 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478574/Stories/Stories_27.jpg"
-url28 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478575/Stories/Stories_28.jpg"
-url29 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478575/Stories/Stories_29.jpg"
-url30 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478576/Stories/Stories_30.jpg"
-url31 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478575/Stories/Stories_31.jpg"
-url32 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478575/Stories/Stories_32.jpg"
-url33 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478576/Stories/Stories_33.jpg"
-url34 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478577/Stories/Stories_34.jpg"
-url35 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478576/Stories/Stories_35.jpg"
-url36 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478576/Stories/Stories_36.jpg"
-url37 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478577/Stories/Stories_37.jpg"
-url38 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478577/Stories/Stories_38.jpg"
-url39 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478577/Stories/Stories_39.jpg"
-url40 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478578/Stories/Stories_40.jpg"
-url41 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478578/Stories/Stories_41.jpg"
-url42 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478578/Stories/Stories_42.jpg"
-url43 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478578/Stories/Stories_43.jpg"
-url44 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478579/Stories/Stories_44.jpg"
-url45 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478578/Stories/Stories_45.jpg"
-url46 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478579/Stories/Stories_46.jpg"
-url47 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478579/Stories/Stories_47.jpg"
-url48 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478580/Stories/Stories_48.jpg"
-url49 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478579/Stories/Stories_49.jpg"
-url50 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478580/Stories/Stories_50.jpg"
-url51 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478579/Stories/Stories_51.jpg"
-url52 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478580/Stories/Stories_52.jpg"
-url53 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478580/Stories/Stories_53.jpg"
-url54 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478580/Stories/Stories_54.jpg"
-url55 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478580/Stories/Stories_55.jpg"
+url1 = "https://i.pinimg.com/564x/e9/7e/13/e97e133d072ea4642db624070d86a71f.jpg"
+url2 = "https://i.pinimg.com/564x/6b/74/7a/6b747a5652043ee739325bb41d6e47ea.jpg"
+url3 = "https://i.pinimg.com/564x/ca/91/79/ca9179022a42780bb44be89c015e2b0b.jpg"
+url4 = "https://s-media-cache-ak0.pinimg.com/564x/c9/57/73/c9577340e3ac768da81553cf35a0d5cb.jpg"
+url5 = "https://i.pinimg.com/564x/b2/26/e2/b226e2a282a72b8d0509bae15691e09c.jpg"
+url6 = "https://s-media-cache-ak0.pinimg.com/564x/00/de/b4/00deb45303b78d14b40bba0332ac6524.jpg"
+url7 = "https://i.pinimg.com/564x/f4/ae/b1/f4aeb19c3a492211fa2680f91baf7195.jpg"
+url8 = "https://s-media-cache-ak0.pinimg.com/564x/9e/a6/6d/9ea66d3771c0d2734b45889c600acca1.jpg"
+url9 = "https://i.pinimg.com/564x/ae/46/7b/ae467b4cfb4c05e55545a65557f51acf.jpg"
+url10 = "https://s-media-cache-ak0.pinimg.com/564x/bb/94/fc/bb94fc9782259ae99bcb7df63b5f27b9.jpg"
+url11 = "https://s-media-cache-ak0.pinimg.com/564x/28/82/da/2882da9a12b2996bf126260264d5667e.jpg"
+url12 = "https://s-media-cache-ak0.pinimg.com/564x/ee/f7/88/eef7886e8e75f740c63b16ed848bb23b.jpg"
+url13 = "https://s-media-cache-ak0.pinimg.com/564x/35/1c/da/351cdab6cd05ccb83c1da155f6aec3ed.jpg"
+url14 = "https://s-media-cache-ak0.pinimg.com/564x/28/82/da/2882da9a12b2996bf126260264d5667e.jpg"
+url15 = "https://i.pinimg.com/564x/8a/17/4f/8a174f066edd52db11edb5152763ac81.jpg"
+url16 = "https://i.pinimg.com/564x/1b/2f/8e/1b2f8e3304264470db768911418e4e83.jpg"
+url17 = "https://i.pinimg.com/564x/7b/d4/6d/7bd46d660f7289a16aa1422407ad52a8.jpg"
+url18 = "https://i.pinimg.com/564x/d4/52/7a/d4527aeaf65a31dbe7b2df684079e0fc.jpg"
+url19 = "https://s-media-cache-ak0.pinimg.com/564x/c7/4a/0c/c74a0c85dde07dc06838234f719a99e9.jpg"
+url20 = "https://s-media-cache-ak0.pinimg.com/564x/2e/95/a4/2e95a427447912c67e42353111313ed9.jpg"
+url21 = "https://i.pinimg.com/564x/ca/17/99/ca17992ed8a8bbc65a677306919d2284.jpg"
+url22 = "https://i.pinimg.com/564x/ee/e4/b8/eee4b8a0519d0e50450ca0dbbcd8ac9c.jpg"
+url23 = "https://s-media-cache-ak0.pinimg.com/564x/d0/33/d2/d033d2923612c19f5c80c016921681e7.jpg"
+url24 = "https://i.pinimg.com/564x/37/06/23/3706236b316283b613298752f788f4d5.jpg"
+url25 = "https://i.pinimg.com/564x/5d/ad/55/5dad55fc6ef9b01d84a1eeedd0833ee5.jpg"
+url26 = "https://i.pinimg.com/564x/19/b2/fb/19b2fb7edac0c14d949b2ffa7498a660.jpg"
+url27 = "https://i.pinimg.com/564x/1c/d6/01/1cd601ce0d33a9a614205d19819940ac.jpg"
+url28 = "https://i.pinimg.com/564x/61/7b/3d/617b3d716461926ea5643febf8f7e652.jpg"
+url29 = "https://i.pinimg.com/564x/42/ea/b5/42eab59aa26ff7bf40269031861438c9.jpg"
+url30 = "https://s-media-cache-ak0.pinimg.com/564x/06/85/47/0685478dfb61bd347c32b666de7e8ee1.jpg"
+url31 = "https://i.pinimg.com/564x/43/81/2d/43812dbb2c0822ffb1412f97a781e576.jpg"
+url32 = "https://i.pinimg.com/564x/21/7d/ca/217dca4315be15d972d989d88e61fedb.jpg"
+url33 = "https://s-media-cache-ak0.pinimg.com/564x/fe/10/cc/fe10cc8a4cdb8a86e2908bdcaba16945.jpg"
+url34 = "https://s-media-cache-ak0.pinimg.com/564x/a1/7c/dc/a17cdca0600b4038950dcd2109c3ab15.jpg"
+url35 = "https://i.pinimg.com/564x/26/8b/d4/268bd401ab139a7f85c7ec08997b1e92.jpg"
+url36 = "https://i.pinimg.com/564x/f2/c8/97/f2c89768d905f9201059161aedec2cd0.jpg"
+url37 = "https://i.pinimg.com/564x/aa/5c/08/aa5c08dedb38fbf788b7c4482724eea1.jpg"
+url38 = "https://i.pinimg.com/564x/55/8f/17/558f17293f0e68a51806ebdb4dd78f16.jpg"
+url39 = "https://i.pinimg.com/564x/23/aa/86/23aa862fa137aa8bffa06e229111085d.jpg"
+url40 = "https://s-media-cache-ak0.pinimg.com/564x/26/1e/9b/261e9bc58cb6d063db785861033d6af7.jpg"
+url41 = "https://i.pinimg.com/564x/18/ce/75/18ce75f511d9c6b58502a5181fb10d3b.jpg"
+url42 = "https://i.pinimg.com/564x/2a/df/f5/2adff558978dcdcb9ad752b24d73b073.jpg"
+url43 = "https://i.pinimg.com/564x/42/12/22/421222d458aeb35b7313f001b37d6c4d.jpg"
+url44 = "https://i.pinimg.com/564x/67/25/e4/6725e4b47cbc2e04532075c67fc5e723.jpg"
+url45 = "https://i.pinimg.com/564x/42/96/00/4296009443a708bc97339796dfb86415.jpg"
+url46 = "https://s-media-cache-ak0.pinimg.com/564x/4e/cc/21/4ecc216cd18968c7a1b11e3df13570ec.jpg"
+url47 = "https://i.pinimg.com/564x/3c/4e/f2/3c4ef22586a00d83a53e84e8b14a20d5.jpg"
+url48 = "https://i.pinimg.com/564x/92/75/4b/92754b7a2b4a9a7291ecfd080e7ec48c.jpg"
+url49 = "https://i.pinimg.com/564x/57/7f/7f/577f7f3f1836c2a38540d8cf8e8c143d.jpg"
+url50 = "https://i.pinimg.com/564x/18/db/e1/18dbe1269281a46f9064eb5efae42dbc.jpg"
+url51 = "https://i.pinimg.com/564x/3c/f4/86/3cf4860a1fd4584c22f4fb6ab9bf8d7b.jpg"
+url52 = "https://i.pinimg.com/564x/f3/b5/ca/f3b5cac3220d345eb0a9b32528b91cd8.jpg"
+url53 = "https://i.pinimg.com/564x/72/a0/3c/72a03c9e364eb4b5d283cb437f3292b0.jpg"
+url54 = "https://s-media-cache-ak0.pinimg.com/564x/4d/37/47/4d37473ba3ed098fc5c054aedafc3898.jpg"
+url55 = "https://s-media-cache-ak0.pinimg.com/564x/8d/ab/7b/8dab7bff5412ff0baaf5d94758ed582b.jpg"
 
 array_url = [url1, url2, url3, url4, url5, url6, url7, url8, url9, url10, url11, url12, url13, url14, url15, url16,
 url17, url18, url19, url20, url21, url22, url23, url24, url25, url26, url27, url28, url29, url30, url31, url32,
@@ -185,9 +185,9 @@ exercices.each do |exercice|
   title: exercice[:title],
   beginning_story: exercice[:beginning_story],
   end_story: exercice[:end_story],
-  user_id: User.all.sample.id
-  photo: array_url.sample
-  )
+  user_id: User.all.sample.id)
+  exo.remote_photo_url = array_url.sample
+
   exo.save
 end
 
