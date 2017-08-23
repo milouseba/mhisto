@@ -1,9 +1,12 @@
 
 <div class="container">
-
   <div class="row card-banner">
         <div class="col-xs-12">
+          <div class="exo-title">
+            <h5>Challenge du moment</h5>
+          </div>
           <div class="card-first">
+
             <%= @exercices.first.id %>
             <div class="card-image-first" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%),
              url('<%= cl_image_path @exercices.first.photo, crop: :fill %>')">
@@ -27,12 +30,10 @@
             </div>
             <%= link_to "", exercice_path(@exercices.first), class: "card-link" %>
           </div>
-        </div>
         <div class="exo-title">
           <h1>Les exos</h1>
         </div>
     </div>
 
   <%= render 'exercicelist' %>
-
 </div>
