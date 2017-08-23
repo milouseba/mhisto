@@ -11,372 +11,6 @@
 require 'open-uri'
 require 'json'
 
-
-
-
-
-# propisition de texte exo + answer
-# 1 Inconnu **************************************************************************************
-# Quand j'arrive à la gare de l'Est, j'espère toujours secrètement qu'il y aura quelqu'un pour m'attendre.
-
-#ANSWER :
-# C'est con. J'ai beau savoir que ma mère est encore au boulot à cette heure-là et que Marc
-# n'est pas du genre à traverser la banlieue pour porter mon sac, j'ai toujours cet espoir débile.
-# Là encore, ça n'a pas loupé, avant de descendre les escalators pour prendre le métro,
-# j'ai jeté un dernier regard circulaire au cas où il y aurait quelqu'un...
-# Et à chaque fois dans les escalators mon sac me paraît encore plus lourd.
-
-# Je voudrais que quelqu'un m'attende quelque part... C'est quand même pas compliqué.
-#DONE DONE DONE DONE DONE DONE
-
-
-
-# 2 Dostoievski **************************************************************************************
-# "Je suis un homme malade...
-
-# Je suis un homme méchant. Un homme repoussoir.
-# Voilà ce que je suis. Je crois que j’ai quelque chose au foie.
-# De toute façon, ma maladie, je n’y comprends rien, j’ignore au juste ce qui me fait mal.
-# Je ne me soigne pas, je ne me suis jamais soigné, même si je respecte la médecine et les docteurs.
-# En plus, je suis superstitieux comme ce n’est pas permis: enfin, assez pour respecter la médecine.
-# (Je suis suffisamment instruit pour ne pas être superstitieux.) Oui, c’est par méchanceté que je ne me soigne pas.
-# Ça, messieurs, je parie que c’est une chose que vous ne comprenez pas.
-# Moi, si! Evidemment, je ne saurais vous expliquer à qui je fais une crasse quand j’obéis à ma méchanceté
-# de cette façon-là; je sais parfaitement que ce ne sont pas les docteurs que j’emmerde en refusant de me soigner;
-# je suis le mieux placé pour savoir que ça ne peut faire de tort qu’à moi seul et à personne d’autre.
-# Et, malgré tout, si je ne me soigne pas, c’est par méchanceté.
-
-# J’ai mal au foie. Tant mieux, qu’il me fasse encore mal!"
-
-#DONE DONE DONE DONE DONE
-
-
-# 3 Nietzsche **************************************************************************************
-# Mais comment pouvons-nous nous permettre de blâmer ou louer l’univers ?
-
-# Gardons-nous de lui reprocher de la dureté et de la raison, ou bien le contraire.
-# Il n’est ni parfait, ni beau, ni noble, et ne veut devenir rien de tout cela, il ne tend absolument pas à imiter l’homme !
-# Il n’est touché par aucun de nos jugements esthétiques et moraux ! Il ne possède pas non plus d’instinct de conservation et,
-# d’une façon générale, pas d’instinct du tout ; il ignore aussi toutes les lois.
-# Gardons-nous de dire qu’il y a des lois dans la nature.
-# Il n’y a que des nécessités : personne ne commande, personne n’obéit, personne ne désobéit.
-# Lorsque vous saurez qu’il n’y a point de fins,
-# vous saurez aussi qu’il n’y a point de hasard : car ce n’est qu’à côté d’un monde de fins que le mot « hasard » a un sens.
-# Gardons-nous de dire que la mort est opposé à la vie. La vie n’est qu’une variété de le mort et une variété très rare.
-# – Gardons-nous de penser que le monde crée éternellement du nouveau.
-# Il n’y a pas de substances éternellement durables ; la matière est une erreur pareille à celle des Dieux des Eléates.
-# Quand donc aurons-nous fini de nous ménager ? Quand toutes ces ombres de Dieu ne nous troublerons-elles plus ?
-# Quand aurons-nous entièrement dépouillé la nature de ses attributs divins ?
-# Quand retrouverons-nous la nature pure, innocente ?
-
-# Quand pourrons-nous, nous autres hommes, redevenir nature ?"
-
-#DONE DONE DONE DONE
-
-
-# 4 "Battle Royale" Koushun Takami **************************************************************************************
-# Comment peut-on tuer ses camarades de classe ?
-
-# Certes, cette règle leur avait été imposée, mais Yumiko n'arrivait pas à croire qu'il existait quelqu'un
-# capable de jouer le jeu. Et pourtant...
-# Oui, et pourtant... Si elle se retrouvait face à quelqu'un qui en voulait à sa vie,
-# elle pouvait s'imaginer passer à l'acte, elle aussi. Et si elle en était capable, tout le monde le pouvait, non ?
-# Yumiko jeta un oeil sur un mégaphone apparemment abandonné dans un coin de la salle.
-# Etait-il en état de marche ? Et si oui...
-# S' il était utilisable, ne pouvait-elle le mettre à profit ?
-# La peur seule l'empêchait de s'en servir. Elle ne pouvait pas croire qu'il y ait des gens prêts à jouer le jeu
-# qui leur était imposé, mais d'un autre côté, elle ne pouvait pas nier qu'elle sentait son coeur pris
-# dans un filet d'angoisse.
-
-# C'est bien pour cette raison qu'avec Yukiko elles s'étaient éloignées de l'école et s'étaient enfermées ici.
-
-#DONE DONE DONE DONE
-
-
-
-# 5 Jean Anouilh, ANTIGONE **************************************************************************************
-# Comprendre… Vous n’avez que ce mot-là à la bouche, tous, depuis que je suis toute petite.
-
-# Il fallait comprendre qu’on ne peut toucher à l’eau, à la belle eau fuyante parce que ça mouille les dalles,
-# à la terre parce que ça tache les robes. Il fallait comprendre qu’on ne doit pas manger tout à la fois,
-# donner tout ce qu’on a dans les poches au premier mendiant qu’on rencontre, courir,
-# courir dans le vent jusqu’à ce qu’on tombe par terre et boire quand on a chaud et se baigner quand il est trop tôt
-# ou trop tard, mais pas juste quand on en a envie !
-# Comprendre. Toujours comprendre..
-
-# Moi, je ne veux pas comprendre, Je comprendrai quand je serai vieille… Pas maintenant.
-
-#DONE DONE DONE DONE
-
-
-# 6 Paolino (sous menace de mort) (Garçon) **************************************************************************************
-# Vous m’insultez ! Je suis un homme honnête, moi !
-
-# Je suis un homme de conscience, moi !
-# Je suis un homme, sachez-le, qui peut arriver à se trouver, bien sûr –sans le vouloir- dans une situation désespérée.
-# Oui ! Mais ce n’est pas vrai, pas vrai que je voudrais me servir des femmes des autres.
-# Parce que s’il en était ainsi, je ne vous aurais pas dit ce que je viens de vous dire, qu’un mari ne devrait
-# jamais négliger sa femme. Et j’ajoute maintenant qu’un mari qui néglige sa femme comment, selon moi, un crime !
-# Et pas rien qu’un ! Plusieurs crimes !
-# Oui parce que non seulement il oblige sa femme à manquer à ses devoirs en envers elle-même, envers son honnêteté,
-# mais parce qu’il peut aussi obliger un homme, un autre homme, à être malheureux toute sa vie.
-
-# Eh oui !
-
-#DONE DONE DONE DONE DONE DONE DONE DONE #DONE DONE DONE DONE #DONE DONE DONE DONE #DONE DONE DONE DONE
-
-#7 Choderlos de Laclos, Paul Achard, LES LIAISONS DANGEREUSES **************************************************************************************
-# Mais, on ne me dit rien, de sorte que, dans l’ignorance où je suis, je commets bien des gaucheries.
-
-# Mais oui : Ainsi hier, maman m’a dit de passer chez elle. Si c’était le monsieur, me dis-je !
-# La main me tremblait et le coeur me battait ; en entrant chez maman,
-# j’ai vu le monsieur en noir, debout près d’elle. Toute tremblante, j’ai trouvé un fauteuil et je me suis assise,
-# bien rouge et bien déconcertée. J’y étais à peine que voilà cet homme à mes genoux.
-# J’ai alors perdu la tête. Je me suis levée en jetant un cri perçant… comme lorsqu’il fait tonnerre.
-# Maman est partie d’un éclat de rire en me disant : « eh bien, qu’avez-vous ?
-# Donnez votre pied à monsieur… » Le monsieur était cordonnier.
-
-# Je ne peux pas vous rendre combien j’ai été honteuse.
-
-#DONE DONE DONE DONE DONE DONE DONE DONE #DONE DONE DONE DONE #DONE DONE DONE DONE #DONE DONE DONE DONE
-
-
-#8 Vaclav Havel, LARGO DESOLATO **************************************************************************************
-
-
-
-# C’est du baratin, tout ça. Quand tu voulais me séduire, au début, tu ne parlais pas comme ça.
-
-# J’allais faire renaître ton espoir, j’allais te régénérer, inaugurer pour toi une vie nouvelle.
-# Tu n’es pas une épave, Léopold, tu es un vulgaire démagogue.
-# Tu dirais n’importe quoi, tout ce qui t’arrange. Tu as eu tout ce que tu voulais et maintenant tu veux te débarrasser de moi.
-# Tu me parles de ton désarroi ! Foutaises, oui !
-# Tu veux me faire comprendre que j’ai rien à attendre de toi et en plus, tu veux te faire plaindre.
-# C’est malhonnête. Ce sont des grands mots, mais tu ne m’auras pas comme ça.
-# Oh !, comme j’ai été bête, bête à pleurer. Croire que je pourrais te faire partager mes sentiments,
-# te redonner goût à la vie ? Tu parles !
-
-# Tu es un cas désespéré. C’est bien fait pour moi. Une illusion de moins.
-
-
-
-
-
-# 9 Vaclav Havel, LARGO DESOLATO
-
-#DONE DONE DONE DONE DONE DONE DONE DONE #DONE DONE DONE DONE #DONE DONE DONE DONE #DONE DONE DONE DONE
-
-# 10 Raymon Queneau, prendre première phrase "Je suis dans le bus." et prendre genre 5 de ses histoires pour compléter.
-
-#DONE DONE DONE DONE DONE DONE DONE DONE #DONE DONE DONE DONE #DONE DONE DONE DONE #DONE DONE DONE DONE
-
-# 11 FLAUBERT
-#genre incipit de Salammbô "C'était à Mégara, faubourg de Carthage, dans les jardins d'Hamilcar." //
-#"Les arbres derrière eux fumaient encore ; de leurs branches noircies, des carcasses de singes à demi brûlées tombaient de temps à autre au milieu des plats.
-#Les soldats ivres ronflaient la bouche ouverte à côté des cadavres ; et ceux qui ne dormaient pas baissaient leur tête, éblouis par le jour.
-#Le sol piétiné disparaissait sous des flaques rouges."
-
-
-#DONE DONE DONE DONE DONE DONE DONE DONE #DONE DONE DONE DONE #DONE DONE DONE DONE #DONE DONE DONE DONE
-
-#12
-# Début/fin de la même manière que Jacques Roubaud
-#DEBUT =>
-# "La rue tombe noire, noire, la noire rue noire tombe là."
-# CONTENU - "La rue tombe noire, noire, la noire rue noire tombe là.
-# La rue tombe noire, noire, tombe la noire rue noire, là.
-# La rue, tombe noire, noire, rue noire, la tombe noire, là.
-# La rue tombe noire, rue noire noire, là, tombe noire, là.
-# #FIN =>
-# # "La rue tombe. La noire rue noire. Noire tombe noire. Là."
-
-#DONE DONE DONE DONE DONE DONE DONE DONE #DONE DONE DONE DONE #DONE DONE DONE DONE #DONE DONE DONE DONE
-
-# #13
-# #le personnage est une femme/homme et devient l'inverse. Compléter le milieu.
-# #DEBUT =>
-# #"Dans un sursaut je me réveille. Il est 9h10, je suis en retard.
-#Ce n'est qu'en arrivant dans la salle de bain que je me rend compte que j'ai mal partout.
-#Comme une mauvaise cuite, j'ai envie de vomir et un mal de crâne insensé."
-#CONTENU - "A TROUVER"
-#FIN =>
-#"Je reste devant la porte d'entrée. Sans oser sortir.
-#'Je suis un femme. Je suis une femme. Je suis une FEMME.'
-#Et j'ai beau le répéter, je ne peux rien y faire."
-
-#DONE DONE DONE DONE DONE DONE DONE DONE #DONE DONE DONE DONE #DONE DONE DONE DONE #DONE DONE DONE DONE
-
-#15
-#Début/fin --> le personnage est mort et ressuscite à la fin. compléter
-
-#16
-#Début/fin --> le perso se réveille à une autre époque dans la peau d'un perso historique plutôt connu
-
-#DONE DONE DONE DONE DONE DONE DONE DONE #DONE DONE DONE DONE #DONE DONE DONE DONE #DONE DONE DONE DONE
-
-
-#17
-#- Début/fin --> début classique genre "je me lève le matin je vais taffer, j'ai une petite vie rangée etc"
-# "Je ne revins plus jamais."
-
-#DONE DONE DONE DONE DONE DONE DONE DONE #DONE DONE DONE DONE #DONE DONE DONE DONE #DONE DONE DONE DONE
-
-
-#18
-#-Début/fin --> Début avec décision du perso de buter quelqu'un, fin : il finit par se faire tuer lui.
-
-#19
-#- Début/fin --> le perso se fait un café et découvre qu'il a pris un gros hallucinogène. Lancer l'écriture sur le trip du personnage. Fin classique.
-
-#20
-#- Début/fin --> réflexion sur la position de pouvoir (être roi, empereur etc),
-#on peut situer la scène où narrateur serait à la place de Néron brulant Rome, ou un truc un peu impressionnant.
-
-#DONE DONE DONE DONE DONE DONE DONE DONE #DONE DONE DONE DONE #DONE DONE DONE DONE #DONE DONE DONE DONE
-
-#21 MAURICE DRUON
-#DEBUT =>
-#“Le hurlement de la foule le fit sursauter. Les flammes venaient de jaillir du bûcher. Sur un ordre d’Alain de Pareilles, les archers éteignirent leurs torches dans l’herbe, et la nuit ne fut plus éclairée que par le brasier.
-#FIN =>
-# "Et tout à coup, la voix du grand-maître s’éleva à travers le rideau de feu et, comme si elle se fut adressée à chacun, atteignit chacun en plein visage. Avec une force stupéfiante, ainsi qu’il l’avait fait devant Notre-Dame, Jacques de Molait criait :
-# “Honte ! Honte ! Vous voyez des innocents qui meurent. Honte sur vous tous ! Dieu vous jugera.”
-# La flamme se flagella, brûla sa barbe, calcina en une seconde sa mitre de papier et alluma ses cheveux blancs.
-# La foule terrifiée s’était tue. On eût dit qu’on brûlait un prophète fou.
-# De ce visage en feu, la voix effrayante proféra :
-# “Pape Clément !...Chevalier Guillaume ! ...Roi Philippe !... Avant un an, je vous cite à paraître au tribunal de Dieu pour y recevoir votre juste châtiment ! Maudits ! Maudits ! tous maudits jusqu’à la treizième génération de vos races !...”
-# Les flammes entrèrent dans la bouche du grand-maître, et y étouffèrent son dernier cri. Puis, pendant un temps qui parut interminable, il se battit contre la mort.”
-
-#DONE DONE DONE DONE DONE DONE DONE DONE #DONE DONE DONE DONE #DONE DONE DONE DONE #DONE DONE DONE DONE
-
-#22
-#DEBUT ->
-#le personnage se retrouve devant lui-même enfant
-#dialogue entre les deux
-#FIN
-
-#DONE DONE DONE DONE DONE DONE DONE DONE #DONE DONE DONE DONE #DONE DONE DONE DONE #DONE DONE DONE DONE
-
-#23 KAAMELOT
-#DEBUT - "Le roi a décidé pour le jour d'aujourd'hui,
-#Qu'en vers de douze pieds vous devrez vous comprendre,
-#Depuis l'aube levée et ce jusqu'à la nuit,
-#Ainsi célébrerez le trépas d'Alexandre"
-#CONTENU : Dialogue entre Léodagan et Yvain
-#FIN - A trouver
-
-#DONE DONE DONE DONE DONE DONE DONE DONE #DONE DONE DONE DONE #DONE DONE DONE DONE #DONE DONE DONE DONE
-
-#24 - RACINE // BRITANNICUS
-#DEBUT - "Narcisse, c'en est fait, Néron est amoureux."
-# CONTENU - "Excité d'un désir curieux,
-# "Cette nuit je l'ai vue arriver en ces lieux,
-# Triste, levant au ciel ses yeux mouillés de larmes,
-# Qui brillaient au travers des flambeaux et des armes,
-# Belle, sans ornement, dans le simple appareil
-# D'une beauté qu'on vient d'arracher au sommeil.
-# Que veux-tu ? Je ne sais si cette négligence,
-# Les ombres, les flambeaux, les cris et le silence,
-# Et le farouche aspect de ses fiers ravisseurs,
-# Relevaient de ses yeux les timides douceurs.
-# Quoi qu'il en soit, ravi d'une si belle vue,
-# J'ai voulu lui parler, et ma voix s'est perdue :
-# Immobile, saisi d'un long étonnement,
-# Je l'ai laissée passer dans son appartement.
-# J'ai passé dans le mien. C'est là que solitaire,
-# De son image en vain j'ai voulu me distraire.
-# Trop présente à mes yeux, je croyais lui parler,
-# J'aimais jusqu'à ses pleurs que je faisais couler.
-# Quelquefois, mais trop tard, je lui demandais grâce ;
-# J'employais les soupirs, et même la menace.
-# Voilà comme, occupé de mon nouvel amour,
-# Mes yeux sans se fermer, ont attendu le jour."
-#FIN
-
-
-#DONE DONE DONE DONE DONE DONE DONE DONE #DONE DONE DONE DONE #DONE DONE DONE DONE #DONE DONE DONE DONE
-
-#25 - ANDRE GIDE, LES NOURRITURES TERRESTRES
-#DEBUT =>
-# "Nathanaël, tu regarderas tout en passant, et tu ne
-# t’arrêteras nulle part. Dis-toi bien que Dieu seul n’est pas provisoire.
-# Que l’importance soit dans ton regard, non dans la chose
-# regardée."
-# CONTENU - "Agir sans juger si l’action est bonne ou mauvaise.
-# Aimer sans s’inquiéter si c’est le bien ou le mal.
-# Nathanaël, je t’enseignerai la ferveur.
-# Une existence pathétique, Nathanaël, plutôt que la tranquillité.
-# Je ne souhaite pas d’autre repos que celui du sommeil
-# de la mort. J’ai peur que tout désir, toute énergie que je n’aurais
-# pas satisfaits durant ma vie, pour leur survie ne me tourmentent.
-# J’espère, après avoir exprimé sur cette terre tout ce qui
-# attendait en moi, satisfait, mourir complètement désespéré.
-# Non point la sympathie, Nathanaël, l’amour. Tu comprends,
-# n’est-ce pas, que ce n’est pas la même chose. C’est par
-# peur d’une perte d’amour que parfois j’ai pu sympathiser avec
-# des tristesses, des ennuis, des douleurs que sinon je n’aurais
-# qu’à peine endurés. Laisse à chacun le soin de sa vie."
-#FIN =>
-#"Nathanaël, je t’enseignerai la ferveur.
-# Nos actes s’attachent à nous comme sa lueur au phosphore.
-# Ils nous consument, il est vrai, mais ils nous font notre splendeur."
-
-
-#DONE DONE DONE DONE DONE DONE DONE DONE #DONE DONE DONE DONE #DONE DONE DONE DONE #DONE DONE DONE DONE
-
-#26 FLAUBERT, MADAME BOVARY
-#DEBUT =>
-#"En effet, elle regarda tout autour d’elle, lentement, comme quelqu’un qui se réveille d’un songe ;
-#puis, d’une voix distincte, elle demanda son miroir, et elle resta penchée dessus quelque temps,
-#jusqu’au moment où de grosses larmes lui découlèrent des yeux.
-#Alors elle se renversa la tête en poussant un soupir et retomba sur l’oreiller."
-# CONTENU - Sa poitrine aussitôt se mit à haleter rapidement. La langue tout entière lui sortit hors de la bouche ;
-# ses yeux, en roulant, pâlissaient comme deux globes de lampe qui s’éteignent, à la croire déjà morte,
-# sans l’effrayante accélération de ses côtes, secouées par un souffle furieux,
-# comme si l’âme eût fait des bonds pour se détacher. Félicité s’agenouilla devant le crucifix,
-# et le pharmacien lui-même fléchit un peu les jarrets, tandis que M. Canivet regardait vaguement sur la place.
-# Bournisien s’était remis en prière, la figure inclinée contre le bord de la couche, avec sa longue soutane noire qui traînait derrière lui dans l’appartement.
-# Charles était de l’autre côté, à genoux, les bras étendus vers Emma.
-# Il avait pris ses mains et il les serrait, tressaillant à chaque battement de son cœur,
-# comme au contrecoup d’une ruine qui tombe. À mesure que le râle devenait plus fort,
-# l’ecclésiastique précipitait ses oraisons ; elles se mêlaient aux sanglots étouffés de Bovary,
-# et quelquefois tout semblait disparaître dans le sourd murmure des syllabes latines,
-# qui tintaient comme un glas de cloche."
-# #FIN =>
-# #"Et Emma se mit à rire, d’un rire atroce, frénétique, désespéré,
-#croyant voir la face hideuse du misérable, qui se dressait dans les ténèbres éternelles comme un épouvantement."
-#"Une convulsion la rabattit sur le matelas. Tous s’approchèrent. Elle n’existait plus."
-
-#27 AGATHA CHRISTIE - LE MEURTRE DE ROGER ACKROYD
-#DEBUT =>
-#"— Le meurtrier est l’un d’entre nous, dites-vous ? Et… vous savez qui ?
-# Poirot avait lu le message. Il froissa la dépêche dans sa main et tapota la petite boulette de
-# papier.
-# — Je le sais, oui… maintenant."
-#CONTENU -> "Ainsi, notre portrait du meurtrier se précise. Il s’agit d’une personne qui a eu l’occasion, ce
-# jour-là, de dérober ses chaussures au capitaine Paton, aux Trois Marcassins.
-# Mais il y a plus : il fallait aussi que le meurtrier ait eu l’occasion de prendre le poignard dans
-# la vitrine. Vous me répondrez que n’importe quelle personne de la maison aurait pu le faire, mais
-# rappelez-vous : Flora Ackroyd a bien précisé que le poignard n’était plus dans la vitrine quand elle a
-# examiné les objets qui s’y trouvaient.
-# Et maintenant que tout est clair, récapitulons. Notre meurtrier est donc une personne qui est
-# allée aux Trois Marcassins dans la journée, et qui était assez liée avec Mr Ackroyd pour savoir qu’il
-# venait d’acheter un dictaphone. Une personne qui s’intéressait à la mécanique, qui a eu l’occasion de
-# prendre le poignard dans la vitrine avant l’arrivée de miss Flora et qui disposait de… du réceptacle
-# nécessaire pour cacher le dictaphone, une sacoche noire par exemple. Enfin une personne qui est
-# restée seule dans le cabinet de travail pendant quelques minutes après la découverte du crime, au
-# moment où Parker téléphonait à la police… Je n’en vois qu’une : le Dr Sheppard !"
-#FIN =>
-#"Je crois que j’ai toujours su que je finirais par tuer Ackroyd. Dès que j’avais appris la mort de
-# Mrs Ferrars, j’avais eu la conviction qu’elle lui avait tout dit avant de mourir. Quand je le rencontrai
-# et le vis si troublé, je m’imaginai qu’il devait connaître la vérité tout en se refusant à y croire… et
-# qu’il voulait me donner une chance de me défendre. Je rentrai donc chez moi prendre les précautions
-# nécessaires.
-#Quand j’aurai terminé ce manuscrit, je le mettrai sous enveloppe et l’adresserai à Poirot.
-#Soit, ce sera le véronal.
-# Ah ! si seulement Hercule Poirot n’avait pas pris sa retraite, et n’était pas venu chez nous cultiver
-# des courges !…"
-
-
 puts "destroying old data..."
   Like.destroy_all
   Comment.destroy_all
@@ -403,25 +37,25 @@ puts "Team users created..."
 url = 'https://randomuser.me/api/'
 user_serialized = open(url).read
 users_list = JSON.parse(user_serialized)
-User.create(email: "sebastien@gmail.com", password: "sebastien", first_name: "sebastien", last_name: "milou",
+User.create(email: "sebastien@gmail.com", password: "sebastien", first_name: "sebastien", last_name: "milou", username: "Seseb"
             avatar: users_list["results"][0]["picture"]["large"])
 
 url = 'https://randomuser.me/api/'
 user_serialized = open(url).read
 users_list = JSON.parse(user_serialized)
-User.create(email: "thomas@gmail.com", password: "thomas", first_name: "thomas", last_name: "chekaiban",
+User.create(email: "thomas@gmail.com", password: "thomas", first_name: "thomas", last_name: "chekaiban", username: "Tom"
             avatar: users_list["results"][0]["picture"]["large"])
 
 url = 'https://randomuser.me/api/'
 user_serialized = open(url).read
 users_list = JSON.parse(user_serialized)
-User.create(email: "maxime@gmail.com", password: "maxime", first_name: "maxime", last_name: "guillemain",
+User.create(email: "maxime@gmail.com", password: "maxime", first_name: "maxime", last_name: "guillemain", username: "Mamax"
             avatar: users_list["results"][0]["picture"]["large"])
 
 url = 'https://randomuser.me/api/'
 user_serialized = open(url).read
 users_list = JSON.parse(user_serialized)
-User.create(email: "ariane@gmail.com", password: "ariane", first_name: "ariane", last_name: "decolle",
+User.create(email: "ariane@gmail.com", password: "ariane", first_name: "ariane", last_name: "decolle", username: "Ari"
             avatar: users_list["results"][0]["picture"]["large"])
 
 puts "Team users added"
@@ -482,6 +116,68 @@ end_story: "Ah ! si seulement Hercule Poirot n’avait pas pris sa retraite, et 
 ]
 
 
+url1 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478574/Stories/Stories_1.jpg"
+url2 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478574/Stories/Stories_2.jpg"
+url3 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478574/Stories/Stories_3.jpg"
+url4 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478574/Stories/Stories_4.jpg"
+url5 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478574/Stories/Stories_5.jpg"
+url6 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478574/Stories/Stories_6.jpg"
+url7 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478575/Stories/Stories_7.jpg"
+url8 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478575/Stories/Stories_8.jpg"
+url9 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478575/Stories/Stories_9.jpg"
+url10 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478576/Stories/Stories_10.jpg"
+url11 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478575/Stories/Stories_11.jpg"
+url12 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478575/Stories/Stories_12.jpg"
+url13 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478576/Stories/Stories_13.jpg"
+url14 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478576/Stories/Stories_14.jpg"
+url15 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478576/Stories/Stories_15.jpg"
+url16 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478577/Stories/Stories_16.jpg"
+url17 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478576/Stories/Stories_17.jpg"
+url18 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478577/Stories/Stories_18.jpg"
+url19 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478578/Stories/Stories_19.jpg"
+url20 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478578/Stories/Stories_20.jpg"
+url21 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478578/Stories/Stories_21.jpg"
+url22 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478579/Stories/Stories_22.jpg"
+url23 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478578/Stories/Stories_23.jpg"
+url24 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478578/Stories/Stories_24.jpg"
+url25 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478574/Stories/Stories_25.jpg"
+url26 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478574/Stories/Stories_26.jpg"
+url27 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478574/Stories/Stories_27.jpg"
+url28 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478575/Stories/Stories_28.jpg"
+url29 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478575/Stories/Stories_29.jpg"
+url30 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478576/Stories/Stories_30.jpg"
+url31 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478575/Stories/Stories_31.jpg"
+url32 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478575/Stories/Stories_32.jpg"
+url33 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478576/Stories/Stories_33.jpg"
+url34 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478577/Stories/Stories_34.jpg"
+url35 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478576/Stories/Stories_35.jpg"
+url36 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478576/Stories/Stories_36.jpg"
+url37 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478577/Stories/Stories_37.jpg"
+url38 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478577/Stories/Stories_38.jpg"
+url39 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478577/Stories/Stories_39.jpg"
+url40 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478578/Stories/Stories_40.jpg"
+url41 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478578/Stories/Stories_41.jpg"
+url42 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478578/Stories/Stories_42.jpg"
+url43 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478578/Stories/Stories_43.jpg"
+url44 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478579/Stories/Stories_44.jpg"
+url45 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478578/Stories/Stories_45.jpg"
+url46 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478579/Stories/Stories_46.jpg"
+url47 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478579/Stories/Stories_47.jpg"
+url48 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478580/Stories/Stories_48.jpg"
+url49 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478579/Stories/Stories_49.jpg"
+url50 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478580/Stories/Stories_50.jpg"
+url51 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478579/Stories/Stories_51.jpg"
+url52 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478580/Stories/Stories_52.jpg"
+url53 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478580/Stories/Stories_53.jpg"
+url54 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478580/Stories/Stories_54.jpg"
+url55 = "http://res.cloudinary.com/dd6ibmn7p/image/upload/v1503478580/Stories/Stories_55.jpg"
+
+array_url = [url1, url2, url3, url4, url5, url6, url7, url8, url9, url10, url11, url12, url13, url14, url15, url16,
+url17, url18, url19, url20, url21, url22, url23, url24, url25, url26, url27, url28, url29, url30, url31, url32,
+url33, url34, url35, url36, url37, url38, url39, url40, url41, url42, url43, url44, url45, url46, url47, url48,
+url49, url50, url51, url52, url53, url54, url55]
+
+
 puts "Creating exercices..."
 
 exercices.each do |exercice|
@@ -490,6 +186,7 @@ exercices.each do |exercice|
   beginning_story: exercice[:beginning_story],
   end_story: exercice[:end_story],
   user_id: User.all.sample.id
+  photo: array_url.sample
   )
   exo.save
 end
@@ -741,6 +438,23 @@ answers.each do |answer|
     )
 end
 puts "Answers created..."
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
