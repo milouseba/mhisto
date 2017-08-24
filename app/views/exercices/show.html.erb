@@ -40,6 +40,7 @@
             <div class="answer-infos">
               <div class="avatar-username">
                 <p><%= answer.user.username %></p>
+                <%= image_tag answer.user.photo %>
               </div>
               <div class="likes-comments">
                 <% if answer.votes_for.size == 0 %>

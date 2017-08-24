@@ -85,10 +85,12 @@ $break-medium: 720px;
 .answer {
   padding: 15px;
   border: 2px solid lightgray;
-  margin: 10px;
   border-radius: 4px;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
   background: white;
+  margin-bottom: 50px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .answer-infos{
@@ -172,6 +174,8 @@ $break-medium: 720px;
   padding: 5px;
   border-radius: 4px;
   display: none;
+  overflow-y: scroll;
+  max-height: 150px;
 }
 
 .comment-content {
