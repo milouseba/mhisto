@@ -83,8 +83,8 @@ autobus", end_story: "Deux heures après et cent vingt minutes plus tard, je le 
 gare Saint-Lazare."},
 {title: "Salammbô", beginning_story: "C'était à Mégara, faubourg de Carthage, dans les jardins d'Hamilcar.",
 end_story: "
-Les arbres derrière eux fumaient encore ; de leurs branches noircies, des carcasses de singes à demi brûlées tombaient de temps à autre au milieu des plats. Les soldats ivres ronflaient la bouche ouverte à côté des cadavres ; et ceux qui ne dormaient pas baissaient leur tête, éblouis par le jour.
-Le sol piétiné disparaissait sous des flaques rouges."},
+Les arbres derrière eux fumaient encore ; de leurs branches noircies, des carcasses de singes à demi brûlées tombaient de temps à autre au milieu des plats.
+Les soldats ivres ronflaient la bouche ouverte à côté des cadavres ; et ceux qui ne dormaient pas baissaient leur tête, éblouis par le jour. Le sol piétiné disparaissait sous des flaques rouges."},
 {title: "Nuit sans date rue Saint Jacques", beginning_story: "La rue tombe noire, noire, la noire rue noire tombe là.",
 end_story: "La rue tombe. La noire rue noire. Noire tombe noire. Là."},
 {title: "Femme", beginning_story: "Dans un sursaut je me réveille. Il est 9h10, je suis en retard.",
