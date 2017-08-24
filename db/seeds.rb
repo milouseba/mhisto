@@ -184,11 +184,11 @@ ex10.save
 # ex21.remote_photo_url = "https://i.pinimg.com/564x/c9/00/33/c90033d5ab82370fc0dadf45eacd8985.jpg"
 # ex21.save
 
-# ex22 = Exercice.create(title: "Le meurtre de Roger Ackroyd", beginning_story: "Le meurtrier est l’un d’entre nous, dites-vous ? Et… vous savez qui ? Poirot avait lu le message.
-# Il froissa la dépêche dans sa main et tapota la petite boulette de papier.",
-# end_story: "Ah ! si seulement Hercule Poirot n’avait pas pris sa retraite, et n’était pas venu chez nous cultiver des courges !")
-# ex22.remote_photo_url = "https://i.pinimg.com/564x/8a/a2/4a/8aa24a3ce1dc9cbbbe64b8a7c867179a.jpg"
-# ex22.save
+ex22 = Exercice.create(title: "Le meurtre de Roger Ackroyd", beginning_story: "Le meurtrier est l’un d’entre nous, dites-vous ? Et… vous savez qui ? Poirot avait lu le message.
+Il froissa la dépêche dans sa main et tapota la petite boulette de papier.",
+end_story: "Ah ! si seulement Hercule Poirot n’avait pas pris sa retraite, et n’était pas venu chez nous cultiver des courges !", user_id: User.all.sample.id)
+ex22.remote_photo_url = "https://i.pinimg.com/564x/8a/a2/4a/8aa24a3ce1dc9cbbbe64b8a7c867179a.jpg"
+ex22.save
 
 # ex23 = Exercice.create(title: "Le Comte de Monte Cristo", beginning_story: "Le 24 février 1815, la vigie de Notre-Dame de la Garde signala le trois-mâts le Pharaon,
 # venant de Smyrne, Trieste et Naples.", end_story: "Néanmoins les experts en navigation reconnaissaient que si un accident était arrivé,
