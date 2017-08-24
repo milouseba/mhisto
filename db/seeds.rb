@@ -497,8 +497,7 @@ puts "Creating answers..."
 answers.each do |answer|
   ans = Answer.new(
     content: answer[:content],
-    status: "published",
-    exercice_id: answer[:exercice_id],
+    exercice_id: Exercice.all.sample.id,
     user_id: User.all.sample.id
     )
   ans.save
