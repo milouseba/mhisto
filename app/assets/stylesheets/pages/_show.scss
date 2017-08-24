@@ -7,9 +7,10 @@ $break-medium: 720px;
   height: 100vh;
   position: sticky !important;
   top: 0 !important;
-  border: 2px solid lightgray;
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.05);
   background-color: white;
-  border-radius: 4px;
+  border-radius: 3px;
+  border: 1px solid rgba(0,0,0,0.1);
 
   @media screen and (max-width: $break-small) {
     display: none;
@@ -21,12 +22,15 @@ $break-medium: 720px;
 
 .photo-exercice{
   position: relative;
+  border-top-right-radius: 2px;
+  border-top-left-radius: 2px;
 }
 
 .photo-exercice img{
   max-height: 200px;
   width: 100%;
-  border-radius: 4px;
+  border-top-right-radius: 2px;
+  border-top-left-radius: 2px;
 }
 
 .photo-exercice-filter{
@@ -37,6 +41,8 @@ $break-medium: 720px;
   right: 0;
   background-color: black;
   opacity: 0.4;
+  border-top-right-radius: 2px;
+  border-top-left-radius: 2px;
 }
 
 .photo-exercice h3{
@@ -57,15 +63,21 @@ $break-medium: 720px;
   text-align: right;
   font-size: 14px;
   margin-bottom: 10px;
-}
-
-.plays-count:hover {
   color: $green;
   cursor: default;
 }
 
+.no-answer {
+  color: black;
+  opacity: 0.3;
+}
+
 .beginning-story{
-  text-align: center;
+  text-align: left;
+  margin-bottom: 20px;
+  font-weight: 300;
+  border-bottom: 0.5px solid rgba(0,0,0,0.05);
+  padding-bottom: 15px;
 }
 
 .button-exercice{
@@ -73,8 +85,11 @@ $break-medium: 720px;
 }
 
 .end-story{
-  text-align: center;
-  margin-top: 15px;
+  text-align: left;
+  margin-top: 20px;
+  font-weight: 300;
+  border-top: 0.5px solid rgba(0,0,0,0.05);
+  padding-top: 15px;
 }
 
 .other-answers ul{
@@ -112,8 +127,19 @@ $break-medium: 720px;
   border-bottom: 1px solid lightgray;
 }
 
-.avatar-username p{
-  margin-bottom: 0px;
+.avatar-hidden {
+  color: $orange;
+  opacity: 0.7
+}
+
+.avatar-username h6 {
+  font-weight: 300;
+}
+
+.avatar-username {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .likes-comments {
@@ -198,4 +224,20 @@ $break-medium: 720px;
 
 .comment-content:last-child{
   border-bottom: none;
+}
+
+.btn-try {
+  font-family: $headers-font;
+  padding: 10px;
+  color: $orange;
+  opacity: 0.3;
+  text-shadow: 1px 1px rgba(0,0,0,0.1);
+}
+
+
+.btn-done-answer {
+  font-family: $headers-font;
+  color: $orange;
+  opacity: 0.9;
+  text-shadow: 1px 1px rgba(0,0,0,0.1);
 }
