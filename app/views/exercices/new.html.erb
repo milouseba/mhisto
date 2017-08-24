@@ -1,8 +1,8 @@
 <div class="container">
   <div class="row">
    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-     <div class="form-post">
-      <h1>Crée ton exercice !</h1>
+     <div class="form-container", id="form-post" >
+      <h1>Ecris ton histoire !</h1>
       <%= simple_form_for(@exercice) do |f| %>
       <%= f.input :title %>
       <%= f.input :beginning_story, placeholder: "Il était une fois..." %>
@@ -11,8 +11,14 @@
 
 
       <%= f.input :photo %>
-      <%= f.input :photo_cache, as: :hidden %>
-      <%= f.submit "Sauvegarder", class: "btn btn-primary" %>
+
+
+          <div id="photo-button">
+            <%= f.input :photo_cache, as: :hidden %>
+          </div>
+        <div class="button">
+        <%= f.submit "Sauvegarder", class: "btn", id: "Save-btn" %>
+        </div>
       <% end %>
     </div>
   </div>

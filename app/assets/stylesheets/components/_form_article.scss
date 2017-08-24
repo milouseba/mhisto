@@ -1,23 +1,65 @@
-.form-post {
+#form-post {
   background: white;
   margin-top: 50px;
   padding: 20px;
   border-radius: 5px;
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+  border: 1px solid rgba(0,0,0,0.1);
+  margin-bottom: 22px;
+  width: 705px;
   h1 {
     text-align: center;
-    font-weight: bold;
     font-size: 25px;
     color: #666666;
     margin-bottom: 50px;
-    margin-top: 0px;
+    margin-top: 20px;
   }
-  .btn {
+}
+
+textarea.form-control {
+  height: 110px;
+}
+
+  #Save-btn {
     width: 100%;
     padding: 10px;
-    font-weight: bold;
+    font-weight: lighter;
+    background-color: #464655;
+    color: white;
+    width: 250px;
   }
 
-  .title {
-    color: #D96459;
+  #Save-btn:hover {
+    background-color: #ff850f;
   }
+
+  .button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+  }
+
+.form-group {
+  color: black;
+}
+
+// #exercice_photo {
+//   display: flex;
+//   align-items: center;
+//   justify-content: space-around;
+// }
+
+#exerice_photo{
+  border: 1px solid red;
+  color: red;
+}
+
+abbr[title] {
+  text-decoration: none;
+  border-bottom: none;
+}
+
+.verticalLine {
+  border-left: thick solid red;
 }
