@@ -8,6 +8,9 @@
       </div>
     </div>
     <div class="exercice-info">
+      <div class="plays-count">
+        <i class="fa fa-play-circle" aria-hidden="true"></i> <%= @exercice.answers.count %>
+      </div>
       <p class="beginning-story"><%= @exercice.beginning_story %></p>
       <div class="button-exercice">
         <% if @exercice.answers.where(user: current_user).count >= 1 %>
@@ -39,7 +42,7 @@
             </div>
             <div class="answer-infos">
               <div class="avatar-username">
-                <p><%= answer.user.username %></p>
+                <p>par <%= answer.user.username %></p>
                 <%= image_tag answer.user.photo %>
               </div>
               <div class="likes-comments">
@@ -64,7 +67,7 @@
             </div>
             <div class="comments-container">
               <div class="show-comments">
-                Show comments
+                Show comments (<%= answer.comments.count %>)
               </div>
               <div class="hide-comments">
                 Hide comments
