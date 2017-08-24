@@ -13,7 +13,7 @@
       <% if user_signed_in? %>
 
         <!-- Links when logged in -->
-        <%= link_to "Write a challenge", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+        <%= link_to "Write a challenge", new_exercice_path, class: "navbar-wagon-item navbar-wagon-link" %>
 
         <!-- Avatar with dropdown menu -->
         <div class="navbar-wagon-item">
@@ -21,18 +21,18 @@
             <%= image_tag avatar_url = current_user.facebook_picture_url || "http://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
             <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
               <li>
-                <%= link_to "#" do %>
-                  <i class="fa fa-user"></i> <%= t(".profile", default: " Profile") %>
+                <%= link_to answers_path  do %>
+                  <i class="fa fa-user"></i> <%= t(".profile", default: "Dashboard") %>
                 <% end %>
               </li>
               <li>
-                <%= link_to root_path "home" do %>
-                  <i class="fa fa-home"></i>  <%= t(".profile", default: " Dashboard") %>
+                <%= link_to exercices_path do %>
+                  <i class="fa fa-home"></i>  <%= t(".profile", default: "Home") %>
                 <% end %>
               </li>
               <li>
                 <%= link_to destroy_user_session_path, method: :delete do %>
-                  <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: " Log out") %>
+                  <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
                 <% end %>
               </li>
             </ul>
