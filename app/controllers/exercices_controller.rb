@@ -8,9 +8,13 @@ class ExercicesController < ApplicationController
   def show
     set_exercice
     authorize @exercice
-    @answers = Answer.where(exercice:@exercice)
-    @answer = Answer.new
-    @comments = Comment.where(answer:@answer)
+    @answers = Answer.where(exercice: @exercice, status: "published")
+    if @exercice.answers.find_by_user_id(current_user.id)
+      @answer = @exercice.answers.find_by_user_id(current_user.id)
+    else
+      @answer = Answer.new
+    end
+    @comments = Comment.where(answer: @answer)
     @comment = Comment.new
   end
 
@@ -31,30 +35,17 @@ class ExercicesController < ApplicationController
 
 
 
-    if @exercice.save
-      respond_to do |format|
-        format.html { redirect_to exercice_path }
-        format.js  # <-- will render `app/views/exercices/create.js.erb`
-      end
-    else
-      respond_to do |format|
-        format.html { render 'exercices/' }
-        format.js  # <-- idem
-      end
-    end
-
-
-
-
-
-
-
-
-
-
-
-
-
+    # if @exercice.save
+    #   respond_to do |format|
+    #     format.html { redirect_to exercice_path }
+    #     format.js  # <-- will render `app/views/exercices/create.js.erb`
+    #   end
+    # else
+    #   respond_to do |format|
+    #     format.html { render 'exercices/' }
+    #     format.js  # <-- idem
+    #   end
+    # end
 
   end
 

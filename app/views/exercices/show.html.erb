@@ -21,20 +21,20 @@
   </div>
 
   <div class="answers">
-    <% unless @exercice.answers.where(user: current_user).count >= 1 %>
+    <% if @answer.status == "pending" %>
       <div class="user-answer">
         <%= simple_form_for [@exercice, @answer] do |a| %>
           <%= a.input :content, label: 'Votre réponse' %>
-          <%= a.submit 'Répondre' %>
-          <%= a.submit 'Save', method %>
+          <%= a.submit 'Save' %>
+          <%= a.submit 'Publié', name: "publish" %>
         <% end %>
-        <p id="words-count"></p>
       </div>
+      <p id="words-count"></p>
     <% end %>
 
     <div class="other-answers">
       <ul>
-        <% @exercice.answers.each do |answer| %>
+        <% @answers.each do |answer| %>
           <div class="answer">
             <div class="answer-content">
               <li><%= answer.content %></li>
