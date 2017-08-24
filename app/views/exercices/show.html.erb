@@ -26,7 +26,9 @@
         <%= simple_form_for [@exercice, @answer] do |a| %>
           <%= a.input :content, label: 'Votre réponse' %>
           <%= a.submit 'Répondre' %>
+          <%= a.submit 'Save', method %>
         <% end %>
+        <p id="words-count"></p>
       </div>
     <% end %>
 
@@ -96,6 +98,8 @@
     </div>
   </div>
 </div>
+
+
 
 
 

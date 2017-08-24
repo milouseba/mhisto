@@ -28,6 +28,34 @@ class ExercicesController < ApplicationController
     else
       render :new
     end
+
+
+
+    if @exercice.save
+      respond_to do |format|
+        format.html { redirect_to exercice_path }
+        format.js  # <-- will render `app/views/exercices/create.js.erb`
+      end
+    else
+      respond_to do |format|
+        format.html { render 'exercices/' }
+        format.js  # <-- idem
+      end
+    end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   end
 
   private

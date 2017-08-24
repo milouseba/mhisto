@@ -1,0 +1,4 @@
+<%= simple_form_for([ exercice, answer ], remote: true) do |form| %>
+  <%= form.input :content %>
+  <%= form.button :submit, method: :patch %>
+<% end %>
