@@ -2,8 +2,10 @@
 
   <div class="instructions">
     <div class="photo-exercice">
-      <%= image_tag @exercice.photo.url %>
-      <div class="photo-exercice-filter">
+      <% if !@exercice.photo.url.nil? %>
+        <%= image_tag @exercice.photo.url %>
+      <% end  %>
+        <div class="photo-exercice-filter">
         <h3><%= @exercice.title %></h3>
       </div>
     </div>
