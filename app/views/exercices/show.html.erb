@@ -2,8 +2,10 @@
 
   <div class="instructions">
     <div class="photo-exercice">
-      <%= image_tag @exercice.photo.url %>
-      <div class="photo-exercice-filter">
+      <% if !@exercice.photo.url.nil? %>
+        <%= image_tag @exercice.photo.url %>
+      <% end  %>
+        <div class="photo-exercice-filter">
         <h3><%= @exercice.title %></h3>
       </div>
     </div>
@@ -30,18 +32,20 @@
   </div>
 
   <div class="answers">
-    <% unless @exercice.answers.where(user: current_user).count >= 1 %>
+    <% if @answer.status == "pending" %>
       <div class="user-answer">
         <%= simple_form_for [@exercice, @answer] do |a| %>
           <%= a.input :content, label: 'Votre réponse' %>
-          <%= a.submit 'Répondre' %>
+          <%= a.submit 'Save' %>
+          <%= a.submit 'Publié', name: "publish" %>
         <% end %>
       </div>
+      <p id="words-count"></p>
     <% end %>
 
     <div class="other-answers">
       <ul>
-        <% @exercice.answers.each do |answer| %>
+        <% @answers.each do |answer| %>
           <div class="answer">
             <div class="answer-content">
               <li><%= answer.content %></li>
@@ -106,6 +110,8 @@
     </div>
   </div>
 </div>
+
+
 
 
 

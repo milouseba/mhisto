@@ -251,5 +251,16 @@ hr {
 
 .card .card-link {
   border: 1px solid $orange;
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
   opacity: 0.4;
 }
+
+.card-first .card-link {
+  border: 1px solid $orange;
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+  opacity: 0.4;
+  left: 0px;
+}
+
