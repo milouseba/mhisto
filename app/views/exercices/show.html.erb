@@ -11,14 +11,20 @@
     </div>
     <div class="exercice-info">
       <div class="plays-count">
-        <i class="fa fa-play-circle" aria-hidden="true"></i> <%= @exercice.answers.count %>
+        <% if @exercice.answers.count == 0 %>
+        <h6 class="no-answer"><%= @exercice.answers.count %> réponse</h6>
+        <% elsif @exercice.answers.count == 1 %>
+        <h6><%= @exercice.answers.count %> réponse</h6>
+        <% else %>
+        <h6><%= @exercice.answers.count %> réponses</h6>
+        <% end %>
       </div>
       <p class="beginning-story"><%= @exercice.beginning_story %></p>
       <div class="button-exercice">
         <% if @exercice.answers.where(user: current_user).count >= 1 %>
-          <button class= "btn btn-warning">Exercice fait</button>
+          <div class= "btn-done-answer">Vous avez déjà réalisé l'exercice</div>
         <% else %>
-          <button class= "btn btn-success">A toi de jouer</button>
+          <div class= "btn-try">En attente de votre réponse</div>
         <% end %>
       </div>
       <p class="end-story"><%= @exercice.end_story %></p>
@@ -46,7 +52,8 @@
             </div>
             <div class="answer-infos">
               <div class="avatar-username">
-                <p>par <%= answer.user.username %></p>
+                <h6>par&nbsp;</h6>
+                <h6 class="avatar-hidden"><%= answer.user.username %></h6>
                 <%= image_tag answer.user.photo %>
               </div>
               <div class="likes-comments">
