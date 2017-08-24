@@ -59,7 +59,6 @@ User.create(email: "ariane@gmail.com", password: "ariane", first_name: "ariane",
             avatar: users_list["results"][0]["picture"]["large"])
 
 puts "Team users added"
-
 puts "Creating exercices..."
 
 ex1 = Exercice.create!(title: "L'attente", beginning_story: "Quand j'arrive à la gare de l'Est, j'espère toujours secrètement qu'il y aura quelqu'un pour m'attendre.",

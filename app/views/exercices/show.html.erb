@@ -1,4 +1,5 @@
 <div class="exercice-content">
+
   <div class="instructions">
     <div class="photo-exercice">
       <% if !@exercice.photo.url.nil? %>
@@ -6,20 +7,23 @@
       <% end  %>
         <div class="photo-exercice-filter">
         <h3><%= @exercice.title %></h3>
-        </div>
-      </div>
-      <div class="exercice-info">
-        <p class="beginning-story"><%= @exercice.beginning_story %></p>
-        <div class="button-exercice">
-          <% if @exercice.answers.where(user: current_user).count >= 1 %>
-            <button class= "btn btn-warning">Exercice fait</button>
-          <% else %>
-            <button class= "btn btn-success">A toi de jouer</button>
-          <% end %>
-        </div>
-        <p class="end-story"><%= @exercice.end_story %></p>
       </div>
     </div>
+    <div class="exercice-info">
+      <div class="plays-count">
+        <i class="fa fa-play-circle" aria-hidden="true"></i> <%= @exercice.answers.count %>
+      </div>
+      <p class="beginning-story"><%= @exercice.beginning_story %></p>
+      <div class="button-exercice">
+        <% if @exercice.answers.where(user: current_user).count >= 1 %>
+          <button class= "btn btn-warning">Exercice fait</button>
+        <% else %>
+          <button class= "btn btn-success">A toi de jouer</button>
+        <% end %>
+      </div>
+      <p class="end-story"><%= @exercice.end_story %></p>
+    </div>
+  </div>
 
   <div class="answers">
     <% unless @exercice.answers.where(user: current_user).count >= 1 %>
@@ -40,7 +44,8 @@
             </div>
             <div class="answer-infos">
               <div class="avatar-username">
-                <p><%= answer.user.username %></p>
+                <p>par <%= answer.user.username %></p>
+                <%= image_tag answer.user.photo %>
               </div>
               <div class="likes-comments">
                 <% if answer.votes_for.size == 0 %>
@@ -62,27 +67,34 @@
                 </div>
               </div>
             </div>
-            <div id="show-comments">
-              Show comments
+            <div class="comments-container">
+              <div class="show-comments">
+                Show comments (<%= answer.comments.count %>)
+              </div>
+              <div class="hide-comments">
+                Hide comments
+              </div>
+              <div class="answer-comments">
+                <% if answer.comments.count != 0 %>
+                  <ul>
+                    <% answer.comments.each do |comment| %>
+                      <div class="comment-content">
+                        <li><%= comment.content %></li>
+                        <li>par <%= comment.user.username %></li>
+                      </div>
+                    <% end %>
+                  </ul>
+                <% else %>
+                  <p>Pas de commentaire pour cette réponse</p>
+                <% end %>
+              </div>
             </div>
-            <div id="hide-comments">
-              Hide comments
-            </div>
-            <div class="answer-comments">
-            <ul>
-              <% answer.comments.each do |comment| %>
-                <div class="comment-content">
-                  <li><%= comment.content %></li>
-                  <li>par <%= comment.user.username %></li>
-                </div>
+            <div class="new-comment">
+              <%= simple_form_for [answer, @comment] do |c| %>
+                <%= c.input :content, label: 'Votre commentaire'  %>
+                <%= c.submit 'Commenter' %>
               <% end %>
-            </ul>
-          </div>
-          <div class="new-comment">
-            <%= simple_form_for [answer, @comment] do |c| %>
-              <%= c.input :content, label: 'Votre commentaire'  %>
-              <%= c.submit 'Commenter' %>
-            <% end %>
+            </div>
           </div>
         <% end %>
       </ul>
