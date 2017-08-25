@@ -37,9 +37,10 @@
         <p>Compteur de mots:&nbsp;</p> <p id="words-count"></p>
       </div>
         <%= simple_form_for [@exercice, @answer] do |a| %>
-          <%= a.input :content, label: '', placeholder: 'Écrivez votre réponse' %>
-            <%= a.submit 'Sauvegarder le texte' %>
-          <%= a.submit 'Publier', name: "publish" %>
+          <%= a.input :content, label: '',
+          placeholder: 'Écrivez votre réponse' %>
+            <%= a.submit 'Sauvegarder le texte', class: "orange_color" %>
+          <%= a.submit 'Publier', name: "publish",  class: "orange_color"  %>
         <% end %>
       </div>
     <% end %>
@@ -129,7 +130,7 @@
                   <div class="new-comment">
                   <%= simple_form_for [answer, @comment] do |c| %>
                     <%= c.input :content, label: '', placeholder: 'Écrivez un commentaire'  %>
-                    <%= c.submit 'Commenter' %>
+                    <%= c.submit 'Commenter', class: "orange_color" %>
                   <% end %>
                 </div>
               </div>
