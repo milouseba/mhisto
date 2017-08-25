@@ -250,14 +250,12 @@ hr {
 }
 
 .card .card-link {
-  border: 1px solid $orange;
   border-top-left-radius: 2px;
   border-bottom-left-radius: 2px;
   opacity: 0.4;
 }
 
 .card-first .card-link {
-  border: 1px solid $orange;
   border-top-left-radius: 2px;
   border-bottom-left-radius: 2px;
   opacity: 0.4;
@@ -265,13 +263,15 @@ hr {
 }
 
 .card-category h2 {
-  background-color: rgba(0,0,0,0.7);
+  background-color: rgba(0,0,0,0.8);
   padding: 4px;
-  border-radius: 4px;
+  margin: -5px;
+  border-radius: 3px;
 }
 
 .card-category h6 {
-  background-color: rgba(0,0,0,0.7);
+  background-color: rgba(0,0,0,0.8);
   padding: 4px;
-  border-radius: 4px;
+  margin: -5px;
+  border-radius: 3px;
 }
