@@ -10,6 +10,18 @@ document.getElementById('answer_content').addEventListener('keyup', (event) => {
   // document.getElementById('btn-publish').className.replace("link-visible", "link-hidden");
 });
 
+// document.getElementById('answer_content').addEventListener('click', (event) => {
+
+//   let count = 0;
+//   event.target.value.split(" ").forEach(val => {
+//     if (val !== "") {
+//       count++;
+//     }
+//   });
+//   document.getElementById('words-count').innerText = count;
+
+// });
+
 // document.getElementById('btn-publish').addEventListener('keyup', (event) => {
 
 
