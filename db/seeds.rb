@@ -23,13 +23,18 @@ puts "database clean..."
 puts "Creating users database..."
 10.times do
 
-  users = User.new(
+url = 'https://randomuser.me/api/'
+user_serialized = open(url).read
+users_list = JSON.parse(user_serialized)
+
+  user = User.new(
   first_name: Faker::Name.first_name,
   last_name: Faker::Name.last_name,
-  email: Faker::Internet.email)
-  users.username = users.first_name
-  users.password = users.first_name
-  users.save
+  email: Faker::Internet.email,
+  avatar: users_list["results"][0]["picture"]["large"])
+  user.username = user.first_name
+  user.password = user.first_name
+  user.save
 end
 
 puts "Team users created..."
@@ -115,11 +120,11 @@ Le sol piétiné disparaissait sous des flaques rouges.", user_id: User.all.samp
 ex10.remote_photo_url = "https://s-media-cache-ak0.pinimg.com/564x/6b/1b/d8/6b1bd88ac97ca94234c5c575be479249.jpg"
 ex10.save
 
-ex24 = Exercice.create(title: "Le meurtre de Roger Ackroyd", beginning_story: "Le meurtrier est l’un d’entre nous, dites-vous ? Et… vous savez qui ? Poirot avait lu le message.
-Il froissa la dépêche dans sa main et tapota la petite boulette de papier.",
-end_story: "Ah ! si seulement Hercule Poirot n’avait pas pris sa retraite, et n’était pas venu chez nous cultiver des courges !")
-ex24.remote_photo_url = "https://i.pinimg.com/564x/de/64/2c/de642c13ace1a56088e7aa9510e05c1a.jpg"
-ex24.save
+# ex24 = Exercice.create(title: "Le meurtre de Roger Ackroyd", beginning_story: "Le meurtrier est l’un d’entre nous, dites-vous ? Et… vous savez qui ? Poirot avait lu le message.
+# Il froissa la dépêche dans sa main et tapota la petite boulette de papier.",
+# end_story: "Ah ! si seulement Hercule Poirot n’avait pas pris sa retraite, et n’était pas venu chez nous cultiver des courges !")
+# ex24.remote_photo_url = "https://i.pinimg.com/564x/de/64/2c/de642c13ace1a56088e7aa9510e05c1a.jpg"
+# ex24.save
 
 # ex11 = Exercise.create(title: "Nuit sans date rue Saint Jacques", beginning_story: "La rue tombe noire, noire, la noire rue noire tombe là.",
 # end_story: "La rue tombe. La noire rue noire. Noire tombe noire. Là.")
@@ -209,11 +214,6 @@ ex22.save
 # ex23.remote_photo_url = "https://s-media-cache-ak0.pinimg.com/564x/b2/fa/60/b2fa60466c632f904b119fd34402a9a0.jpg"
 # ex23.save
 
-# ex24 = Exercice.create(title: "Le meurtre de Roger Ackroyd", beginning_story: "Le meurtrier est l’un d’entre nous, dites-vous ? Et… vous savez qui ? Poirot avait lu le message.
-# Il froissa la dépêche dans sa main et tapota la petite boulette de papier.",
-# end_story: "Ah ! si seulement Hercule Poirot n’avait pas pris sa retraite, et n’était pas venu chez nous cultiver des courges !")
-# ex24.remote_photo_url = "https://i.pinimg.com/564x/de/64/2c/de642c13ace1a56088e7aa9510e05c1a.jpg"
-# ex24.save
 
 
 # exercices.each do |exercice|
@@ -236,7 +236,7 @@ answers = [
 n'est pas du genre à traverser la banlieue pour porter mon sac, j'ai toujours cet espoir débile.
 Là encore, ça n'a pas loupé, avant de descendre les escalators pour prendre le métro,
 j'ai jeté un dernier regard circulaire au cas où il y aurait quelqu'un...
-Et à chaque fois dans les escalators mon sac me paraît encore plus lourd.", exercice_id: 1},
+Et à chaque fois dans les escalators mon sac me paraît encore plus lourd.", exercice_id: ex1.id},
 {content: "De toute façon, ma maladie, je n’y comprends rien, j’ignore au juste ce qui me fait mal.
 Je ne me soigne pas, je ne me suis jamais soigné, même si je respecte la médecine et les docteurs.
 En plus, je suis superstitieux comme ce n’est pas permis: enfin, assez pour respecter la médecine.
@@ -245,7 +245,7 @@ En plus, je suis superstitieux comme ce n’est pas permis: enfin, assez pour re
 Moi, si! Evidemment, je ne saurais vous expliquer à qui je fais une crasse quand j’obéis à ma méchanceté
 de cette façon-là; je sais parfaitement que ce ne sont pas les docteurs que j’emmerde en refusant de me soigner;
 je suis le mieux placé pour savoir que ça ne peut faire de tort qu’à moi seul et à personne d’autre.
-Et, malgré tout, si je ne me soigne pas, c’est par méchanceté.", exercice_id: 2},
+Et, malgré tout, si je ne me soigne pas, c’est par méchanceté.", exercice_id: ex2.id},
 {content: "Il n’est ni parfait, ni beau, ni noble, et ne veut devenir rien de tout cela, il ne tend absolument pas à imiter l’homme !
 Il n’est touché par aucun de nos jugements esthétiques et moraux ! Il ne possède pas non plus d’instinct de conservation et,
 d’une façon générale, pas d’instinct du tout ; il ignore aussi toutes les lois.
@@ -258,20 +258,20 @@ Gardons-nous de dire que la mort est opposé à la vie. La vie n’est qu’une 
 Il n’y a pas de substances éternellement durables ; la matière est une erreur pareille à celle des Dieux des Eléates.
 Quand donc aurons-nous fini de nous ménager ? Quand toutes ces ombres de Dieu ne nous troublerons-elles plus ?
 Quand aurons-nous entièrement dépouillé la nature de ses attributs divins ?
-Quand retrouverons-nous la nature pure, innocente ?", exercice_id: 3},
+Quand retrouverons-nous la nature pure, innocente ?", exercice_id: ex3.id},
 {content: "Et pourtant... Oui, et pourtant... Si elle se retrouvait face à quelqu'un qui en voulait à sa vie,
 elle pouvait s'imaginer passer à l'acte, elle aussi. Et si elle en était capable, tout le monde le pouvait, non ?
 Yumiko jeta un oeil sur un mégaphone apparemment abandonné dans un coin de la salle.
 Etait-il en état de marche ? Et si oui...
 S' il était utilisable, ne pouvait-elle le mettre à profit ?
 La peur seule l'empêchait de s'en servir. Elle ne pouvait pas croire qu'il y ait des gens prêts à jouer le jeu
-qui leur était imposé.", exercice_id: 4},
+qui leur était imposé.", exercice_id: ex4.id},
 {content: "...à la belle eau fuyante parce que ça mouille les dalles,
 à la terre parce que ça tache les robes. Il fallait comprendre qu’on ne doit pas manger tout à la fois,
 donner tout ce qu’on a dans les poches au premier mendiant qu’on rencontre, courir,
 courir dans le vent jusqu’à ce qu’on tombe par terre et boire quand on a chaud et se baigner quand il est trop tôt
 ou trop tard, mais pas juste quand on en a envie !
-Comprendre. Toujours comprendre...", exercice_id: 5},
+Comprendre. Toujours comprendre...", exercice_id: ex5.id},
 {content: "Et dans la pratique, les soldats éprouvaient souvent des difficultés à choisir,
   entre plusieurs voies, celle qui leur paraissait la plus honorable.
   Ces difficultés, le Reichsführer était heureux de le dire, n'existait plus pour les SS.
@@ -279,26 +279,26 @@ Comprendre. Toujours comprendre...", exercice_id: 5},
   Désormais, par conséquent, tout était parfaitement simple et clair. On n'avait plus de cas de conscience à se poser.
   Il suffisait d'être fidèle, c'est-à-dire d'obéir. Notre devoir, notre unique devoir était d'obéir.
   Et grâce à cette obéissance absolue, consentie dans le véritable esprit du Corps noir,
-  nous étions sûrs de ne plus jamais nous tromper.", exercice_id: 6},
+  nous étions sûrs de ne plus jamais nous tromper.", exercice_id: ex6.id},
 {content: "Mais oui : Ainsi hier, maman m’a dit de passer chez elle. Si c’était le monsieur, me dis-je !
 La main me tremblait et le coeur me battait ; en entrant chez maman,
 j’ai vu le monsieur en noir, debout près d’elle. Toute tremblante, j’ai trouvé un fauteuil et je me suis assise,
 bien rouge et bien déconcertée. J’y étais à peine que voilà cet homme à mes genoux.
 J’ai alors perdu la tête. Je me suis levée en jetant un cri perçant… comme lorsqu’il fait tonnerre.
-Maman est partie d’un éclat de rire en me disant :", exercice_id: 7},
+Maman est partie d’un éclat de rire en me disant :", exercice_id: ex7.id},
 {content: "J’allais faire renaître ton espoir, j’allais te régénérer, inaugurer pour toi une vie nouvelle.
 Tu n’es pas une épave, Léopold, tu es un vulgaire démagogue.
 Tu dirais n’importe quoi, tout ce qui t’arrange. Tu as eu tout ce que tu voulais et maintenant tu veux te débarrasser de moi.
 Tu me parles de ton désarroi ! Foutaises, oui !
 Tu veux me faire comprendre que j’ai rien à attendre de toi et en plus, tu veux te faire plaindre.
 C’est malhonnête. Ce sont des grands mots, mais tu ne m’auras pas comme ça.
-Oh !, comme j’ai été bête, bête à pleurer.", exercice_id: 8},
+Oh !, comme j’ai été bête, bête à pleurer.", exercice_id: ex8.id},
 {content: " Je vis et remarquai un jeune homme et un vieil adolescent assez ridicule et pas mal
 grotesque : cou maigre et tuyau décharné, ficelle et cordelière autour du chapeau et couvre-chef. Après
 une bousculade et confusion, il dit et profère d'une voix et d'un ton larmoyants et pleurnichards que son
 voisin et covoyageur fait exprès et s'efforce de le pousser et de l'importuner chaque fois qu'on descend et
 sort. Ceci déclaré et après avoir ouvert la bouche, il se précipite et se dirige vers une place et un siège
-vides et libres.", exercice_id: 9},
+vides et libres.", exercice_id: ex9.id},
 {content: "La houle des soldats se poussait. Ils n'avaient plus peur. Ils recommençaient à boire.
 Les parfums qui leur coulaient du front mouillaient de gouttes larges leurs tuniques en lambeaux,
 et s'appuyant des deux poings sur les tables qui leur semblaient osciller comme des navires,
@@ -309,7 +309,7 @@ Ils criaient pour avoir des femmes. Ils déliraient en cent langages. Quelques-u
 à cause de la buée qui flottait autour d'eux, ou bien, apercevant des feuillages,
 ils s'imaginaient être à la chasse et couraient sur leurs compagnons comme sur des bêtes sauvages.
 L'incendie de l'un à l'autre gagnait tous les arbres, et les hautes masses de verdure, d'où s'échappaient de longues spirales blanches, semblaient des volcans qui commencent à fumer.
-La clameur redoublait ; les lions blessés rugissaient dans l'ombre.", exercice_id: 10},
+La clameur redoublait ; les lions blessés rugissaient dans l'ombre.", exercice_id: ex10.id},
 # {content: "La rue tombe noire, noire, la noire rue noire tombe là.
 # La rue tombe noire, noire, tombe la noire rue noire, là.
 # La rue, tombe noire, noire, rue noire, la tombe noire, là.
@@ -495,14 +495,14 @@ venait d’acheter un dictaphone. Une personne qui s’intéressait à la mécan
 prendre le poignard dans la vitrine avant l’arrivée de miss Flora et qui disposait de… du réceptacle
 nécessaire pour cacher le dictaphone, une sacoche noire par exemple. Enfin une personne qui est
 restée seule dans le cabinet de travail pendant quelques minutes après la découverte du crime, au
-moment où Parker téléphonait à la police… Je n’en vois qu’une : le Dr Sheppard !", exercice_id: 24},
+moment où Parker téléphonait à la police… Je n’en vois qu’une : le Dr Sheppard !", exercice_id: ex22.id},
 ]
 
 puts "Creating answers..."
 answers.each do |answer|
   ans = Answer.new(
     content: answer[:content],
-    exercice_id: Exercice.all.sample.id,
+    exercice_id: answer[:exercice_id],
     user_id: User.all.sample.id,
     status: "published"
     )
