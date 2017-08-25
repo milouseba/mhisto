@@ -62,43 +62,45 @@ puts "Team users added"
 
 puts "Creating exercices..."
 
-ex1 = Exercice.create!(title: "L'attente", beginning_story: "Quand j'arrive à la gare de l'Est, j'espère toujours secrètement qu'il y aura quelqu'un pour m'attendre.",
-  end_story: "Je voudrais que quelqu'un m'attende quelque part... C'est quand même pas compliqué.", user_id: User.all.sample.id)
+ex1 = Exercice.create!(title: "L'attente", beginning_story: "Quand j'arrive à la gare de l'Est, j'espère toujours secrètement qu'il y aura quelqu'un pour m'attendre. C'est con.",
+end_story: "Je voudrais que quelqu'un m'attende quelque part... C'est quand même pas compliqué. Les personnages de ces douze nouvelles sont pleins d’espoirs
+futiles, ou de désespoir grave.", user_id: User.all.sample.id)
 ex1.remote_photo_url = "https://i.pinimg.com/564x/36/90/dc/3690dcb9de1669cccfe094f61679b627.jpg"
 ex1.save
 
-ex2 = Exercice.create(title: "Les Carnets du sous-sol", beginning_story: "Je suis un homme malade.Je suis un homme méchant. Un homme repoussoir.",
-end_story: "J’ai mal au foie. Tant mieux, qu’il me fasse encore mal!", user_id: User.all.sample.id)
+ex2 = Exercice.create(title: "Les Carnets du sous-sol", beginning_story: "Je suis un homme malade.Je suis un homme méchant. Un homme repoussoir. Voilà ce que je suis. Je crois que j’ai quelque chose au foie.",
+end_story: "J’ai mal au foie. Tant mieux, qu’il me fasse encore mal! Il y a longtemps que je vis comme ça - dans les vingt ans. Maintenant j’en ai quarante.", user_id: User.all.sample.id)
 ex2.remote_photo_url = "https://s-media-cache-ak0.pinimg.com/564x/dd/e3/33/dde333ee3daa1074279e9f943891fdff.jpg"
 ex2.save
 
-ex3 = Exercice.create(title: "Le Gai Savoir", beginning_story: "Mais comment pouvons-nous nous permettre de blâmer ou louer l’univers ?",
-end_story: "Quand pourrons-nous, nous autres hommes, redevenir nature ?", user_id: User.all.sample.id)
+ex3 = Exercice.create(title: "Le Gai Savoir", beginning_story: "Mais comment pouvons-nous nous permettre de blâmer ou louer l’univers ? Gardons-nous de lui reprocher de la dureté et de la raison, ou bien le contraire.",
+end_story: "Quand aurons-nous le droit, nous autres hommes, de nous rendre naturels, avec la nature pure, nouvellement trouvée, nouvellement délivrée ?", user_id: User.all.sample.id)
 ex3.remote_photo_url = "https://www.les-philosophes.fr/images/stories/photo-nietzsche.jpg"
 ex3.save
 
-ex4 = Exercice.create(title: "Battle Royale", beginning_story: " Comment peut-on tuer ses camarades de classe ?",
-end_story: " C'est bien pour cette raison qu'avec Yukiko elles s'étaient éloignées de l'école et s'étaient enfermées ici.", user_id: User.all.sample.id)
+ex4 = Exercice.create(title: "Battle Royale", beginning_story: "Comment peut-on tuer ses camarades de classe ? Certes, cette règle leur avait été imposée, mais Yumiko n'arrivait pas à croire qu'il existait quelqu'un
+capable de jouer le jeu.",
+end_story: "Elle ne pouvait pas nier qu'elle sentait son coeur pris dans un filet d'angoisse. C'est bien pour cette raison qu'avec Yukiko elles s'étaient éloignées de l'école et s'étaient enfermées ici.", user_id: User.all.sample.id)
 ex4.remote_photo_url = "http://2.bp.blogspot.com/-Jbj_5V9JvE0/UXmERuqwPtI/AAAAAAAACEQ/8HV9mPra3dU/s1600/battel-royale.jpg"
 ex4.save
 
-ex5 = Exercice.create(title: "Antigone", beginning_story: "Comprendre… Vous n’avez que ce mot-là à la bouche, tous, depuis que je suis toute petite.",
-end_story: "Comprendre… Vous n’avez que ce mot-là à la bouche, tous, depuis que je suis toute petite.", user_id: User.all.sample.id)
+ex5 = Exercice.create(title: "Antigone", beginning_story: "Comprendre… Vous n’avez que ce mot-là à la bouche, tous, depuis que je suis toute petite.Il fallait comprendre qu’on ne peut toucher à l’eau...",
+end_story: "Toujours comprendre. Moi, je ne veux pas comprendre. Je comprendrai quand je serai vieille [...]. Si je deviens vieille. Pas maintenant.”", user_id: User.all.sample.id)
 ex5.remote_photo_url = "https://i.pinimg.com/564x/35/44/f3/3544f39fcd1b07acef3797eaf0aaf0f6.jpg"
 ex5.save
 
-ex6 = Exercice.create(title: "La mort est mon métier", beginning_story: "De tout temps, l'honneur avait été considéré comme l'idéal suprême du soldat.",
-end_story: "L'Allemagne, l'Allemagne au-dessus de tout.", user_id: User.all.sample.id)
+ex6 = Exercice.create(title: "La mort est mon métier", beginning_story: "De tout temps, l'honneur avait été considéré comme l'idéal suprême du soldat. Mais on savait mal alors ce qu'était l'honneur.",
+end_story: "d'être toujours dans le droit chemin, de servir inébranlablement, dans les bons et les mauvais jours, le principe éternel : L'Allemagne, l'Allemagne au-dessus de tout.", user_id: User.all.sample.id)
 ex6.remote_photo_url = "https://i.pinimg.com/564x/fd/cb/87/fdcb87e8ab8c9f97db45411d8788f351.jpg"
 ex6.save
 
 ex7 = Exercice.create(title: "Les Liaisons dangereuses", beginning_story: "Mais, on ne me dit rien, de sorte que, dans l’ignorance où je suis, je commets bien des gaucheries.",
-end_story: "Je ne peux pas vous rendre combien j’ai été honteuse.", user_id: User.all.sample.id)
+end_story: "« eh bien, qu’avez-vous ? Donnez votre pied à monsieur… ». Le monsieur était cordonnier. Je ne peux pas vous rendre combien j’ai été honteuse.", user_id: User.all.sample.id)
 ex7.remote_photo_url = "https://i.pinimg.com/564x/8c/e5/96/8ce596b2eea1e4f22ca6b68b11305bc5.jpg"
 ex7.save
 
 ex8 = Exercice.create(title: "Largo Desolato", beginning_story: "C’est du baratin, tout ça. Quand tu voulais me séduire, au début, tu ne parlais pas comme ça.",
-end_story: "Tu es un cas désespéré. C’est bien fait pour moi. Une illusion de moins.", user_id: User.all.sample.id)
+end_story: "Croire que je pourrais te faire partager mes sentiments, te redonner goût à la vie ? Tu parles ! Tu es un cas désespéré. C’est bien fait pour moi. Une illusion de moins.", user_id: User.all.sample.id)
 ex8.remote_photo_url = "https://s-media-cache-ak0.pinimg.com/564x/54/e0/7f/54e07f7f8c745323c9e099d52730653f.jpg"
 ex8.save
 
@@ -108,12 +110,17 @@ gare Saint-Lazare.", user_id: User.all.sample.id)
 ex9.remote_photo_url = "https://i.pinimg.com/564x/64/70/43/6470435d60ebee726fbc24ccd0824840.jpg"
 ex9.save
 
-ex10 = Exercice.create(title: "Salammbô", beginning_story: "C'était à Mégara, faubourg de Carthage, dans les jardins d'Hamilcar.",
-end_story: "Les arbres derrière eux fumaient encore ; de leurs branches noircies, des carcasses de singes à demi brûlées tombaient de temps à autre au milieu des plats. Les soldats ivres ronflaient la bouche ouverte à côté des cadavres ; et ceux qui ne dormaient pas baissaient leur tête, éblouis par le jour.
+ex10 = Exercice.create(title: "Salammbô", beginning_story: "C'était à Mégara, faubourg de Carthage, dans les jardins d'Hamilcar. Les soldats qu'il avait commandés en Sicile se donnaient un grand festin",
+end_story: "Les soldats ivres ronflaient la bouche ouverte à côté des cadavres ; et ceux qui ne dormaient pas baissaient leur tête, éblouis par le jour.
 Le sol piétiné disparaissait sous des flaques rouges.", user_id: User.all.sample.id)
 ex10.remote_photo_url = "https://s-media-cache-ak0.pinimg.com/564x/6b/1b/d8/6b1bd88ac97ca94234c5c575be479249.jpg"
 ex10.save
 
+ex24 = Exercice.create(title: "Le meurtre de Roger Ackroyd", beginning_story: "Le meurtrier est l’un d’entre nous, dites-vous ? Et… vous savez qui ? Poirot avait lu le message.
+Il froissa la dépêche dans sa main et tapota la petite boulette de papier.",
+end_story: "Ah ! si seulement Hercule Poirot n’avait pas pris sa retraite, et n’était pas venu chez nous cultiver des courges !")
+ex24.remote_photo_url = "https://i.pinimg.com/564x/de/64/2c/de642c13ace1a56088e7aa9510e05c1a.jpg"
+ex24.save
 
 # ex11 = Exercise.create(title: "Nuit sans date rue Saint Jacques", beginning_story: "La rue tombe noire, noire, la noire rue noire tombe là.",
 # end_story: "La rue tombe. La noire rue noire. Noire tombe noire. Là.")
@@ -185,23 +192,21 @@ ex10.save
 # ex21.remote_photo_url = "https://i.pinimg.com/564x/c9/00/33/c90033d5ab82370fc0dadf45eacd8985.jpg"
 # ex21.save
 
-# ex22 = Exercice.create(title: "Le meurtre de Roger Ackroyd", beginning_story: "Le meurtrier est l’un d’entre nous, dites-vous ? Et… vous savez qui ? Poirot avait lu le message.
-# Il froissa la dépêche dans sa main et tapota la petite boulette de papier.",
-# end_story: "Ah ! si seulement Hercule Poirot n’avait pas pris sa retraite, et n’était pas venu chez nous cultiver des courges !")
+# ex22 = Exercice.create(title: "Le Comte de Monte Cristo", beginning_story: "Le 24 février 1815, la vigie de Notre-Dame de la Garde signala le trois-mâts le Pharaon,
+# venant de Smyrne, Trieste et Naples.", end_story: "Néanmoins les experts en navigation reconnaissaient que si un accident était arrivé,
+# ce ne pouvait être au bâtiment lui-même.")
 # ex22.remote_photo_url = "https://i.pinimg.com/564x/8a/a2/4a/8aa24a3ce1dc9cbbbe64b8a7c867179a.jpg"
 # ex22.save
 
-# ex23 = Exercice.create(title: "Le Comte de Monte Cristo", beginning_story: "Le 24 février 1815, la vigie de Notre-Dame de la Garde signala le trois-mâts le Pharaon,
-# venant de Smyrne, Trieste et Naples.", end_story: "Néanmoins les experts en navigation reconnaissaient que si un accident était arrivé,
-# ce ne pouvait être au bâtiment lui-même.")
-# ex23.remote_photo_url = "https://i.pinimg.com/564x/8a/a2/4a/8aa24a3ce1dc9cbbbe64b8a7c867179a.jpg"
+# ex23 = Exercice.create(title: "Mémoires d'un yakuza", beginning_story: "A REMPLIR CE SOIR", end_story: "A REMPLIR CE SOIR")
+# ex23.remote_photo_url = "https://s-media-cache-ak0.pinimg.com/564x/b2/fa/60/b2fa60466c632f904b119fd34402a9a0.jpg"
 # ex23.save
 
-# ex24 = Exercice.create(title: "Mémoires d'un yakuza", beginning_story: "A REMPLIR CE SOIR", end_story: "A REMPLIR CE SOIR")
-# ex24.remote_photo_url = "https://s-media-cache-ak0.pinimg.com/564x/b2/fa/60/b2fa60466c632f904b119fd34402a9a0.jpg"
+# ex24 = Exercice.create(title: "Le meurtre de Roger Ackroyd", beginning_story: "Le meurtrier est l’un d’entre nous, dites-vous ? Et… vous savez qui ? Poirot avait lu le message.
+# Il froissa la dépêche dans sa main et tapota la petite boulette de papier.",
+# end_story: "Ah ! si seulement Hercule Poirot n’avait pas pris sa retraite, et n’était pas venu chez nous cultiver des courges !")
+# ex24.remote_photo_url = "https://i.pinimg.com/564x/de/64/2c/de642c13ace1a56088e7aa9510e05c1a.jpg"
 # ex24.save
-
-
 
 
 # exercices.each do |exercice|
@@ -220,14 +225,12 @@ ex10.save
 puts "Exercices created..."
 
 answers = [
-{content: "C'est con. J'ai beau savoir que ma mère est encore au boulot à cette heure-là et que Marc
+{content: "J'ai beau savoir que ma mère est encore au boulot à cette heure-là et que Marc
 n'est pas du genre à traverser la banlieue pour porter mon sac, j'ai toujours cet espoir débile.
 Là encore, ça n'a pas loupé, avant de descendre les escalators pour prendre le métro,
 j'ai jeté un dernier regard circulaire au cas où il y aurait quelqu'un...
 Et à chaque fois dans les escalators mon sac me paraît encore plus lourd.", exercice_id: 1},
-{content: "Je suis un homme méchant. Un homme repoussoir.
-Voilà ce que je suis. Je crois que j’ai quelque chose au foie.
-De toute façon, ma maladie, je n’y comprends rien, j’ignore au juste ce qui me fait mal.
+{content: "De toute façon, ma maladie, je n’y comprends rien, j’ignore au juste ce qui me fait mal.
 Je ne me soigne pas, je ne me suis jamais soigné, même si je respecte la médecine et les docteurs.
 En plus, je suis superstitieux comme ce n’est pas permis: enfin, assez pour respecter la médecine.
 (Je suis suffisamment instruit pour ne pas être superstitieux.) Oui, c’est par méchanceté que je ne me soigne pas.
@@ -236,8 +239,7 @@ Moi, si! Evidemment, je ne saurais vous expliquer à qui je fais une crasse quan
 de cette façon-là; je sais parfaitement que ce ne sont pas les docteurs que j’emmerde en refusant de me soigner;
 je suis le mieux placé pour savoir que ça ne peut faire de tort qu’à moi seul et à personne d’autre.
 Et, malgré tout, si je ne me soigne pas, c’est par méchanceté.", exercice_id: 2},
-{content: "Gardons-nous de lui reprocher de la dureté et de la raison, ou bien le contraire.
-Il n’est ni parfait, ni beau, ni noble, et ne veut devenir rien de tout cela, il ne tend absolument pas à imiter l’homme !
+{content: "Il n’est ni parfait, ni beau, ni noble, et ne veut devenir rien de tout cela, il ne tend absolument pas à imiter l’homme !
 Il n’est touché par aucun de nos jugements esthétiques et moraux ! Il ne possède pas non plus d’instinct de conservation et,
 d’une façon générale, pas d’instinct du tout ; il ignore aussi toutes les lois.
 Gardons-nous de dire qu’il y a des lois dans la nature.
@@ -250,46 +252,40 @@ Il n’y a pas de substances éternellement durables ; la matière est une erreu
 Quand donc aurons-nous fini de nous ménager ? Quand toutes ces ombres de Dieu ne nous troublerons-elles plus ?
 Quand aurons-nous entièrement dépouillé la nature de ses attributs divins ?
 Quand retrouverons-nous la nature pure, innocente ?", exercice_id: 3},
-{content: "Certes, cette règle leur avait été imposée, mais Yumiko n'arrivait pas à croire qu'il existait quelqu'un
-capable de jouer le jeu. Et pourtant...
-Oui, et pourtant... Si elle se retrouvait face à quelqu'un qui en voulait à sa vie,
+{content: "Et pourtant... Oui, et pourtant... Si elle se retrouvait face à quelqu'un qui en voulait à sa vie,
 elle pouvait s'imaginer passer à l'acte, elle aussi. Et si elle en était capable, tout le monde le pouvait, non ?
 Yumiko jeta un oeil sur un mégaphone apparemment abandonné dans un coin de la salle.
 Etait-il en état de marche ? Et si oui...
 S' il était utilisable, ne pouvait-elle le mettre à profit ?
 La peur seule l'empêchait de s'en servir. Elle ne pouvait pas croire qu'il y ait des gens prêts à jouer le jeu
-qui leur était imposé, mais d'un autre côté, elle ne pouvait pas nier qu'elle sentait son coeur pris
-dans un filet d'angoisse.", exercice_id: 4},
-{content: "Il fallait comprendre qu’on ne peut toucher à l’eau, à la belle eau fuyante parce que ça mouille les dalles,
+qui leur était imposé.", exercice_id: 4},
+{content: "...à la belle eau fuyante parce que ça mouille les dalles,
 à la terre parce que ça tache les robes. Il fallait comprendre qu’on ne doit pas manger tout à la fois,
 donner tout ce qu’on a dans les poches au premier mendiant qu’on rencontre, courir,
 courir dans le vent jusqu’à ce qu’on tombe par terre et boire quand on a chaud et se baigner quand il est trop tôt
 ou trop tard, mais pas juste quand on en a envie !
 Comprendre. Toujours comprendre...", exercice_id: 5},
-{content: " Mais on savait mal alors ce qu'était l'honneur. Et dans la pratique, les soldats éprouvaient souvent des difficultés à choisir,
+{content: "Et dans la pratique, les soldats éprouvaient souvent des difficultés à choisir,
   entre plusieurs voies, celle qui leur paraissait la plus honorable.
   Ces difficultés, le Reichsführer était heureux de le dire, n'existait plus pour les SS.
   Il avait fait de cette définition la devise de sa troupe d'élite: 'Ton honneur', avait-il dit, 'c'est ta fidélité'.
   Désormais, par conséquent, tout était parfaitement simple et clair. On n'avait plus de cas de conscience à se poser.
   Il suffisait d'être fidèle, c'est-à-dire d'obéir. Notre devoir, notre unique devoir était d'obéir.
   Et grâce à cette obéissance absolue, consentie dans le véritable esprit du Corps noir,
-  nous étions sûrs de ne plus jamais nous tromper, d'être toujours dans le droit chemin, de servir inébranlablement,
-  dans les bons et les mauvais jours, le principe éternel:", exercice_id: 6},
+  nous étions sûrs de ne plus jamais nous tromper.", exercice_id: 6},
 {content: "Mais oui : Ainsi hier, maman m’a dit de passer chez elle. Si c’était le monsieur, me dis-je !
 La main me tremblait et le coeur me battait ; en entrant chez maman,
 j’ai vu le monsieur en noir, debout près d’elle. Toute tremblante, j’ai trouvé un fauteuil et je me suis assise,
 bien rouge et bien déconcertée. J’y étais à peine que voilà cet homme à mes genoux.
 J’ai alors perdu la tête. Je me suis levée en jetant un cri perçant… comme lorsqu’il fait tonnerre.
-Maman est partie d’un éclat de rire en me disant : « eh bien, qu’avez-vous ?
-Donnez votre pied à monsieur… » Le monsieur était cordonnier.", exercice_id: 7},
+Maman est partie d’un éclat de rire en me disant :", exercice_id: 7},
 {content: "J’allais faire renaître ton espoir, j’allais te régénérer, inaugurer pour toi une vie nouvelle.
 Tu n’es pas une épave, Léopold, tu es un vulgaire démagogue.
 Tu dirais n’importe quoi, tout ce qui t’arrange. Tu as eu tout ce que tu voulais et maintenant tu veux te débarrasser de moi.
 Tu me parles de ton désarroi ! Foutaises, oui !
 Tu veux me faire comprendre que j’ai rien à attendre de toi et en plus, tu veux te faire plaindre.
 C’est malhonnête. Ce sont des grands mots, mais tu ne m’auras pas comme ça.
-Oh !, comme j’ai été bête, bête à pleurer. Croire que je pourrais te faire partager mes sentiments,
-te redonner goût à la vie ? Tu parles !", exercice_id: 8},
+Oh !, comme j’ai été bête, bête à pleurer.", exercice_id: 8},
 {content: " Je vis et remarquai un jeune homme et un vieil adolescent assez ridicule et pas mal
 grotesque : cou maigre et tuyau décharné, ficelle et cordelière autour du chapeau et couvre-chef. Après
 une bousculade et confusion, il dit et profère d'une voix et d'un ton larmoyants et pleurnichards que son
@@ -456,19 +452,7 @@ La clameur redoublait ; les lions blessés rugissaient dans l'ombre.", exercice_
 # l’ecclésiastique précipitait ses oraisons ; elles se mêlaient aux sanglots étouffés de Bovary,
 # et quelquefois tout semblait disparaître dans le sourd murmure des syllabes latines,
 # qui tintaient comme un glas de cloche.", exercice_id: 21},
-# {content: "Ainsi, notre portrait du meurtrier se précise. Il s’agit d’une personne qui a eu l’occasion, ce
-# jour-là, de dérober ses chaussures au capitaine Paton, aux Trois Marcassins.
-# Mais il y a plus : il fallait aussi que le meurtrier ait eu l’occasion de prendre le poignard dans
-# la vitrine. Vous me répondrez que n’importe quelle personne de la maison aurait pu le faire, mais
-# rappelez-vous : Flora Ackroyd a bien précisé que le poignard n’était plus dans la vitrine quand elle a
-# examiné les objets qui s’y trouvaient.
-# Et maintenant que tout est clair, récapitulons. Notre meurtrier est donc une personne qui est
-# allée aux Trois Marcassins dans la journée, et qui était assez liée avec Mr Ackroyd pour savoir qu’il
-# venait d’acheter un dictaphone. Une personne qui s’intéressait à la mécanique, qui a eu l’occasion de
-# prendre le poignard dans la vitrine avant l’arrivée de miss Flora et qui disposait de… du réceptacle
-# nécessaire pour cacher le dictaphone, une sacoche noire par exemple. Enfin une personne qui est
-# restée seule dans le cabinet de travail pendant quelques minutes après la découverte du crime, au
-# moment où Parker téléphonait à la police… Je n’en vois qu’une : le Dr Sheppard !", exercice_id: 22},
+
 # {content: "Comme d’habitude, un pilote côtier partit
 # aussitôt du port, rasa le château d’If, et alla
 # aborder le navire entre le cap de Morgion et l’île
@@ -490,8 +474,21 @@ La clameur redoublait ; les lions blessés rugissaient dans l'ombre.", exercice_
 # son grand foc et sa brigantine, mais si lentement
 # et d’une allure si triste, que les curieux, avec cet
 # instinct qui pressent un malheur, se demandaient
-# quel accident pouvait être arrivé à bord", exercice_id: 23},
-# {content: "A REMPLIR CE SOIR"}
+# quel accident pouvait être arrivé à bord", exercice_id: 22},
+# {content: "A REMPLIR CE SOIR", exercice_id: 23}
+{content: "Ainsi, notre portrait du meurtrier se précise. Il s’agit d’une personne qui a eu l’occasion, ce
+jour-là, de dérober ses chaussures au capitaine Paton, aux Trois Marcassins.
+Mais il y a plus : il fallait aussi que le meurtrier ait eu l’occasion de prendre le poignard dans
+la vitrine. Vous me répondrez que n’importe quelle personne de la maison aurait pu le faire, mais
+rappelez-vous : Flora Ackroyd a bien précisé que le poignard n’était plus dans la vitrine quand elle a
+examiné les objets qui s’y trouvaient.
+Et maintenant que tout est clair, récapitulons. Notre meurtrier est donc une personne qui est
+allée aux Trois Marcassins dans la journée, et qui était assez liée avec Mr Ackroyd pour savoir qu’il
+venait d’acheter un dictaphone. Une personne qui s’intéressait à la mécanique, qui a eu l’occasion de
+prendre le poignard dans la vitrine avant l’arrivée de miss Flora et qui disposait de… du réceptacle
+nécessaire pour cacher le dictaphone, une sacoche noire par exemple. Enfin une personne qui est
+restée seule dans le cabinet de travail pendant quelques minutes après la découverte du crime, au
+moment où Parker téléphonait à la police… Je n’en vois qu’une : le Dr Sheppard !", exercice_id: 24},
 ]
 
 puts "Creating answers..."
