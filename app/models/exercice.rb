@@ -10,7 +10,7 @@ class Exercice < ApplicationRecord
   validates :end_story, presence: true
   validates :user_id, presence: true
 
-  STATUSES = ["draft", "published"]
+  STATUSES = ["published", "pending"]
   validates :status, inclusion: {in: STATUSES, allow_nil: true}
 
   mount_uploader :photo, PhotoUploader
