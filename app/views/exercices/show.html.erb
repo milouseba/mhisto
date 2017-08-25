@@ -98,13 +98,13 @@
                 <% else %>
                   <p>Pas de commentaire pour cette réponse</p>
                 <% end %>
+                  <div class="new-comment">
+                  <%= simple_form_for [answer, @comment] do |c| %>
+                    <%= c.input :content, label: '', placeholder: 'Écrivez un commentaire'  %>
+                    <%= c.submit 'Commenter' %>
+                  <% end %>
+                </div>
               </div>
-            </div>
-            <div class="new-comment">
-              <%= simple_form_for [answer, @comment] do |c| %>
-                <%= c.input :content, label: '', placeholder: 'Écrivez un commentaire'  %>
-                <%= c.submit 'Commenter' %>
-              <% end %>
             </div>
           </div>
         <% end %>
