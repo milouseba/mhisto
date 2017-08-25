@@ -4,7 +4,6 @@ $break-small: 500px;
 
     /* margin-bottom: -68px; */
 .footer {
-  position: inherit;
   bottom: 0;
   display: flex;
   align-items: center;
@@ -13,12 +12,12 @@ $break-small: 500px;
   padding: 0 50px;
   height: 60px;
   color: rgba(0, 0, 0, 0.3);
-  position: absolute;
-  bottom: 0;
+  // position: absolute;
   border-top: solid;
   border-width: thin;
   border-color: rgba(0, 0, 0, 0.05);
   width: 100%;
+  position: inherit;
 }
 
 .footer-links {
