@@ -1,21 +1,26 @@
 $footer_height: 60px;
 $break-small: 500px;
 
+
+    /* margin-bottom: -68px; */
 .footer {
-  background: white;
+  position: inherit;
+  bottom: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background: white;
   padding: 0 50px;
-  height: $footer_height;
-  color: rgba(0,0,0,0.3);
+  height: 60px;
+  color: rgba(0, 0, 0, 0.3);
   position: absolute;
   bottom: 0;
   border-top: solid;
   border-width: thin;
-  border-color: rgba(0,0,0,0.3);
+  border-color: rgba(0, 0, 0, 0.3);
   width: 100%;
 }
+
 .footer-links {
   display: flex;
   align-items: center;

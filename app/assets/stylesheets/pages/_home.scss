@@ -18,19 +18,23 @@
 
 .home-card-title {
   position: absolute;
-  top: 33px;
+  top: 60px;
   left: 29px;
   font-size: 15px;
   text-transform: uppercase;
+  width: 500px;
 }
 
 .home-card-title h1 {
-  margin-top: 0px;
+  margin-top: 50px;
+  color: white;
+  opacity: 0.8;
+  font-weight: 300;
 }
 
 .home-card-btn {
   position: absolute;
-  bottom: 40px;
+  bottom: 95px;
   left: 40px;
 }
 
