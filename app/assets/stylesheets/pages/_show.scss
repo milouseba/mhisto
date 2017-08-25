@@ -3,6 +3,7 @@ $break-medium: 720px;
 
 
 .instructions {
+  margin-top: -20px;
   width: 30%;
   height: 100vh;
   position: sticky !important;
@@ -34,13 +35,14 @@ $break-medium: 720px;
 }
 
 .photo-exercice-filter{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: black;
-  opacity: 0.4;
   border-top-right-radius: 2px;
   border-top-left-radius: 2px;
 }
@@ -48,7 +50,14 @@ $break-medium: 720px;
 .photo-exercice h3{
   color: white;
   opacity: 1;
-  z-index: 500;
+  text-transform: uppercase;
+  font-weight: 300;
+  background-color: black;
+  text-align: center;
+  background-color: rgba(0,0,0,0.7);
+  width: 300px;
+  padding: 4px;
+  border-radius: 4px;
 }
 
 .exercice-content {
@@ -60,10 +69,8 @@ $break-medium: 720px;
 }
 
 .plays-count {
-  text-align: right;
-  font-size: 14px;
+  text-align: left;
   margin-bottom: 10px;
-  color: $green;
   cursor: default;
 }
 
@@ -92,28 +99,34 @@ $break-medium: 720px;
   padding-top: 15px;
 }
 
-.other-answers ul{
+.other-answers ul {
   list-style: none;
   padding: 0px;
 }
 
-.answers{
+.answers {
   width: 70%;
   flex: 1 0 auto;
 }
 
 .user-answer {
-  padding: 20px;
-  border-radius: 3px;
+  padding: 15px;
+  padding-top: 0px;
+  border-radius: 4px;
   transition: all 0.15s ease;
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.05);
+  border: 1px solid rgba(0,0,0,0.1);
+  margin: 15px;
+  padding: 10px;
 }
 
 .answer {
   padding: 25px;
   border: 2px solid lightgray;
   border-radius: 4px;
-  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
-  background: white;
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.05);
+  border: 1px solid rgba(0,0,0,0.1);
+  background: rgba(0,0,0,0.01);
   margin-bottom: 50px;
   margin-left: 15px;
   margin-right: 15px;
@@ -124,7 +137,7 @@ $break-medium: 720px;
   align-items: center;
   justify-content: space-between;
   margin-top: 15px;
-  border-bottom: 1px solid lightgray;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
 }
 
 .avatar-hidden {
@@ -143,7 +156,6 @@ $break-medium: 720px;
 }
 
 .likes-comments {
-    color: $light-gray;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -161,11 +173,13 @@ $break-medium: 720px;
 
 .likes a{
   text-decoration: none;
-  color: $light-gray;
+  color: rgba(0,0,0,0.2);
+  font-family: $headers-font;
 }
 
 .liked {
     margin-right: 11px;
+    font-family: $headers-font;
 }
 
 .liked {
@@ -187,8 +201,10 @@ $break-medium: 720px;
 .show-comments {
   cursor: pointer;
   text-align: center;
-  opacity: 0.7;
+  opacity: 0.6;
   margin-top: 20px;
+  font-family: $headers-font;
+
 }
 
 .show-comments:hover {
@@ -198,9 +214,10 @@ $break-medium: 720px;
 .hide-comments {
   cursor: pointer;
   text-align: center;
-  opacity: 0.7;
+  opacity: 0.6;
   display: none;
   margin-top: 20px;
+  font-family: $headers-font;
 }
 
 .hide-comments:hover {
@@ -208,7 +225,6 @@ $break-medium: 720px;
 }
 
 .answer-comments {
-  border: 1px solid lightgray;
   font-size: 13px;
   padding: 5px;
   border-radius: 4px;
@@ -220,6 +236,7 @@ $break-medium: 720px;
 .comment-content {
   border-bottom: 1px solid lightgray;
   padding: 12px;
+  font-weight: 300;
 }
 
 .comment-content:last-child{
@@ -242,6 +259,66 @@ $break-medium: 720px;
   text-shadow: 1px 1px rgba(0,0,0,0.1);
 }
 
+.answer-content {
+  font-weight: 300;
+  padding: 10px;
+}
+
+textarea {
+  font-weight: 300;
+}
+
+input {
+  color: white;
+  font-weight: 400;
+  font-family: $headers-font;
+  border-style: none;
+  border-radius: 6px;
+  background-color: rgba(255,133,15,0.6);
+  padding: 5px 10px;
+  &:hover {
+  background-color: rgba(255,133,15,1);
+  transition: 0.2s ease-in-out;
+  }
+}
+
+.commentor {
+  display: flex;
+  align-items: center;
+  font-family: $headers-font;
+  padding-top: 10px;
+  margin-left: -10px;
+  opacity: 0.7;
+}
+
+.user-commentor {
+  color: $orange;
+  font-weight: 300;
+}
+
+.word-counter {
+  display: flex;
+  align-items: center;
+  font-family: $headers-font;
+  font-weight: 200;
+  margin-bottom: -20px;
+}
+
+#words-count {
+  opacity: 0.8;
+  font-weight: 400;
+}
+
+.other-answers h4 {
+  font-weight: 500;
+  margin-left: 15px;
+  padding-top: 40px;
+}
+
+.answers h4 {
+  font-weight: 500;
+  margin-left: 15px;
+  margin-top: 20px;
 
 #answer_content {
   transition: 0.5s ease-in-out;
