@@ -68,53 +68,53 @@ puts "Creating exercices..."
 
 ex1 = Exercice.create!(title: "L'attente", beginning_story: "Quand j'arrive à la gare de l'Est, j'espère toujours secrètement qu'il y aura quelqu'un pour m'attendre. C'est con.",
 end_story: "Je voudrais que quelqu'un m'attende quelque part... C'est quand même pas compliqué. Les personnages de ces douze nouvelles sont pleins d’espoirs
-futiles, ou de désespoir grave.", user_id: User.all.sample.id, status: published)
+futiles, ou de désespoir grave.", user_id: User.all.sample.id, status: "published")
 ex1.remote_photo_url = "https://i.pinimg.com/564x/36/90/dc/3690dcb9de1669cccfe094f61679b627.jpg"
 ex1.save
 
-ex2 = Exercice.create(status: published, title: "Les Carnets du sous-sol", beginning_story: "Je suis un homme malade.Je suis un homme méchant. Un homme repoussoir. Voilà ce que je suis. Je crois que j’ai quelque chose au foie.",
+ex2 = Exercice.create(status: "published", title: "Les Carnets du sous-sol", beginning_story: "Je suis un homme malade.Je suis un homme méchant. Un homme repoussoir. Voilà ce que je suis. Je crois que j’ai quelque chose au foie.",
 end_story: "J’ai mal au foie. Tant mieux, qu’il me fasse encore mal! Il y a longtemps que je vis comme ça - dans les vingt ans. Maintenant j’en ai quarante.", user_id: User.all.sample.id)
 ex2.remote_photo_url = "https://s-media-cache-ak0.pinimg.com/564x/dd/e3/33/dde333ee3daa1074279e9f943891fdff.jpg"
 ex2.save
 
-ex3 = Exercice.create(status: published, title: "Le Gai Savoir", beginning_story: "Mais comment pouvons-nous nous permettre de blâmer ou louer l’univers ? Gardons-nous de lui reprocher de la dureté et de la raison, ou bien le contraire.",
+ex3 = Exercice.create(status: "published", title: "Le Gai Savoir", beginning_story: "Mais comment pouvons-nous nous permettre de blâmer ou louer l’univers ? Gardons-nous de lui reprocher de la dureté et de la raison, ou bien le contraire.",
 end_story: "Quand aurons-nous le droit, nous autres hommes, de nous rendre naturels, avec la nature pure, nouvellement trouvée, nouvellement délivrée ?", user_id: User.all.sample.id)
 ex3.remote_photo_url = "https://www.les-philosophes.fr/images/stories/photo-nietzsche.jpg"
 ex3.save
 
-ex4 = Exercice.create(status: published, title: "Battle Royale", beginning_story: "Comment peut-on tuer ses camarades de classe ? Certes, cette règle leur avait été imposée, mais Yumiko n'arrivait pas à croire qu'il existait quelqu'un
+ex4 = Exercice.create(status: "published", title: "Battle Royale", beginning_story: "Comment peut-on tuer ses camarades de classe ? Certes, cette règle leur avait été imposée, mais Yumiko n'arrivait pas à croire qu'il existait quelqu'un
 capable de jouer le jeu.",
 end_story: "Elle ne pouvait pas nier qu'elle sentait son coeur pris dans un filet d'angoisse. C'est bien pour cette raison qu'avec Yukiko elles s'étaient éloignées de l'école et s'étaient enfermées ici.", user_id: User.all.sample.id)
 ex4.remote_photo_url = "http://2.bp.blogspot.com/-Jbj_5V9JvE0/UXmERuqwPtI/AAAAAAAACEQ/8HV9mPra3dU/s1600/battel-royale.jpg"
 ex4.save
 
-ex5 = Exercice.create(status: published, title: "Antigone", beginning_story: "Comprendre… Vous n’avez que ce mot-là à la bouche, tous, depuis que je suis toute petite.Il fallait comprendre qu’on ne peut toucher à l’eau...",
+ex5 = Exercice.create(status: "published", title: "Antigone", beginning_story: "Comprendre… Vous n’avez que ce mot-là à la bouche, tous, depuis que je suis toute petite.Il fallait comprendre qu’on ne peut toucher à l’eau...",
 end_story: "Toujours comprendre. Moi, je ne veux pas comprendre. Je comprendrai quand je serai vieille [...]. Si je deviens vieille. Pas maintenant.”", user_id: User.all.sample.id)
 ex5.remote_photo_url = "https://i.pinimg.com/564x/35/44/f3/3544f39fcd1b07acef3797eaf0aaf0f6.jpg"
 ex5.save
 
-ex6 = Exercice.create(status: published, title: "La mort est mon métier", beginning_story: "De tout temps, l'honneur avait été considéré comme l'idéal suprême du soldat. Mais on savait mal alors ce qu'était l'honneur.",
+ex6 = Exercice.create(status: "published", title: "La mort est mon métier", beginning_story: "De tout temps, l'honneur avait été considéré comme l'idéal suprême du soldat. Mais on savait mal alors ce qu'était l'honneur.",
 end_story: "d'être toujours dans le droit chemin, de servir inébranlablement, dans les bons et les mauvais jours, le principe éternel : L'Allemagne, l'Allemagne au-dessus de tout.", user_id: User.all.sample.id)
 ex6.remote_photo_url = "https://i.pinimg.com/564x/fd/cb/87/fdcb87e8ab8c9f97db45411d8788f351.jpg"
 ex6.save
 
-ex7 = Exercice.create(status: published, title: "Les Liaisons dangereuses", beginning_story: "Mais, on ne me dit rien, de sorte que, dans l’ignorance où je suis, je commets bien des gaucheries.",
+ex7 = Exercice.create(status: "published", title: "Les Liaisons dangereuses", beginning_story: "Mais, on ne me dit rien, de sorte que, dans l’ignorance où je suis, je commets bien des gaucheries.",
 end_story: "« eh bien, qu’avez-vous ? Donnez votre pied à monsieur… ». Le monsieur était cordonnier. Je ne peux pas vous rendre combien j’ai été honteuse.", user_id: User.all.sample.id)
 ex7.remote_photo_url = "https://i.pinimg.com/564x/8c/e5/96/8ce596b2eea1e4f22ca6b68b11305bc5.jpg"
 ex7.save
 
-ex8 = Exercice.create(status: published, title: "Largo Desolato", beginning_story: "C’est du baratin, tout ça. Quand tu voulais me séduire, au début, tu ne parlais pas comme ça.",
+ex8 = Exercice.create(status: "published", title: "Largo Desolato", beginning_story: "C’est du baratin, tout ça. Quand tu voulais me séduire, au début, tu ne parlais pas comme ça.",
 end_story: "Croire que je pourrais te faire partager mes sentiments, te redonner goût à la vie ? Tu parles ! Tu es un cas désespéré. C’est bien fait pour moi. Une illusion de moins.", user_id: User.all.sample.id)
 ex8.remote_photo_url = "https://s-media-cache-ak0.pinimg.com/564x/54/e0/7f/54e07f7f8c745323c9e099d52730653f.jpg"
 ex8.save
 
-ex9 = Exercice.create(status: published, title: "Exercice de style", beginning_story: "Vers le milieu de la journée et à midi, je me trouvai et montai sur la plate-forme et la terrasse arrière d'un
+ex9 = Exercice.create(status: "published", title: "Exercice de style", beginning_story: "Vers le milieu de la journée et à midi, je me trouvai et montai sur la plate-forme et la terrasse arrière d'un
 autobus", end_story: "Deux heures après et cent vingt minutes plus tard, je le rencontre et le revois cour de Rome et devant la
 gare Saint-Lazare.", user_id: User.all.sample.id)
 ex9.remote_photo_url = "https://i.pinimg.com/564x/64/70/43/6470435d60ebee726fbc24ccd0824840.jpg"
 ex9.save
 
-ex10 = Exercice.create(status: published, title: "Salammbô", beginning_story: "C'était à Mégara, faubourg de Carthage, dans les jardins d'Hamilcar. Les soldats qu'il avait commandés en Sicile se donnaient un grand festin",
+ex10 = Exercice.create(status: "published", title: "Salammbô", beginning_story: "C'était à Mégara, faubourg de Carthage, dans les jardins d'Hamilcar. Les soldats qu'il avait commandés en Sicile se donnaient un grand festin",
 end_story: "Les soldats ivres ronflaient la bouche ouverte à côté des cadavres ; et ceux qui ne dormaient pas baissaient leur tête, éblouis par le jour.
 Le sol piétiné disparaissait sous des flaques rouges.", user_id: User.all.sample.id)
 ex10.remote_photo_url = "https://s-media-cache-ak0.pinimg.com/564x/6b/1b/d8/6b1bd88ac97ca94234c5c575be479249.jpg"
@@ -203,7 +203,7 @@ ex10.save
 # ex22.remote_photo_url = "https://i.pinimg.com/564x/8a/a2/4a/8aa24a3ce1dc9cbbbe64b8a7c867179a.jpg"
 # ex22.save
 
-ex22 = Exercice.create(status: published, title: "Le meurtre de Roger Ackroyd", beginning_story: "Le meurtrier est l’un d’entre nous, dites-vous ? Et… vous savez qui ? Poirot avait lu le message.
+ex22 = Exercice.create(status: "published", title: "Le meurtre de Roger Ackroyd", beginning_story: "Le meurtrier est l’un d’entre nous, dites-vous ? Et… vous savez qui ? Poirot avait lu le message.
 Il froissa la dépêche dans sa main et tapota la petite boulette de papier.",
 end_story: "Ah ! si seulement Hercule Poirot n’avait pas pris sa retraite, et n’était pas venu chez nous cultiver des courges !", user_id: User.all.sample.id)
 ex22.remote_photo_url = "https://i.pinimg.com/564x/8a/a2/4a/8aa24a3ce1dc9cbbbe64b8a7c867179a.jpg"
