@@ -10,15 +10,6 @@
       </div>
     </div>
     <div class="exercice-info">
-      <div class="plays-count">
-        <% if @exercice.answers.count == 0 %>
-        <h6 class="no-answer"><%= @exercice.answers.count %> réponse</h6>
-        <% elsif @exercice.answers.count == 1 %>
-        <h6><%= @exercice.answers.count %> réponse</h6>
-        <% else %>
-        <h6><%= @exercice.answers.count %> réponses</h6>
-        <% end %>
-      </div>
       <p class="beginning-story"><%= @exercice.beginning_story %></p>
       <div class="button-exercice">
         <% if @exercice.answers.where(user: current_user).count >= 1 %>
@@ -32,20 +23,29 @@
   </div>
 
   <div class="answers">
+  <h4>Réaliser le challenge</h4>
     <% if @answer.status == "pending" %>
       <div class="user-answer">
+      <div class="word-counter">
+        <p>Compteur de mots:&nbsp;</p> <p id="words-count"></p>
+      </div>
         <%= simple_form_for [@exercice, @answer] do |a| %>
-          <div class="user-answer-label">
-            <%= a.input :content, label: 'Votre réponse' %>
-          </div>
-          <%= a.submit 'Save' %>
-          <%= a.submit 'Publié', name: "publish" %>
+          <%= a.input :content, label: '', placeholder: 'Écrivez votre réponse' %>
+            <%= a.submit 'Sauvegarder le texte' %>
+          <%= a.submit 'Publier', name: "publish" %>
         <% end %>
       </div>
-      <p id="words-count"></p>
     <% end %>
 
     <div class="other-answers">
+        <h4 class="plays-count">
+        <% if @exercice.answers.count == 0 %>
+        <% elsif @exercice.answers.count == 1 %>
+        Réponse ( <%= @exercice.answers.count %> )
+        <% else %>
+        Réponses ( <%= @exercice.answers.count %> )
+        <% end %>
+      </h4>
       <ul>
         <% @answers.each do |answer| %>
           <div class="answer">
@@ -72,10 +72,7 @@
                       <%= answer.votes_for.size %>
                   </div>
                 <% end %>
-                <div class="comments">
-                  <i class="fa fa-comments" aria-hidden="true"></i>
-                  <%= answer.comments.count %>
-                </div>
+
               </div>
             </div>
             <div class="comments-container">
@@ -91,7 +88,10 @@
                     <% answer.comments.each do |comment| %>
                       <div class="comment-content">
                         <li><%= comment.content %></li>
-                        <li>par <%= comment.user.username %></li>
+                        <div class="commentor">
+                          <li>par&nbsp;</li>
+                          <li class="user-commentor"><%= comment.user.username %></li>
+                        </div>
                       </div>
                     <% end %>
                   </ul>
@@ -102,7 +102,7 @@
             </div>
             <div class="new-comment">
               <%= simple_form_for [answer, @comment] do |c| %>
-                <%= c.input :content, label: 'Votre commentaire'  %>
+                <%= c.input :content, label: '', placeholder: 'Écrivez un commentaire'  %>
                 <%= c.submit 'Commenter' %>
               <% end %>
             </div>
