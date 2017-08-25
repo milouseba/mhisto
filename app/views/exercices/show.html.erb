@@ -12,8 +12,10 @@
     <div class="exercice-info">
       <p class="beginning-story"><%= @exercice.beginning_story %></p>
       <div class="button-exercice">
-        <% if @exercice.answers.where(user: current_user).count >= 1 %>
-          <div class= "btn-done-answer">Vous avez déjà réalisé l'exercice</div>
+        <% if @exercice.answers.where(user: current_user, status: "published").count >= 1 %>
+          <div class= "btn-done-answer">Vous avez réalisé l'exercice</div>
+        <% elsif @exercice.answers.where(user: current_user, status: "pending").count >= 1 %>
+          <div class= "btn-try">Vous n'avez pas encore publié votre réponse</div>
         <% else %>
           <div class= "btn-try">En attente de votre réponse</div>
         <% end %>
@@ -23,7 +25,12 @@
   </div>
 
   <div class="answers">
-  <h4>Réaliser le challenge</h4>
+    <% if @exercice.answers.where(user: current_user, status: "published").count >= 1 %>
+    <% elsif @exercice.answers.where(user: current_user, status: "pending").count >= 1 %>
+      <h4>Finir le challenge</h4>
+    <% else %>
+      <h4>Réaliser le challenge</h4>
+    <% end %>
     <% if @answer.status == "pending" %>
       <div class="user-answer">
       <div class="word-counter">
@@ -38,14 +45,25 @@
     <% end %>
 
     <div class="other-answers">
+      <% if @exercice.answers.where(status: "published").count == 1 %>
+        <h4 class="plays-count-modif">
+          <% if @exercice.answers.where(status: "published").count == 0 %>
+          <% elsif @exercice.answers.where(status: "published").count == 1 %>
+            Réponse ( <%= @exercice.answers.where(status: "published").count %> )
+          <% else %>
+            Réponses ( <%= @exercice.answers.where(status: "published").count %> )
+          <% end %>
+        </h4>
+      <% else %>
         <h4 class="plays-count">
-        <% if @exercice.answers.count == 0 %>
-        <% elsif @exercice.answers.count == 1 %>
-        Réponse ( <%= @exercice.answers.count %> )
-        <% else %>
-        Réponses ( <%= @exercice.answers.count %> )
-        <% end %>
-      </h4>
+          <% if @exercice.answers.where(status: "published").count == 0 %>
+          <% elsif @exercice.answers.where(status: "published").count == 1 %>
+            Réponse ( <%= @exercice.answers.where(status: "published").count %> )
+          <% else %>
+            Réponses ( <%= @exercice.answers.where(status: "published").count %> )
+          <% end %>
+        </h4>
+      <% end %>
       <ul>
         <% @answers.each do |answer| %>
           <div class="answer">
@@ -76,11 +94,21 @@
               </div>
             </div>
             <div class="comments-container">
-              <div class="show-comments">
-                Show comments (<%= answer.comments.count %>)
-              </div>
+              <% if answer.comments.count == 0 %>
+                <div class="show-comments">
+                  Commenter
+                </div>
+              <% elsif answer.comments.count == 1 %>
+                <div class="show-comments">
+                  Commentaire (<%= answer.comments.count %>)
+                </div>
+              <% else %>
+                <div class="show-comments">
+                  Commentaires (<%= answer.comments.count %>)
+                </div>
+              <% end %>
               <div class="hide-comments">
-                Hide comments
+                Masquer
               </div>
               <div class="answer-comments">
                 <% if answer.comments.count != 0 %>
@@ -96,8 +124,8 @@
                     <% end %>
                   </ul>
                 <% else %>
-                  <p>Pas de commentaire pour cette réponse</p>
-                <% end %>
+<!--                   <p>Pas de commentaire pour cette réponse</p>
+ -->                <% end %>
                   <div class="new-comment">
                   <%= simple_form_for [answer, @comment] do |c| %>
                     <%= c.input :content, label: '', placeholder: 'Écrivez un commentaire'  %>
