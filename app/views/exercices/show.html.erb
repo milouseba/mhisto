@@ -35,7 +35,9 @@
     <% if @answer.status == "pending" %>
       <div class="user-answer">
         <%= simple_form_for [@exercice, @answer] do |a| %>
-          <%= a.input :content, label: 'Votre réponse' %>
+          <div class="user-answer-label">
+            <%= a.input :content, label: 'Votre réponse' %>
+          </div>
           <%= a.submit 'Save' %>
           <%= a.submit 'Publié', name: "publish" %>
         <% end %>
@@ -110,7 +112,6 @@
     </div>
   </div>
 </div>
-
 
 
 

@@ -3,6 +3,7 @@ $break-medium: 720px;
 
 
 .instructions {
+  margin-top: -20px;
   width: 30%;
   height: 100vh;
   position: sticky !important;
@@ -92,12 +93,12 @@ $break-medium: 720px;
   padding-top: 15px;
 }
 
-.other-answers ul{
+.other-answers ul {
   list-style: none;
   padding: 0px;
 }
 
-.answers{
+.answers {
   width: 70%;
   flex: 1 0 auto;
 }
@@ -240,4 +241,8 @@ $break-medium: 720px;
   color: $orange;
   opacity: 0.9;
   text-shadow: 1px 1px rgba(0,0,0,0.1);
+}
+
+.user-answer-label {
+  font-weight: 300;
 }
