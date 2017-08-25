@@ -191,19 +191,19 @@ ex24.save
 # ex21.remote_photo_url = "https://i.pinimg.com/564x/c9/00/33/c90033d5ab82370fc0dadf45eacd8985.jpg"
 # ex21.save
 
-<<<<<<< HEAD
+
 # ex22 = Exercice.create(title: "Le Comte de Monte Cristo", beginning_story: "Le 24 février 1815, la vigie de Notre-Dame de la Garde signala le trois-mâts le Pharaon,
 # venant de Smyrne, Trieste et Naples.", end_story: "Néanmoins les experts en navigation reconnaissaient que si un accident était arrivé,
 # ce ne pouvait être au bâtiment lui-même.")
 # ex22.remote_photo_url = "https://i.pinimg.com/564x/8a/a2/4a/8aa24a3ce1dc9cbbbe64b8a7c867179a.jpg"
 # ex22.save
-=======
+
 ex22 = Exercice.create(title: "Le meurtre de Roger Ackroyd", beginning_story: "Le meurtrier est l’un d’entre nous, dites-vous ? Et… vous savez qui ? Poirot avait lu le message.
 Il froissa la dépêche dans sa main et tapota la petite boulette de papier.",
 end_story: "Ah ! si seulement Hercule Poirot n’avait pas pris sa retraite, et n’était pas venu chez nous cultiver des courges !", user_id: User.all.sample.id)
 ex22.remote_photo_url = "https://i.pinimg.com/564x/8a/a2/4a/8aa24a3ce1dc9cbbbe64b8a7c867179a.jpg"
 ex22.save
->>>>>>> 7ba34dd4068edad5b4e59014767de05750788ee6
+
 
 # ex23 = Exercice.create(title: "Mémoires d'un yakuza", beginning_story: "A REMPLIR CE SOIR", end_story: "A REMPLIR CE SOIR")
 # ex23.remote_photo_url = "https://s-media-cache-ak0.pinimg.com/564x/b2/fa/60/b2fa60466c632f904b119fd34402a9a0.jpg"
@@ -503,7 +503,8 @@ answers.each do |answer|
   ans = Answer.new(
     content: answer[:content],
     exercice_id: Exercice.all.sample.id,
-    user_id: User.all.sample.id
+    user_id: User.all.sample.id,
+    status: "published"
     )
   ans.save
 end
