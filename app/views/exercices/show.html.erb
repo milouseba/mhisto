@@ -1,4 +1,5 @@
 <div class="exercice-content">
+
   <div class="instructions">
     <div class="photo-exercice">
       <% if !@exercice.photo.url.nil? %>
@@ -6,41 +7,54 @@
       <% end  %>
         <div class="photo-exercice-filter">
         <h3><%= @exercice.title %></h3>
-        </div>
-      </div>
-      <div class="exercice-info">
-        <p class="beginning-story"><%= @exercice.beginning_story %></p>
-        <div class="button-exercice">
-          <% if @exercice.answers.where(user: current_user).count >= 1 %>
-            <button class= "btn btn-warning">Exercice fait</button>
-          <% else %>
-            <button class= "btn btn-success">A toi de jouer</button>
-          <% end %>
-        </div>
-        <p class="end-story"><%= @exercice.end_story %></p>
       </div>
     </div>
+    <div class="exercice-info">
+      <div class="plays-count">
+        <% if @exercice.answers.count == 0 %>
+        <h6 class="no-answer"><%= @exercice.answers.count %> réponse</h6>
+        <% elsif @exercice.answers.count == 1 %>
+        <h6><%= @exercice.answers.count %> réponse</h6>
+        <% else %>
+        <h6><%= @exercice.answers.count %> réponses</h6>
+        <% end %>
+      </div>
+      <p class="beginning-story"><%= @exercice.beginning_story %></p>
+      <div class="button-exercice">
+        <% if @exercice.answers.where(user: current_user).count >= 1 %>
+          <div class= "btn-done-answer">Vous avez déjà réalisé l'exercice</div>
+        <% else %>
+          <div class= "btn-try">En attente de votre réponse</div>
+        <% end %>
+      </div>
+      <p class="end-story"><%= @exercice.end_story %></p>
+    </div>
+  </div>
 
   <div class="answers">
-    <% unless @exercice.answers.where(user: current_user).count >= 1 %>
+    <% if @answer.status == "pending" %>
       <div class="user-answer">
         <%= simple_form_for [@exercice, @answer] do |a| %>
           <%= a.input :content, label: 'Votre réponse' %>
-          <%= a.submit 'Répondre' %>
+          <%= a.submit 'Save' %>
+          <%= a.submit 'Publié', name: "publish" %>
         <% end %>
       </div>
+      <p id="words-count"></p>
     <% end %>
 
     <div class="other-answers">
       <ul>
-        <% @exercice.answers.each do |answer| %>
+        <% @answers.each do |answer| %>
           <div class="answer">
             <div class="answer-content">
               <li><%= answer.content %></li>
             </div>
             <div class="answer-infos">
               <div class="avatar-username">
-                <p><%= answer.user.username %></p>
+                <h6>par&nbsp;</h6>
+                <h6 class="avatar-hidden"><%= answer.user.username %></h6>
+                <%= image_tag answer.user.photo %>
               </div>
               <div class="likes-comments">
                 <% if answer.votes_for.size == 0 %>
@@ -62,33 +76,42 @@
                 </div>
               </div>
             </div>
-            <div id="show-comments">
-              Show comments
+            <div class="comments-container">
+              <div class="show-comments">
+                Show comments (<%= answer.comments.count %>)
+              </div>
+              <div class="hide-comments">
+                Hide comments
+              </div>
+              <div class="answer-comments">
+                <% if answer.comments.count != 0 %>
+                  <ul>
+                    <% answer.comments.each do |comment| %>
+                      <div class="comment-content">
+                        <li><%= comment.content %></li>
+                        <li>par <%= comment.user.username %></li>
+                      </div>
+                    <% end %>
+                  </ul>
+                <% else %>
+                  <p>Pas de commentaire pour cette réponse</p>
+                <% end %>
+              </div>
             </div>
-            <div id="hide-comments">
-              Hide comments
-            </div>
-            <div class="answer-comments">
-            <ul>
-              <% answer.comments.each do |comment| %>
-                <div class="comment-content">
-                  <li><%= comment.content %></li>
-                  <li>par <%= comment.user.username %></li>
-                </div>
+            <div class="new-comment">
+              <%= simple_form_for [answer, @comment] do |c| %>
+                <%= c.input :content, label: 'Votre commentaire'  %>
+                <%= c.submit 'Commenter' %>
               <% end %>
-            </ul>
-          </div>
-          <div class="new-comment">
-            <%= simple_form_for [answer, @comment] do |c| %>
-              <%= c.input :content, label: 'Votre commentaire'  %>
-              <%= c.submit 'Commenter' %>
-            <% end %>
+            </div>
           </div>
         <% end %>
       </ul>
     </div>
   </div>
 </div>
+
+
 
 
 

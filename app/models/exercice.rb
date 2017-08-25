@@ -15,4 +15,8 @@ class Exercice < ApplicationRecord
 
   mount_uploader :photo, PhotoUploader
 
+  # def except(n)
+  #   self - [n]
+  # end
+
 end

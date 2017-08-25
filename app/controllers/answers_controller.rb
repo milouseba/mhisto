@@ -1,5 +1,5 @@
 class AnswersController < ApplicationController
-  after_action :verify_authorized, :except => [:create, :index, :like]
+  after_action :verify_authorized, :except => [:create, :index, :like, :update]
 
   def index
     @answers = Answer.where(user_id: current_user.id)
@@ -9,19 +9,34 @@ class AnswersController < ApplicationController
   end
 
   def new
-    # @answer = Answer.new
+
   end
 
   def create
-    @answer = Answer.new(answer_params)
     set_exercice
+    @answer = Answer.new(answer_params)
     @answer.exercice = @exercice
     @answer.user = current_user
+    @answer.status = "published" unless params[:publish].nil?
     if @answer.save
       redirect_to exercice_path(@exercice)
     else
       render "exercices/show"
     end
+  end
+
+  def update
+    set_exercice
+    @answer = Answer.find(params[:id])
+    @answer.update(content: params[:answer][:content])
+    @answer.update(status: "published") unless params[:publish].nil?
+    redirect_to exercice_path(@exercice)
+  end
+
+  def publish
+    set_exercice
+    @answer = @exercice.answers.find_by_user_id(current_user.id)
+    @answer.update(status: "published")
   end
 
   def like

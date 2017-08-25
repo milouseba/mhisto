@@ -13,19 +13,20 @@
             </div>
 
             <div class="card-category">
-              <p><%= @exercices.first.title %></p>
-            </div>
-
-            <div class="card-user">
-              <p>by <%= User.find(@exercices.first.user_id).username %></p>
+              <h2><%= @exercices.first.title %></h2>
             </div>
 
             <div class="card-details">
               <div class="card-beginning">
-                <p><%= @exercices.first.beginning_story %></p>
+                <h6>On vous donne le début...</h6>
+                <p>"<%= @exercices.first.beginning_story %>"</p>
               </div>
+                <div class="card-start-writing">
+                  <h4> <%= link_to "À VOUS D'ÉCRIRE ENTRE LES LIGNES!", exercice_path(@exercices.first)%></h4>
+                </div>
               <div class="card-end">
-                <p><%= @exercices.first.end_story %></p>
+                <h6>On vous donne le fin...</h6>
+                <p>"<%= @exercices.first.end_story %>"</p>
               </div>
             </div>
             <%= link_to "", exercice_path(@exercices.first), class: "card-link" %>
