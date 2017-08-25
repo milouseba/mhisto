@@ -9,13 +9,16 @@
       <div class="row">
         <div class="col-xs-12">
           <div class="dash-answer">
-            <div class="dash-answer-exercice-title"><h3><%= answer.exercice.title %></h3></div>
+            <div class="dash-answer-exercice-title">
+              <h3><%= link_to answer.exercice.title, exercice_path(answer.exercice.id), class: "dash-answer-exercice-title-link" %></h3>
+            </div>
             <div class="dash-answer-exercice-date"> créé le <%= answer.exercice.created_at %></div>
             <div class="dash-answer-all">
               <div class="dash-answer-exercice-begin"><p><%= answer.exercice.beginning_story %></p></div>
               <div class="dash-answer-content"><p><%= answer.content %></p></div>
               <div class="dash-answer-exercice-end"><p><%= answer.exercice.end_story %></p></div>
             </div>
+            <div class="dash-answer-exercice-status"><p><%= answer.status %></p></div>
           </div>
         </div>
       </div>
@@ -34,6 +37,7 @@
               <div class="dash-answer-exercice-begin"><p><%= exercice.beginning_story %></p></div>
               <div class="dash-answer-titre-debut"><h6>Fin:</h6></div>
               <div class="dash-answer-exercice-end"><p><%= exercice.end_story %></p></div>
+              <div class="dash-answer-exercice-status"><p><%= exercice.status %></p></div>
             </div>
           </div>
         </div>

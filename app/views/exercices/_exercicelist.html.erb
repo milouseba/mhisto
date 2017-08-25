@@ -1,4 +1,9 @@
-<% @exercices.drop(1).each do |exercice|%>
+<% if current_user %>
+  <% nb_of_elements = @exercices.count %>
+<% else %>
+  <% nb_of_elements = 4 %>
+<% end %>
+<% @exercices.drop(1).first(nb_of_elements).each do |exercice|%>
         <div class="col-xs-12 col-sm-6">
         <div class="card" id="card-grid-exercices">
       <div class="card-image" style="background-image: url(<%= cl_image_path exercice.photo, crop: :fit, height: 200; %>)">
