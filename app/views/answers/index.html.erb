@@ -2,6 +2,8 @@
   <div class="tab">
     <button class="tablinks active" onclick="openDashTab(event, 'MyAnswers')">Mes réponses</button>
     <button class="tablinks" onclick="openDashTab(event, 'MyExercices')">Mes exercices</button>
+    <button class="tablinks" onclick="openDashTab(event, 'MyProfile')">Mon profil</button>
+
   </div>
 
   <div id="MyAnswers" class="tabcontent" style="display:block;">
@@ -50,6 +52,37 @@
       </div>
     <% end %>
   </div>
+
+  <div id="MyProfile" class="tabcontent">
+    <div class="profile-content text-center">
+      <div class="profile-avatar">
+        <%= image_tag @current_user.avatar, class: "avatar-big" %>
+      </div>
+      <div class='profile-stats'>
+        <h5>réponses:</h5>
+        <p><%= @current_user.answers.count %></p>
+      </div>
+      <div class="profile-stats">
+        <h5>exercices:</h5>
+        <p><%= @current_user.exercices.count %></p>
+      </div>
+      <div class="profile-stats">
+        <h5>likes:</h5>
+        <p><%= @current_user.votes.count %></p>
+      </div>
+    </div>
+    <div class="form-container">
+      <%= simple_form_for @current_user do |u| %>
+        <%= u.input :username %>
+        <%= u.input :first_name, class: 'form-control' %>
+        <%= u.input :last_name %>
+        <%= u.input :email, class: 'form-control'  %>
+        <%= u.input :bio, class: 'form-control' %>
+        <%= u.submit "Sauvegarder", class: "btn", id: "Save-btn" %>
+      <% end %>
+    </div>
+  </div>
+
   <br>
   <br>
 </div>
