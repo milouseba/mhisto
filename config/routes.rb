@@ -16,4 +16,8 @@ Rails.application.routes.draw do
 
   resources :answers, only: [:index]
 
+  # get 'answer/user_id/edit', to: 'users#edit', as: 'edit_user'
+
+  resources :users, only: [:edit, :update, :show]
+
 end
