@@ -3,7 +3,7 @@
   <div class="instructions">
     <div class="photo-exercice">
       <% if !@exercice.photo.url.nil? %>
-        <%= image_tag @exercice.photo.url %>
+        <%= cl_image_tag @exercice.photo, width: 379, height: 200, crop: :fill, gravity: :north %>
       <% end  %>
         <div class="photo-exercice-filter">
         <h3><%= @exercice.title %></h3>
