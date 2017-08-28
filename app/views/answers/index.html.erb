@@ -1,6 +1,6 @@
 <div class="container">
   <div class="tab">
-    <button class="tablinks active" onclick="openDashTab(event, 'MyAnswers')">Mes answers</button>
+    <button class="tablinks active" onclick="openDashTab(event, 'MyAnswers')">Mes réponses</button>
     <button class="tablinks" onclick="openDashTab(event, 'MyExercices')">Mes exercices</button>
   </div>
 
@@ -11,14 +11,17 @@
           <div class="dash-answer">
             <div class="dash-answer-exercice-title">
               <h3><%= link_to answer.exercice.title, exercice_path(answer.exercice.id), class: "dash-answer-exercice-title-link" %></h3>
+            <div class="dash-answer-exercice-status" id="status-replace"><p><%= answer.status %></p>
             </div>
-            <div class="dash-answer-exercice-date"> créé le <%= answer.exercice.created_at %></div>
+            </div>
             <div class="dash-answer-all">
               <div class="dash-answer-exercice-begin"><p><%= answer.exercice.beginning_story %></p></div>
               <div class="dash-answer-content"><p><%= answer.content %></p></div>
               <div class="dash-answer-exercice-end"><p><%= answer.exercice.end_story %></p></div>
+              <div class="date-date">
+            <div class="dash-answer-exercice-date"><%= answer.exercice.updated_at.strftime("%m/%d/%y") %></div>
             </div>
-            <div class="dash-answer-exercice-status"><p><%= answer.status %></p></div>
+            </div>
           </div>
         </div>
       </div>
@@ -30,14 +33,17 @@
       <div class="row">
         <div class="col-xs-12">
           <div class="dash-exercice">
-            <div class="dash-answer-exercice-title"><h3><%= exercice.title %></h3></div>
-            <div class="dash-answer-exercice-date"> créé le <%= exercice.created_at %></div>
+            <div class="dash-answer-exercice-title"><h3><%= exercice.title %></h3>
+            <div class="dash-answer-exercice-status" id="status-replace"><p><%= exercice.status %></p></div>
+            </div>
             <div class="dash-exercice-all">
-              <div class="dash-answer-titre-debut"><h6>Début:</h6></div>
+              <div class="dash-answer-titre-debut"><h6>Votre début :</h6></div>
               <div class="dash-answer-exercice-begin"><p><%= exercice.beginning_story %></p></div>
-              <div class="dash-answer-titre-debut"><h6>Fin:</h6></div>
+              <div class="dash-answer-titre-fin"><h6>Votre fin :</h6></div>
               <div class="dash-answer-exercice-end"><p><%= exercice.end_story %></p></div>
-              <div class="dash-answer-exercice-status"><p><%= exercice.status %></p></div>
+              <div class="date-date">
+            <div class="dash-answer-exercice-date"><%= exercice.updated_at.strftime("%m/%d/%y") %></div>
+              </div>
             </div>
           </div>
         </div>
@@ -47,5 +53,4 @@
   <br>
   <br>
 </div>
-
 

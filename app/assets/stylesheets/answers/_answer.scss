@@ -2,6 +2,19 @@
   border-bottom-style: solid;
   border-bottom-width: thin;
   border-bottom-color: rgba(0,0,0,0.1);
+  padding-bottom: 10px;
+}
+
+.dash-answer-all p {
+  font-weight: 300;
+}
+
+.dash-exercice-all {
+  font-weight: 300;
+  margin-bottom: 20px;
+  margin-top: 0px;
+  font-size: 14px;
+  padding: 15px 5px;
 }
 
 .dash-answer-exercice-date {
@@ -9,14 +22,14 @@
   padding-top: 2px;
 }
 
-.dash-answer-all, .dash-exercice-all {
+.dash-answer-all, {
   font-size: 14px;
   margin-top: 10px;
-  padding: 0 5px;
+  padding: 15px 5px;
 }
 
-.dash-answer-all p {
-  margin: 0;
+.dash-answer-all {
+  margin-bottom: 25px;
 }
 
 .dash-answer-all > .dash-answer-exercice-begin, .dash-answer-all > .dash-answer-exercice-end {
@@ -41,8 +54,14 @@
 
 .dash-answer-exercice-title > h3 {
   margin-bottom: 3px;
+  font-weight: 400;
 }
 
+.dash-answer-exercice-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
 .dash-answer {
   position: relative;
@@ -55,9 +74,14 @@
 }
 
 .dash-answer-exercice-status {
-  position: absolute;
-  right: 20px;
-  font-size: 12px;
+  font-size: 15px;
+  padding-top: 35px;
+  font-family: $headers-font;
+  opacity: 0.7;
+}
+
+.dash-answer-exercice-status p {
+  margin-bottom: 0px;
 }
 
 .dash-answer-exercice-title-link {
@@ -67,4 +91,34 @@
 .dash-answer-exercice-title-link:hover {
   color: $orange;
   text-decoration: none;
+}
+
+.date-date {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.dash-answer-exercice-date {
+  font-size: 12px;
+  color: white;
+  font-family: $headers-font;
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  background-color: rgba(255, 133, 15, 0.7);
+  padding: 4px;
+  padding-bottom: 3px;
+  margin-top: 10px;
+  border-radius: 4px;
+}
+
+.dash-answer-content p {
+  font-weight: 500;
+}
+
+.dash-answer-titre-debut h6 {
+  font-weight: 400;
+}
+
+.dash-answer-titre-fin h6 {
+  font-weight: 400;
+  padding-top: 20px;
 }
