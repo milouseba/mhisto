@@ -1,0 +1,157 @@
+
+
+.card-answer-show {
+  height: 80vh;
+  margin: 0px;
+}
+
+.answer-begin-to-end {
+  height: 80vh;
+  margin: 0px;
+  padding: 10px;
+  position: relative;
+}
+
+.card-image-answer-show {
+  width:100%;
+  height:80%;
+  border-bottom-left-radius: 2px;
+  border-top-left-radius: 2px;
+}
+
+.card-answer-show-details {
+
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 20%;
+  width: 100%;
+  border-style: solid;
+  border-width: 2px;
+  border-color: black;
+}
+
+.card-answer-show-titre {
+  color: black;
+  position: absolute;
+  top: 2px;
+  left: 5px;
+}
+
+.card-answer-show-titre > h4 {
+  margin: 0;
+ }
+
+.card-answer-show-date {
+  color: black;
+  position: absolute;
+  top: 25px;
+  left: 7px;
+  font-size: 10px;
+}
+
+.card-answer-show-avatar {
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  bottom: 5px;
+  right: 5px;
+}
+
+.card-answer-show-status {
+  position: absolute;
+  color: black;
+  bottom: 3px;
+  right: 3px;
+  font-size: 10px;
+}
+
+.answer-show-begin-story, .answer-show-end-story {
+  color: black;
+  // height: 20%;
+  position: absolute;
+  left: 0px;
+}
+
+.answer-show-begin-story > p, .answer-show-end-story > p {
+  margin: 0;
+}
+
+.answer-show-begin-story > p {
+  border-bottom-style: solid;
+  border-bottom-color: grey;
+  border-bottom-width: 1px;
+}
+
+.answer-show-end-story > p {
+  border-top-style: solid;
+  border-top-color: grey;
+  border-top-width: 1px;
+}
+
+.answer-show-begin-story {
+  top: 0px;
+}
+
+.answer-show-end-story {
+  bottom: 0px;
+}
+
+.answer-show-middle-story-wrapper {
+  color: black;
+  position: absolute;
+  top: 10%;
+  left: 0px;
+  width: 100%;
+  border-style: solid;
+  border-width: 2px;
+  height: 80%;
+}
+
+.answer-show-middle-story-all {
+  position: relative;
+  height: 100%;
+}
+
+.answer-show-middle-story {
+  // color: black;
+  // // height: 60%;
+  position: absolute;
+  top: 0;
+  // left: 0px;
+  width:100%;
+  height: 100%;
+  // border-style: solid;
+  // border-width: 2px;
+}
+
+.list-answers {
+  display: none;
+}
+
+.answer-show-middle-story > .active {
+  display: block;
+  // position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+.hide-btn {
+  display: none;
+}
+
+.btn-prev-next {
+  position: absolute;
+  bottom: 0;
+}
+
+
+
+
+
+
+
+
+
+

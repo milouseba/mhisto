@@ -1,11 +1,17 @@
 class AnswersController < ApplicationController
-  after_action :verify_authorized, :except => [:create, :index, :like, :update]
+  after_action :verify_authorized, :except => [:create, :index, :like, :update, :show]
 
   def index
     @answers = Answer.where(user_id: current_user.id)
     # @answers = policy_scope(Answer).where(user_id: current_user.id).order(created_at: :desc)
     # @exercices = Exercice.where(user_id: current_user.id)
     @exercices = policy_scope(Exercice).where(user_id: current_user.id).order(created_at: :desc)
+  end
+
+  def show
+    set_exercice
+    @answers = @exercice.answers
+    @answer = Answer.find(params[:id])
   end
 
   def new
