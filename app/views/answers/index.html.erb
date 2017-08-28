@@ -59,16 +59,16 @@
         <%= image_tag @current_user.avatar, class: "avatar-big" %>
       </div>
       <div class='profile-stats'>
-        <h5>réponses:</h5>
-        <p><%= @current_user.answers.count %></p>
+        <h5>Réponses</h5>
+        <p class="numbers"><%= @current_user.answers.count %></p>
       </div>
       <div class="profile-stats">
-        <h5>exercices:</h5>
-        <p><%= @current_user.exercices.count %></p>
+        <h5>Exercices</h5>
+        <p class="numbers"><%= @current_user.exercices.count %></p>
       </div>
       <div class="profile-stats">
-        <h5>likes:</h5>
-        <p><%= @current_user.votes.count %></p>
+        <h5>Likes</h5>
+        <p class="numbers"><%= @current_user.votes.count %></p>
       </div>
     </div>
     <div class="form-container">
