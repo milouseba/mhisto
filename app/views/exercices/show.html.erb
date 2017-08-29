@@ -3,14 +3,14 @@
   <div class="instructions">
     <div class="photo-exercice">
       <% if !@exercice.photo.url.nil? %>
-        <%= image_tag @exercice.photo.url %>
+        <%= cl_image_tag @exercice.photo, width: 379, height: 200, crop: :fill, gravity: :north %>
       <% end  %>
         <div class="photo-exercice-filter">
         <h3><%= @exercice.title %></h3>
       </div>
     </div>
     <div class="exercice-info">
-      <p class="beginning-story"><%= @exercice.beginning_story %></p>
+      <p class="beginning-story">Début<%= @exercice.beginning_story %></p>
       <div class="button-exercice">
         <% if @exercice.answers.where(user: current_user, status: "published").count >= 1 %>
           <div class= "btn-done-answer">Vous avez réalisé l'exercice</div>
@@ -20,7 +20,7 @@
           <div class= "btn-try">En attente de votre réponse</div>
         <% end %>
       </div>
-      <p class="end-story"><%= @exercice.end_story %></p>
+      <p class="end-story">Fin:<%= @exercice.end_story %></p>
     </div>
   </div>
 
@@ -49,15 +49,15 @@
 
     <div class="other-answers" id='answers-index'>
       <h4 class="plays-count">
-        <% if @exercice.answers.where(status: "published").count == 0 %>
-        <% elsif @exercice.answers.where(status: "published").count == 1 %>
-          Réponse ( <%= @exercice.answers.where(status: "published").count %> )
-        <% else %>
-          Réponses ( <%= @exercice.answers.where(status: "published").count %> )
-        <% end %>
+        <%= pluralize @exercice.answers.where(status: "published").count, "Réponse" %>
       </h4>
       <ul>
+        <% if @answer.user %>
+          <%= render 'answers/show', answer: @answer %>
+        <% end %>
+
         <% @answers.each do |answer| %>
+          <% next if answer == @answer %>
           <%= render 'answers/show', answer: answer %>
         <% end %>
       </ul>

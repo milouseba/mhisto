@@ -29,10 +29,10 @@ $break-medium: 720px;
 }
 
 .photo-exercice img{
-  max-height: 200px;
-  width: 100%;
   border-top-right-radius: 2px;
   border-top-left-radius: 2px;
+  height: 200px;
+  width: 100%;
 }
 
 .photo-exercice-filter{
@@ -323,6 +323,10 @@ input {
   margin-top: 20px;
 }
 
+#answer-content {
+  height: 50vh;
+}
+
 #answer_content {
   transition: 0.5s ease-in-out;
 }
@@ -337,5 +341,12 @@ textarea#comment_content {
 
 h4.plays-count {
   padding-top: 0px;
+}
+
+
+.avatar-answer {
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
 }
 

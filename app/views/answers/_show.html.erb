@@ -4,8 +4,8 @@
   </div>
   <div class="answer-infos">
     <div class="avatar-username">
-      <h6>par&nbsp;</h6>
-      <h6 class="avatar-hidden"><%= answer.user.username %></h6>
+      <h6><%= image_tag answer.user.avatar || answer.user.facebook_picture_url || 'https://api.adorable.io/avatars/285/abott@adorable.png', class: "avatar-answer" %>&nbsp;</h6>
+      <h6 class="avatar-hidden"><%= link_to answer.user.username, user_path(answer.user) %></h6>
     </div>
     <div class="likes-comments">
       <% if answer.votes_for.size == 0 %>
@@ -29,13 +29,9 @@
       <div class="show-comments">
         Commenter
       </div>
-    <% elsif answer.comments.count == 1 %>
-      <div class="show-comments">
-        Commentaire (<%= answer.comments.count %>)
-      </div>
     <% else %>
       <div class="show-comments">
-        Commentaires (<%= answer.comments.count %>)
+        <%= pluralize answer.comments.count, "Commentaire" %>
       </div>
     <% end %>
     <div class="hide-comments">
@@ -55,9 +51,9 @@
           <% end %>
         </ul>
       <% else %>
-<!--                   <p>Pas de commentaire pour cette réponse</p>
--->
-      <% end %>
+
+    <% end %>
+
         <div class="new-comment">
         <%= simple_form_for [answer, @comment] do |c| %>
           <%= c.input :content, label: '', placeholder: 'Écrivez un commentaire'  %>
