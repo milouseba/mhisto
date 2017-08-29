@@ -278,8 +278,13 @@ input {
   padding: 5px 10px;
 }
 
- .orange_color:hover {
+ .orange_color {
   background-color: rgba(255,133,15,1);
+  padding : 10px 20px;
+  font-size: 14px;
+ }
+ .orange_color:hover {
+  background-color: rgba(255,133,15,0.8);
   transition: 0.2s ease-in-out;
 }
 
@@ -303,6 +308,10 @@ input {
   font-family: $headers-font;
   font-weight: 200;
   margin-bottom: -20px;
+  position: absolute;
+  font-size: 14px;
+  padding-left: 15px;
+  padding-top: 5px;
 }
 
 #words-count {
@@ -328,6 +337,7 @@ input {
 
 #answer_content {
   transition: 0.5s ease-in-out;
+  padding-top: 30px;
 }
 
 .answer-content-grow {
@@ -341,7 +351,6 @@ textarea#comment_content {
 h4.plays-count {
   padding-top: 0px;
 }
-
 
 .avatar-answer {
   height: 35px;
@@ -357,4 +366,10 @@ h4.plays-count {
   }
 }
 
+.answer_auto_save {
+  padding-top: 5px;
+  position: absolute;
+  right: 45px;
+  font-size: 14px;
+}
 
