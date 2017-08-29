@@ -42,10 +42,11 @@ class AnswersController < ApplicationController
     @answer = Answer.find(params[:id])
     @answer.update(content: params[:answer][:content])
     @answer.update(status: "published") unless params[:publish].nil?
+    @comment = Comment.new
     respond_to do |format|
-        format.html { redirect_to exercice_path(@exercice) }
-        format.js  # <-- will render `app/views/reviews/create.js.erb`
-      end
+      format.html { redirect_to exercice_path(@exercice) }
+      format.js  # <-- will render `app/views/reviews/create.js.erb`
+    end
   end
 
   def publish
