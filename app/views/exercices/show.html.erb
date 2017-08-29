@@ -35,9 +35,9 @@
       <% if @answer.status == "pending" %>
         <div class="user-answer">
         <div class="word-counter">
-          <p>Compteur de mots:&nbsp;</p> <p id="words-count"></p>
+          <p># de mots:&nbsp;</p> <p id="words-count"></p>
         </div>
-        <div id='save-auto'>
+        <div id='save-auto' class='answer_auto_save'>
         </div>
           <div id="answer_form_wrapper">
             <%= render 'answers/form', exercice: @exercice, answer: @answer %>
