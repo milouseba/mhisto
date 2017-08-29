@@ -47,15 +47,15 @@
 
     <div class="other-answers" id='answers-index'>
       <h4 class="plays-count">
-        <% if @exercice.answers.where(status: "published").count == 0 %>
-        <% elsif @exercice.answers.where(status: "published").count == 1 %>
-          Réponse ( <%= @exercice.answers.where(status: "published").count %> )
-        <% else %>
-          Réponses ( <%= @exercice.answers.where(status: "published").count %> )
-        <% end %>
+        <%= pluralize @exercice.answers.where(status: "published").count, "Réponse" %>
       </h4>
       <ul>
+        <% if @answer.user %>
+          <%= render 'answers/show', answer: @answer %>
+        <% end %>
+
         <% @answers.each do |answer| %>
+          <% next if answer == @answer %>
           <%= render 'answers/show', answer: answer %>
         <% end %>
       </ul>
