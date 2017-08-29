@@ -1,0 +1,19 @@
+<% if @answer.errors.any? %>
+<% elsif @answer.status == 'published' %>
+
+<% else %>
+  // put a edit form
+  debugger;
+  const form = "<%= j render 'answers/form', exercice: @exercice, answer: @answer %>";
+  document.getElementById('answer_form_wrapper').innerHTML = form;
+  document.getElementById('answer_content').addEventListener('keyup', function(event) {
+    var count = 0;
+    event.target.value.split(" ").forEach(function(val) {
+      if (val !== "") {
+        count++;
+      }
+    });
+    document.getElementById('words-count').innerText = count;
+    document.getElementById('save-text-auto').click();
+  });
+<% end %>
