@@ -22,17 +22,17 @@
             <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
               <li>
                 <%= link_to answers_path  do %>
-                  <i class="fa fa-user"></i> <%= t(".profile", default: "Dashboard") %>
+                  <i class="fa fa-user"></i>&nbsp;&nbsp;<%= t(".profile", default: "Dashboard") %>
                 <% end %>
               </li>
               <li>
                 <%= link_to exercices_path do %>
-                  <i class="fa fa-home"></i>  <%= t(".profile", default: "Home") %>
+                  <i class="fa fa-home"></i>&nbsp;&nbsp;<%= t(".profile", default: "Home") %>
                 <% end %>
               </li>
               <li>
                 <%= link_to destroy_user_session_path, method: :delete do %>
-                  <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+                  <i class="fa fa-sign-out"></i>&nbsp;&nbsp;<%= t(".sign_out", default: "Log out") %>
                 <% end %>
               </li>
             </ul>
