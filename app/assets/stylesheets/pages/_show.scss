@@ -304,6 +304,10 @@ input {
   font-family: $headers-font;
   font-weight: 200;
   margin-bottom: -20px;
+  position: absolute;
+  font-size: 14px;
+  padding-left: 15px;
+  padding-top: 5px;
 }
 
 #words-count {
@@ -329,7 +333,7 @@ input {
 
 #answer_content {
   transition: 0.5s ease-in-out;
-  padding-top: 20px;
+  padding-top: 30px;
 }
 
 .answer-content-grow {
@@ -351,7 +355,7 @@ h4.plays-count {
 }
 
 .answer_auto_save {
-  padding-top: 2px;
+  padding-top: 5px;
   position: absolute;
   right: 45px;
   font-size: 14px;
