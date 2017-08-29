@@ -9,10 +9,11 @@ $break-medium: 720px;
   height: 100vh;
   position: sticky !important;
   top: 0 !important;
-  box-shadow: 1px 1px 3px rgba(0,0,0,0.05);
+  box-shadow: 1px 1px 10px rgba(0,0,0,0.2);
   background-color: white;
   border-radius: 3px;
-  border: 1px solid rgba(0,0,0,0.1);
+  border: 3px solid $orange;
+
 
   @media screen and (max-width: $break-small) {
     display: none;

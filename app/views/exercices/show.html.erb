@@ -10,17 +10,22 @@
       </div>
     </div>
     <div class="exercice-info">
-      <p class="beginning-story">Début<%= @exercice.beginning_story %></p>
+      <h6>Début:</h6>
+      <p class="beginning-story"><%= @exercice.beginning_story %></p>
       <div class="button-exercice">
         <% if @exercice.answers.where(user: current_user, status: "published").count >= 1 %>
           <div class= "btn-done-answer">Vous avez réalisé l'exercice</div>
         <% elsif @exercice.answers.where(user: current_user, status: "pending").count >= 1 %>
           <div class= "btn-try">Vous n'avez pas encore publié votre réponse</div>
         <% else %>
-          <div class= "btn-try">En attente de votre réponse</div>
+          <h6>Coeur de l'histoire:</h6>
+          <div class= "btn-try" id="text-copy">À vous d'écrire entre les lignes !</div>
         <% end %>
       </div>
-      <p class="end-story">Fin:<%= @exercice.end_story %></p>
+      <div class="end-story">
+        <h6>Fin:</h6>
+        <%= @exercice.end_story %>
+      </div>
     </div>
   </div>
 
@@ -56,7 +61,6 @@
     </div>
   </div>
 </div>
-
 
 
 
