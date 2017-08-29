@@ -10,7 +10,7 @@
       </div>
     </div>
     <div class="exercice-info">
-      <p class="beginning-story"><%= @exercice.beginning_story %></p>
+      <p class="beginning-story">Début<%= @exercice.beginning_story %></p>
       <div class="button-exercice">
         <% if @exercice.answers.where(user: current_user, status: "published").count >= 1 %>
           <div class= "btn-done-answer">Vous avez réalisé l'exercice</div>
@@ -20,7 +20,7 @@
           <div class= "btn-try">En attente de votre réponse</div>
         <% end %>
       </div>
-      <p class="end-story"><%= @exercice.end_story %></p>
+      <p class="end-story">Fin:<%= @exercice.end_story %></p>
     </div>
   </div>
 
