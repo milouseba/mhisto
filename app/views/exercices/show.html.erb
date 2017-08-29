@@ -46,13 +46,12 @@
       <% end %>
 
     </div>
-
     <div class="other-answers" id='answers-index'>
       <h4 class="plays-count">
         <%= pluralize @exercice.answers.where(status: "published").count, "Réponse" %>
       </h4>
       <ul>
-        <% if @answer.user %>
+        <% if @answer.status == "published" %>
           <div class="my-answer">
             <%= render 'answers/show', answer: @answer %>
           </div>
