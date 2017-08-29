@@ -4,9 +4,9 @@
      <div class="form-container", id="form-post" >
       <h1>Ecris ton histoire !</h1>
       <%= simple_form_for(@exercice) do |f| %>
-      <%= f.input :title %>
-      <%= f.input :beginning_story, placeholder: "Il était une fois..." %>
-      <%= f.input :end_story, placeholder: "Ils vécurent heureux..."%>
+      <%= f.input :title, label: "Titre" %>
+      <%= f.input :beginning_story, label: "Début", placeholder: "Il était une fois..." %>
+      <%= f.input :end_story, label: "Fin", placeholder: "Ils vécurent heureux..."%>
 
 
 

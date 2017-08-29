@@ -26,12 +26,6 @@
 
   <div class="answers">
     <div id="answer-form-block">
-      <% if @exercice.answers.where(user: current_user, status: "published").count >= 1 %>
-      <% elsif @exercice.answers.where(user: current_user, status: "pending").count >= 1 %>
-        <h4>Finir le challenge</h4>
-      <% else %>
-        <h4>Réaliser le challenge</h4>
-      <% end %>
       <% if @answer.status == "pending" %>
         <div class="user-answer">
         <div class="word-counter">
@@ -48,9 +42,6 @@
     </div>
 
     <div class="other-answers" id='answers-index'>
-      <h4 class="plays-count">
-        <%= pluralize @exercice.answers.where(status: "published").count, "Réponse" %>
-      </h4>
       <ul>
         <% if @answer.user %>
           <div class="my-answer">
