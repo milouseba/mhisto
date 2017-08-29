@@ -44,12 +44,12 @@ header {
 
 /* Navbar link */
 .navbar-wagon-link {
-  color: #616668;
+  color: $orange;
   font-size: 14px;
   font-family: $headers-font;
 }
 .navbar-wagon-link:hover {
-  color: $orange;
+  color: #616668;
   text-decoration: none;
 }
 

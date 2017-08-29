@@ -25,9 +25,15 @@ class AnswersController < ApplicationController
     @answer.user = current_user
     @answer.status = "published" unless params[:publish].nil?
     if @answer.save
-      redirect_to exercice_path(@exercice)
+      respond_to do |format|
+        format.html { redirect_to exercice_path(@exercice) }
+        format.js  # <-- will render `app/views/reviews/create.js.erb`
+      end
     else
-      render "exercices/show"
+      respond_to do |format|
+        format.html { render "exercices/show" }
+        format.js  # <-- will render `app/views/reviews/create.js.erb`
+      end
     end
   end
 
@@ -36,7 +42,11 @@ class AnswersController < ApplicationController
     @answer = Answer.find(params[:id])
     @answer.update(content: params[:answer][:content])
     @answer.update(status: "published") unless params[:publish].nil?
-    redirect_to exercice_path(@exercice)
+    @comment = Comment.new
+    respond_to do |format|
+      format.html { redirect_to exercice_path(@exercice) }
+      format.js  # <-- will render `app/views/reviews/create.js.erb`
+    end
   end
 
   def publish

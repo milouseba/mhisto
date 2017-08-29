@@ -1,0 +1,65 @@
+<div class="answer">
+  <div class="answer-content">
+    <%= answer.content %>
+  </div>
+  <div class="answer-infos">
+    <div class="avatar-username">
+      <h6><%= image_tag answer.user.avatar || answer.user.facebook_picture_url || 'https://api.adorable.io/avatars/285/abott@adorable.png', class: "avatar-answer" %>&nbsp;</h6>
+      <h6 class="avatar-hidden"><%= link_to answer.user.username, user_path(answer.user) %></h6>
+    </div>
+    <div class="likes-comments">
+      <% if answer.votes_for.size == 0 %>
+        <div class="likes">
+          <%= link_to answers_like_path(answer) do %>
+            <i class="fa fa-heart" aria-hidden="true"></i>
+            <%= answer.votes_for.size %>
+          <% end %>
+        </div>
+      <% else %>
+        <div class="liked">
+            <i class="fa fa-heart" aria-hidden="true"></i>
+            <%= answer.votes_for.size %>
+        </div>
+      <% end %>
+
+    </div>
+  </div>
+  <div class="comments-container">
+    <% if answer.comments.count == 0 %>
+      <div class="show-comments">
+        Commenter
+      </div>
+    <% else %>
+      <div class="show-comments">
+        <%= pluralize answer.comments.count, "Commentaire" %>
+      </div>
+    <% end %>
+    <div class="hide-comments">
+      Masquer
+    </div>
+    <div class="answer-comments">
+      <% if answer.comments.count != 0 %>
+        <ul>
+          <% answer.comments.each do |comment| %>
+            <div class="comment-content">
+              <li><%= comment.content %></li>
+              <div class="commentor">
+                <li>par&nbsp;</li>
+                <li class="user-commentor"><%= comment.user.username %></li>
+              </div>
+            </div>
+          <% end %>
+        </ul>
+      <% else %>
+
+    <% end %>
+
+        <div class="new-comment">
+        <%= simple_form_for [answer, @comment] do |c| %>
+          <%= c.input :content, label: '', placeholder: 'Écrivez un commentaire'  %>
+          <%= c.submit 'Commenter', class: "orange_color" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

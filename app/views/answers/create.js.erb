@@ -1,0 +1,49 @@
+<% if @answer.errors.any? %>
+<% elsif @answer.status == 'published' %>
+
+<% else %>
+  // put a edit form
+  const form = "<%= j render 'answers/form', exercice: @exercice, answer: @answer %>";
+  document.getElementById('answer_form_wrapper').innerHTML = form;
+
+  document.getElementById('answer_content').addEventListener('keyup', function(event) {
+
+    var count = 0;
+    event.target.value.split(" ").forEach(function(val) {
+      if (val !== "") {
+        count++;
+      }
+    });
+
+    document.getElementById('words-count').innerText = count;
+    document.getElementById('save-text-auto').click();
+
+    document.getElementById('answer_content').addEventListener('click', function(event) {
+      event.target.classList.add("answer-content-grow");
+    });
+
+    document.addEventListener('click', function(event) {
+      console.log(event.target.id);
+      if (event.target.className.indexOf("answer-content-grow") === -1) {
+        if (event.target.id != "save-text-auto") {
+          document.getElementById('answer_content').classList.remove("answer-content-grow");
+         }
+      }
+    });
+
+  });
+  document.getElementById('answer_content').classList.add("answer-content-grow");
+  // document.getElementById('answer_content').focus();
+  // // document.querySelector('.answer-content-grow').focus();
+
+  var monInput = document.getElementById('answer_content');
+  var strLength = monInput.value.length * 2;
+
+  monInput.focus();
+  monInput.setSelectionRange(strLength, strLength);
+
+  document.getElementById('save-auto').innerText = "Save"
+
+<% end %>
+
+

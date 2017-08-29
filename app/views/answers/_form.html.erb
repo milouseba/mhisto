@@ -1,0 +1,5 @@
+<%= simple_form_for [exercice, answer], html: {class: 'my-answer-form'}, remote: true do |a| %>
+  <%= a.input :content, required: false, label: false, placeholder: 'Écrivez votre réponse' %>
+  <%= a.submit 'Sauvegarder le texte', class: "orange_color", id: "save-text-auto", hidden: true %>
+  <%= a.submit 'Publier', name: "publish", class: "orange_color" %>
+<% end %>

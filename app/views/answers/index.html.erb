@@ -56,7 +56,7 @@
   <div id="MyProfile" class="tabcontent">
     <div class="profile-content text-center">
       <div class="profile-avatar">
-        <%= image_tag @current_user.avatar, class: "avatar-big" %>
+        <%= image_tag @current_user.avatar || @current_user.facebook_picture_url || 'https://api.adorable.io/avatars/285/abott@adorable.png', class: "avatar-big" %>
       </div>
       <div class='profile-stats'>
         <h5>Réponses</h5>
@@ -73,9 +73,9 @@
     </div>
     <div class="form-container">
       <%= simple_form_for @current_user do |u| %>
-        <%= u.input :username %>
-        <%= u.input :first_name, class: 'form-control' %>
-        <%= u.input :last_name %>
+        <%= u.input :username, label: "Pseudo" %>
+        <%= u.input :first_name, label: "Prénom", class: 'form-control' %>
+        <%= u.input :last_name, label: "Nom" %>
         <%= u.input :email, class: 'form-control'  %>
         <%= u.input :bio, class: 'form-control' %>
         <%= u.submit "Sauvegarder", class: "btn", id: "Save-btn" %>
