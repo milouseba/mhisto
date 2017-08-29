@@ -329,6 +329,7 @@ input {
 
 #answer_content {
   transition: 0.5s ease-in-out;
+  padding-top: 20px;
 }
 
 .answer-content-grow {
@@ -343,9 +344,15 @@ h4.plays-count {
   padding-top: 0px;
 }
 
-
 .avatar-answer {
   height: 35px;
   width: 35px;
   border-radius: 50%;
+}
+
+.answer_auto_save {
+  padding-top: 2px;
+  position: absolute;
+  right: 45px;
+  font-size: 14px;
 }
