@@ -1,6 +1,6 @@
 <div class="answer">
   <div class="answer-content">
-    <li><%= answer.content %></li>
+    <%= answer.content %>
   </div>
   <div class="answer-infos">
     <div class="avatar-username">
@@ -51,7 +51,9 @@
           <% end %>
         </ul>
       <% else %>
+
     <% end %>
+
         <div class="new-comment">
         <%= simple_form_for [answer, @comment] do |c| %>
           <%= c.input :content, label: '', placeholder: 'Écrivez un commentaire'  %>

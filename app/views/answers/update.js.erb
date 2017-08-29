@@ -1,10 +1,16 @@
 <% if @answer.status == 'published' %>
   // 1. Remove le form
-  document.getElementById('answer-form-block').remove;
+  document.getElementById('answer-form-block').remove();
   // 2. Append / Prepend ton answer => partial
   const new_answer = "<%= j render 'answers/show', answer: @answer %>";
   document.getElementById('answers-index').insertAdjacentHTML('afterbegin', new_answer );
+
 <% else %>
-  // Add saved text at the bottom of text area
-  // alert('sauvegardé')
-<% end %>
+
+  document.getElementById('save-auto').innerText = "...";
+
+  setTimeout(function () {
+    document.getElementById('save-auto').innerText = "Sauvegardé";
+  }, 1000);
+
+  <% end %>
