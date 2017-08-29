@@ -25,121 +25,49 @@
   </div>
 
   <div class="answers">
-    <% if @exercice.answers.where(user: current_user, status: "published").count >= 1 %>
-    <% elsif @exercice.answers.where(user: current_user, status: "pending").count >= 1 %>
-      <h4>Finir le challenge</h4>
-    <% else %>
-      <h4>Réaliser le challenge</h4>
-    <% end %>
-    <% if @answer.status == "pending" %>
-      <div class="user-answer">
-      <div class="word-counter">
-        <p>Compteur de mots:&nbsp;</p> <p id="words-count"></p>
-      </div>
-        <%= simple_form_for [@exercice, @answer] do |a| %>
-          <%= a.input :content, label: '',
-          placeholder: 'Écrivez votre réponse' %>
-            <%= a.submit 'Sauvegarder le texte', class: "orange_color" %>
-          <%= a.submit 'Publier', name: "publish",  class: "orange_color"  %>
-        <% end %>
-      </div>
-    <% end %>
-
-    <div class="other-answers">
-      <% if @exercice.answers.where(status: "published").count == 1 %>
-        <h4 class="plays-count-modif">
-          <% if @exercice.answers.where(status: "published").count == 0 %>
-          <% elsif @exercice.answers.where(status: "published").count == 1 %>
-            Réponse ( <%= @exercice.answers.where(status: "published").count %> )
-          <% else %>
-            Réponses ( <%= @exercice.answers.where(status: "published").count %> )
-          <% end %>
-        </h4>
+    <div id="answer-form-block">
+      <% if @exercice.answers.where(user: current_user, status: "published").count >= 1 %>
+      <% elsif @exercice.answers.where(user: current_user, status: "pending").count >= 1 %>
+        <h4>Finir le challenge</h4>
       <% else %>
-        <h4 class="plays-count">
-          <% if @exercice.answers.where(status: "published").count == 0 %>
-          <% elsif @exercice.answers.where(status: "published").count == 1 %>
-            Réponse ( <%= @exercice.answers.where(status: "published").count %> )
-          <% else %>
-            Réponses ( <%= @exercice.answers.where(status: "published").count %> )
-          <% end %>
-        </h4>
+        <h4>Réaliser le challenge</h4>
       <% end %>
+      <% if @answer.status == "pending" %>
+        <div class="user-answer">
+        <div class="word-counter">
+          <p>Compteur de mots:&nbsp;</p> <p id="words-count"></p>
+        </div>
+          <div id="answer_form_wrapper">
+            <%= render 'answers/form', exercice: @exercice, answer: @answer %>
+          </div>
+        </div>
+      <% end %>
+
+    </div>
+
+    <div class="other-answers" id='answers-index'>
+      <h4 class="plays-count">
+        <% if @exercice.answers.where(status: "published").count == 0 %>
+        <% elsif @exercice.answers.where(status: "published").count == 1 %>
+          Réponse ( <%= @exercice.answers.where(status: "published").count %> )
+        <% else %>
+          Réponses ( <%= @exercice.answers.where(status: "published").count %> )
+        <% end %>
+      </h4>
       <ul>
         <% @answers.each do |answer| %>
-          <div class="answer">
-            <div class="answer-content">
-              <li><%= answer.content %></li>
-            </div>
-            <div class="answer-infos">
-              <div class="avatar-username">
-                <h6><%= image_tag answer.user.avatar || 'https://api.adorable.io/avatars/285/abott@adorable.png', class: "avatar-answer" %>&nbsp;</h6>
-                <h6 class="avatar-hidden"><%= link_to answer.user.username, user_path(answer.user) %></h6>
-              </div>
-              <div class="likes-comments">
-                <% if answer.votes_for.size == 0 %>
-                  <div class="likes">
-                    <%= link_to answers_like_path(answer) do %>
-                      <i class="fa fa-heart" aria-hidden="true"></i>
-                      <%= answer.votes_for.size %>
-                    <% end %>
-                  </div>
-                <% else %>
-                  <div class="liked">
-                      <i class="fa fa-heart" aria-hidden="true"></i>
-                      <%= answer.votes_for.size %>
-                  </div>
-                <% end %>
-
-              </div>
-            </div>
-            <div class="comments-container">
-              <% if answer.comments.count == 0 %>
-                <div class="show-comments">
-                  Commenter
-                </div>
-              <% elsif answer.comments.count == 1 %>
-                <div class="show-comments">
-                  Commentaire (<%= answer.comments.count %>)
-                </div>
-              <% else %>
-                <div class="show-comments">
-                  Commentaires (<%= answer.comments.count %>)
-                </div>
-              <% end %>
-              <div class="hide-comments">
-                Masquer
-              </div>
-              <div class="answer-comments">
-                <% if answer.comments.count != 0 %>
-                  <ul>
-                    <% answer.comments.each do |comment| %>
-                      <div class="comment-content">
-                        <li><%= comment.content %></li>
-                        <div class="commentor">
-                          <li>par&nbsp;</li>
-                          <li class="user-commentor"><%= comment.user.username %></li>
-                        </div>
-                      </div>
-                    <% end %>
-                  </ul>
-                <% else %>
-<!--                   <p>Pas de commentaire pour cette réponse</p>
- -->                <% end %>
-                  <div class="new-comment">
-                  <%= simple_form_for [answer, @comment] do |c| %>
-                    <%= c.input :content, label: '', placeholder: 'Écrivez un commentaire'  %>
-                    <%= c.submit 'Commenter', class: "orange_color" %>
-                  <% end %>
-                </div>
-              </div>
-            </div>
-          </div>
+          <%= render 'answers/show', answer: answer %>
         <% end %>
       </ul>
     </div>
   </div>
 </div>
+
+
+
+
+
+
 
 
 
