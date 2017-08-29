@@ -51,7 +51,9 @@
       </h4>
       <ul>
         <% if @answer.user %>
-          <%= render 'answers/show', answer: @answer %>
+          <div class="my-answer">
+            <%= render 'answers/show', answer: @answer %>
+          </div>
         <% end %>
 
         <% @answers.each do |answer| %>
