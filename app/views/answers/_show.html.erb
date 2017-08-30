@@ -8,17 +8,18 @@
       <h6 class="avatar-hidden"><%= link_to answer.user.username, user_path(answer.user) %></h6>
     </div>
     <div class="likes-comments">
-      <% if answer.votes_for.size == 0 %>
+    <!-- TODO grey when likes == 0 and change display on hover if user votes for it or not -->
+      <% if answer.votes_for.voters.include? current_user %>
+        <div class="liked">
+            <i class="fa fa-heart" aria-hidden="true"></i>
+            <%= answer.votes_for.size %>
+        </div>
+      <% else %>
         <div class="likes">
           <%= link_to answers_like_path(answer) do %>
             <i class="fa fa-heart" aria-hidden="true"></i>
             <%= answer.votes_for.size %>
           <% end %>
-        </div>
-      <% else %>
-        <div class="liked">
-            <i class="fa fa-heart" aria-hidden="true"></i>
-            <%= answer.votes_for.size %>
         </div>
       <% end %>
 

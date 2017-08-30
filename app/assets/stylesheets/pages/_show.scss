@@ -6,13 +6,13 @@ $break-medium: 720px;
   margin-top: -10px;
   margin-bottom: 10px;
   width: 30%;
-  height: 100vh;
+  height: 87vh;
   position: sticky !important;
   top: 0 !important;
-  box-shadow: 1px 1px 10px rgba(0,0,0,0.2);
+  box-shadow: 1px 1px 10px rgba(0,0,0,0.1);
   background-color: white;
   border-radius: 3px;
-  border: 3px solid $orange;
+  border: 1px solid rgba(0,0,0,0.1);
 
 
   @media screen and (max-width: $break-small) {
@@ -87,6 +87,7 @@ $break-medium: 720px;
   font-weight: 300;
   border-bottom: 0.5px solid rgba(0,0,0,0.05);
   padding-bottom: 15px;
+  font-size: 16px;
 }
 
 .button-exercice{
@@ -99,6 +100,7 @@ $break-medium: 720px;
   font-weight: 300;
   border-top: 0.5px solid rgba(0,0,0,0.05);
   padding-top: 15px;
+  font-size: 16px;
 }
 
 .other-answers ul {
