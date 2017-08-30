@@ -58,7 +58,14 @@ class AnswersController < ApplicationController
   def like
     @answer = Answer.find(params[:id])
     @answer.liked_by current_user
-    redirect_to exercice_path(@answer.exercice)
+    # @answer.unlike_by current_user
+    respond_to do |format|
+      format.html { redirect_to exercice_path(@answer.exercice) }
+      format.js  # <-- will render `app/views/reviews/create.js.erb`
+    end
+
+
+    # redirect_to exercice_path(@answer.exercice)
   end
 
   private
