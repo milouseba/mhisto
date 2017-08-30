@@ -1,54 +1,24 @@
 $break-small: 600px;
 $break-medium: 720px;
 
+.exercice-container {
+  width: 70%;
+  margin: 0 auto;
+}
 
 .instructions {
   margin-top: -10px;
   margin-bottom: 10px;
-  width: 30%;
-  height: 100vh;
-  position: sticky !important;
-  top: 0 !important;
   box-shadow: 1px 1px 10px rgba(0,0,0,0.2);
   background-color: white;
   border-radius: 3px;
-
-
-  @media screen and (max-width: $break-small) {
-    display: none;
-  }
-  @media screen and (max-width: $break-medium) {
-    flex: 0 1 auto;
-  }
-}
-
-.photo-exercice{
-  position: relative;
-  border-top-right-radius: 2px;
-  border-top-left-radius: 2px;
-}
-
-.photo-exercice img{
-  border-top-right-radius: 2px;
-  border-top-left-radius: 2px;
-  height: 200px;
-  width: 100%;
-}
-
-.photo-exercice-filter{
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  border-top-right-radius: 2px;
-  border-top-left-radius: 2px;
+  height: 25vh;
 }
 
-.photo-exercice h3{
+.exercice-title h3{
   color: white;
   opacity: 1;
   text-transform: uppercase;
@@ -59,7 +29,14 @@ $break-medium: 720px;
   width: 300px;
   padding: 4px;
   border-radius: 4px;
+  margin: 0px;
 }
+
+.exercice-status {
+
+}
+
+
 
 .exercice-content {
   display: flex;
@@ -88,7 +65,7 @@ $break-medium: 720px;
   padding-bottom: 15px;
 }
 
-.button-exercice{
+.exercice-status{
   text-align: center;
 }
 
@@ -106,19 +83,18 @@ $break-medium: 720px;
 }
 
 .answers {
-  width: 70%;
+  width: 100%;
   flex: 1 0 auto;
 }
 
 .user-answer {
-  padding: 15px;
   padding-top: 0px;
   border-radius: 4px;
   transition: all 0.15s ease;
   box-shadow: 1px 1px 3px rgba(0,0,0,0.05);
   border: 1px solid rgba(0,0,0,0.1);
-  margin: 15px;
   padding: 10px;
+  position: relative;
 }
 
 .answer {
@@ -129,8 +105,6 @@ $break-medium: 720px;
   border: 1px solid rgba(0,0,0,0.1);
   background: rgba(0,0,0,0.01);
   margin-bottom: 50px;
-  margin-left: 15px;
-  margin-right: 15px;
 }
 
 .answer-infos{
@@ -305,15 +279,15 @@ input {
 .word-counter {
   display: flex;
   align-items: center;
+  justify-content: space-around;
   font-family: $headers-font;
   font-weight: 200;
-  margin-bottom: -20px;
-  position: absolute;
   font-size: 14px;
-  padding-left: 15px;
-  padding-top: 5px;
 }
 
+.word-counter p {
+  margin: 0px;
+}
 #words-count {
   opacity: 0.8;
   font-weight: 400;
@@ -331,22 +305,26 @@ input {
   margin-top: 20px;
 }
 
-#answer-content {
-  height: 50vh;
-}
-
 #answer_content {
   transition: 0.5s ease-in-out;
   padding-top: 30px;
+  height: 20vh;
+}
+
+.form-container {
+  padding: 15px;
+  padding-top: 0px;
+  border-radius: 3px;
 }
 
 .answer-content-grow {
-  height: 59vh !important;
+  height: 30vh !important;
 }
 
 textarea#comment_content {
     height: 60px;
 }
+
 
 h4.plays-count {
   padding-top: 0px;
@@ -367,11 +345,29 @@ h4.plays-count {
 }
 
 .answer_auto_save {
-  padding-top: 5px;
-  position: absolute;
-  right: 45px;
   font-size: 14px;
   font-family: $headers-font;
   font-weight: 300;
 }
 
+.save-counter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  position: absolute;
+  width: 94%;
+}
+
+.begin-story {
+  text-align: left;
+  opacity: 0.6;
+  font-weight: 200;
+  margin-bottom: 10px;
+}
+
+.ending-story {
+  text-align: left;
+  opacity: 0.6;
+  font-weight: 200;
+}
