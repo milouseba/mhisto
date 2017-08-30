@@ -183,15 +183,16 @@ $break-medium: 1100px;
 
 .card-start-writing a {
   position: absolute;
-  top: 36%;
-  left: 26%;
+  top: 35%;
+  left: 30%;
   color: white;
   background-color: $orange;
-  padding: 10px;
+  padding: 15px 30px;
   border-radius: 4px;
   opacity: 1;
   text-shadow: 1px 1px rgba(0,0,0,0.1);
-  font-weight: 200;
+  font-weight: 300;
+  font-size: 20px;
 
   &:hover {
     text-decoration: none;
