@@ -52,7 +52,7 @@
             <%= render 'answers/show', answer: @answer %>
           </div>
         <% end %>
-
+        <div class="text-reponses-other-user">Les réponses des autres utilisateurs</div>
         <% @answers.each do |answer| %>
           <% next if answer == @answer %>
           <%= render 'answers/show', answer: answer %>
