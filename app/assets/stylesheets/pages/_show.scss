@@ -113,9 +113,16 @@ $break-medium: 720px;
   flex: 1 0 auto;
 }
 
+.answer-jour-restant {
+  padding-left: 20px;
+  font-weight: 500;
+  color: $green;
+  // display: flex;
+  // justify-content: center;
+}
+
 .user-answer {
   padding: 15px;
-  padding-top: 0px;
   border-radius: 4px;
   transition: all 0.15s ease;
   box-shadow: 1px 1px 3px rgba(0,0,0,0.05);
@@ -135,6 +142,7 @@ $break-medium: 720px;
   margin-bottom: 50px;
   margin-left: 15px;
   margin-right: 15px;
+  margin-top: 20px;
 }
 
 .answer-infos{
@@ -390,4 +398,3 @@ h4.plays-count {
   font-family: $headers-font;
   font-weight: 300;
 }
-

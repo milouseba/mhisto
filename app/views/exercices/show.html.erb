@@ -30,6 +30,13 @@
   </div>
 
   <div class="answers">
+    <div class="answer-jour-restant">
+      <% if @answer.status != "published" %>
+        Complète le challenge avant lundi!
+      <% else %>
+        Challenge terminé! Bravo!
+      <% end %>
+    </div>
     <div id="answer-form-block">
       <% if @answer.status == "pending" %>
         <div class="user-answer">
