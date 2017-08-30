@@ -5,6 +5,22 @@
   const new_answer = "<%= j render 'answers/show', answer: @answer %>";
   document.getElementById('answers-index').insertAdjacentHTML('afterbegin', new_answer );
 
+
+
+$(".show-collapse").click(function() {
+  $(this).hide();
+  $(this).parent().find(".hide-collapse").show();
+});
+$( ".hide-collapse" ).click(function() {
+  $(this).hide();
+  $(this).parent().find(".show-collapse").show();
+});
+
+document.getElementById('text-copy').innerText = 'Bravo!';
+
+
+
+
 <% else %>
 
   document.getElementById('save-auto').innerText = "...";

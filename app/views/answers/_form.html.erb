@@ -15,7 +15,7 @@
 
           </div>
     <%= simple_form_for [exercice, answer], html: {class: 'my-answer-form'}, remote: true do |a| %>
-      <%= a.input :content, required: false, label: false, placeholder: "À vous d'écrire le milieu" %>
+      <%= a.input :content, required: false, label: false, placeholder: "À vous d'écrire le milieu", input_html: { spellcheck: false, autocorrect: "off" } %>
       <%= a.submit 'Sauvegarder le texte', class: "orange_color", id: "save-text-auto", hidden: true %>
   <div class="ending-story">
     <h6>Fin</h6>

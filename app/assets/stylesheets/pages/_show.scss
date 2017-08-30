@@ -236,6 +236,7 @@ $break-medium: 720px;
 .answer-content {
   font-weight: 300;
   padding: 10px;
+  text-align: left;
 }
 
 textarea {
@@ -370,4 +371,41 @@ h4.plays-count {
   text-align: left;
   opacity: 0.6;
   font-weight: 200;
+}
+
+#content-toggle {
+  text-decoration: none;
+  font-weight: 200;
+  text-align: left;
+}
+
+#content-toggle p {
+  text-align: left;
+}
+
+.toggle-none {
+  display: none;
+}
+
+.hide-collapse {
+  font-weight: 200;
+  text-align: left;
+  opacity: 0.6;
+  padding-top: 10px;
+}
+
+.show-collapse {
+  padding-top: 15px;
+  text-align: left;
+  font-weight: 200;
+  &:hover {
+    color: $orange;
+    cursor: pointer
+  }
+}
+
+#answer_content_collapse {
+  font-weight: 300;
+  text-align: left;
+  opacity: 1 !important;
 }

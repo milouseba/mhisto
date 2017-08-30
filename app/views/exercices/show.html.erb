@@ -1,4 +1,4 @@
-<div class="wrapper">
+<div id="exercice-show" class="wrapper">
   <div class="exercice-container text-center">
 
     <div class="instructions">
@@ -35,6 +35,7 @@
 
     </div>
 
+
     <div class="answers">
       <div id="answer-form-block">
         <% if @answer.status == "pending" %>
@@ -53,15 +54,14 @@
       <div class="other-answers" id='answers-index'>
         <ul>
           <% if @answer.status == "published" %>
-            <div class="my-answer">
-              <%= render 'answers/show', answer: @answer %>
-            </div>
+            <%= render 'answers/show', answer: @answer %>
           <% end %>
 
           <% @answers.each do |answer| %>
             <% next if answer == @answer %>
             <%= render 'answers/show', answer: answer %>
           <% end %>
+
         </ul>
       </div>
     </div>
