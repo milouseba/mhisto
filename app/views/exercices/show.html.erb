@@ -34,7 +34,7 @@
       <% if @answer.status == "pending" %>
         <div class="user-answer">
         <div class="word-counter">
-          <p># de mots:&nbsp;</p> <p id="words-count"></p>
+          <p># de mots:&nbsp;</p> <p id="words-count"></p><p>&nbsp;(entre 50/150 mots)</p>
         </div>
         <div id='save-auto' class='answer_auto_save'>
         </div>
@@ -52,7 +52,7 @@
             <%= render 'answers/show', answer: @answer %>
           </div>
         <% end %>
-
+        <div class="text-reponses-other-user">Les réponses des autres utilisateurs</div>
         <% @answers.each do |answer| %>
           <% next if answer == @answer %>
           <%= render 'answers/show', answer: answer %>
