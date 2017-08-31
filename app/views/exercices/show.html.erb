@@ -35,25 +35,6 @@
       </div>
     </div>
 
-<!-- <<<<<<< HEAD -->
-<!--   <div class="answers">
-    <div class="answer-jour-restant">
-      <% #if @answer.status != "published" %>
-        Complète le challenge avant lundi!
-      <% #else %>
-        Challenge terminé! Bravo!
-      <% #end %>
-    </div>
-    <div id="answer-form-block">
-      <% #if @answer.status == "pending" %>
-        <div class="user-answer">
-        <div class="word-counter">
-          <p># de mots:&nbsp;</p> <p id="words-count"></p><p>&nbsp;(entre 50/150 mots)</p>
-        </div>
-        <div id='save-auto' class='answer_auto_save'>
-        </div> -->
-<!-- ======= -->
-
 
     <div class="answers">
       <div id="answer-form-block">
@@ -66,14 +47,7 @@
         </div>
         <% end %>
 
-<!-- <<<<<<< HEAD
-        <div class="text-reponses-other-user">Les réponses des autres utilisateurs</div>
-        <% @answers.each #do |answer| %>
-          <%# next if answer == @answer %>
-          <%=# render 'answers/show', answer: answer %>
-        <% #end %>
-      </ul>
-======= -->
+
       </div>
       <div class="other-answers" id='answers-index'>
         <ul>
