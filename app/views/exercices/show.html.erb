@@ -27,7 +27,7 @@
             <div class= "btn-done-answer"><i class="fa fa-check-circle-o" aria-hidden="true"></i> Vous avez réalisé l'exercice
             </div>
           <% elsif @exercice.answers.where(user: current_user, status: "pending").count >= 1 %>
-            <div class= "btn-try">Vous n'avez pas encore publié votre réponse
+            <div class= "btn-try"><i class="fa fa-times" aria-hidden="true"></i> Vous n'avez pas encore publié votre réponse
             </div>
           <% else %>
             <div class= "btn-try" id="text-copy">À vous d'écrire entre les lignes !
