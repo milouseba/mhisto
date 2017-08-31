@@ -9,12 +9,21 @@ class ExercicesController < ApplicationController
   def show
     set_exercice
     authorize @exercice
-    @answers = Answer.where(exercice: @exercice, status: "published")
+    # @answers = Answer.where(exercice: @exercice, status: "published")
+
+    # Answers ordered by most votes including answers with no vote
+    @answers = Answer.select("answers.*, count(answers.id)").
+      joins("LEFT OUTER JOIN votes ON votes.votable_id = answers.id AND votes.votable_type = 'Answer'").
+      where(exercice: @exercice, status: "published").
+      group("answers.id").
+      order("count(answers.id) DESC")
+
     if @exercice.answers.find_by_user_id(current_user.id)
       @answer = @exercice.answers.find_by_user_id(current_user.id)
     else
       @answer = Answer.new
     end
+
     @comments = Comment.where(answer: @answer)
     @comment = Comment.new
   end
