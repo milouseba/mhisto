@@ -57,6 +57,14 @@
             <%= render 'answers/show', answer: @answer %>
           <% end %>
           <div class="other-users-intro"><h5>Réponses des autres utilisateurs...</h5></div>
+
+          <!-- test tri par votes  -->
+
+
+          <!-- fin test tri par votes  -->
+
+
+
           <% @answers.each do |answer| %>
             <% next if answer == @answer %>
             <%= render 'answers/show', answer: answer %>
