@@ -17,6 +17,10 @@ $break-medium: 720px;
   justify-content: space-between;
   height: 40vh;
   padding: 10px;
+<<<<<<< HEAD
+=======
+  background-image: -webkit-linear-gradient(50deg, white 83%, rgba(255,133,15,0.8) 17%);
+>>>>>>> 0c1702f8bb4997b57500c8165bcc51bf6737aaa1
 }
 
 .exercice-title h3{
@@ -39,6 +43,7 @@ $break-medium: 720px;
   padding: 10px;
   font-weight: 200;
   text-align: left;
+<<<<<<< HEAD
 }
 
 .answers-number {
@@ -65,9 +70,35 @@ $break-medium: 720px;
   height: 50px;
   width: 50px;
   border-radius: 50%;
+=======
 }
 
+.answers-number {
+  margin-bottom: 15px;
+  text-align:left;
+  font-weight: 200;
+  margin-left: 10px;
+}
 
+.time-remaining {
+}
+
+.time-status{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+>>>>>>> 0c1702f8bb4997b57500c8165bcc51bf6737aaa1
+}
+
+.creator-avatar {
+}
+
+.avatar-middle {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
 .exercice-content {
   display: flex;
 }
@@ -266,6 +297,7 @@ $break-medium: 720px;
 .answer-content {
   font-weight: 300;
   padding: 10px;
+  text-align: left;
 }
 
 textarea {
@@ -400,4 +432,41 @@ h4.plays-count {
   text-align: left;
   opacity: 0.6;
   font-weight: 200;
+}
+
+#content-toggle {
+  text-decoration: none;
+  font-weight: 200;
+  text-align: left;
+}
+
+#content-toggle p {
+  text-align: left;
+}
+
+.toggle-none {
+  display: none;
+}
+
+.hide-collapse {
+  font-weight: 200;
+  text-align: left;
+  opacity: 0.6;
+  padding-top: 10px;
+}
+
+.show-collapse {
+  padding-top: 15px;
+  text-align: left;
+  font-weight: 200;
+  &:hover {
+    color: $orange;
+    cursor: pointer
+  }
+}
+
+#answer_content_collapse {
+  font-weight: 300;
+  text-align: left;
+  opacity: 1 !important;
 }
