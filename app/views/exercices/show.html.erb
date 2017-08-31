@@ -5,24 +5,26 @@
       <div class="exercice-infos">
         <div class="creator-avatar">
           <%= image_tag @exercice.user.avatar, class: "avatar-middle" %>
-          <%= @exercice.user.username %>, crée le
-          <%= @exercice.created_at.strftime("%m/%d/%y") %>
+          <div class="creator-flexbox">
+            <p>créé par <%= link_to @exercice.user.username, user_path(@exercice.user)%></p>
+            <p>le <%= @exercice.created_at.strftime("%m/%d/%y") %></p>
+          </div>
         </div>
       </div>
       <div class="exercice-title">
-        <h3><%= @exercice.title %></h3>
-      </div>
-      <div class="answers-number">
-        Nombre de participants: <%= @exercice.answers.where(status: "published").count %>
+        <h2><%= @exercice.title %></h2>
       </div>
       <div class="time-status">
         <div class="time-remaining">
-          2 jours restants
+          <i class="fa fa-hourglass-half" aria-hidden="true"></i> 2 jours restants
+        </div>
+        <div class="answers-number">
+          <i class="fa fa-user-circle-o" aria-hidden="true"></i> <%= @exercice.answers.where(status: "published").count %> participants
         </div>
 
         <div class="exercice-status">
           <% if @exercice.answers.where(user: current_user, status: "published").count >= 1 %>
-            <div class= "btn-done-answer">Vous avez réalisé l'exercice
+            <div class= "btn-done-answer"><i class="fa fa-check-circle-o" aria-hidden="true"></i> Vous avez réalisé l'exercice
             </div>
           <% elsif @exercice.answers.where(user: current_user, status: "pending").count >= 1 %>
             <div class= "btn-try">Vous n'avez pas encore publié votre réponse
