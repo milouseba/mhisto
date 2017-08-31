@@ -1,0 +1,13 @@
+<% if answer.votes_for.voters.include? current_user %>
+        <div class="liked">
+            <i class="fa fa-heart" aria-hidden="true"></i>
+            <%= answer.votes_for.size %>
+        </div>
+      <% else %>
+        <div class="likes">
+          <%= link_to answers_like_path(answer) do %>
+            <i class="fa fa-heart" aria-hidden="true"></i>
+            <%= answer.votes_for.size %>
+          <% end %>
+        </div>
+      <% end %>
