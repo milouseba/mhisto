@@ -24,7 +24,10 @@
     <p><%= answer.content.first(310) %>...</p>
   </div>
   <div class="hide-collapse" style="display: none;">
-    <h6>Début</h6>
+    <div class="debut-answer">
+      <h6>Début</h6>
+      <i class="fa fa-minus" aria-hidden="true"></i>
+    </div>
     <p><%= @exercice.beginning_story %></p>
     <div id="answer_content_collapse"><%= answer.content %></div>
     <h6>Fin</h6>

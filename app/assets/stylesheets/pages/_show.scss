@@ -17,10 +17,7 @@ $break-medium: 720px;
   justify-content: space-between;
   height: 40vh;
   padding: 10px;
-<<<<<<< HEAD
-=======
   background-image: -webkit-linear-gradient(50deg, white 83%, rgba(255,133,15,0.8) 17%);
->>>>>>> 0c1702f8bb4997b57500c8165bcc51bf6737aaa1
 }
 
 .exercice-title h3{
@@ -43,7 +40,6 @@ $break-medium: 720px;
   padding: 10px;
   font-weight: 200;
   text-align: left;
-<<<<<<< HEAD
 }
 
 .answers-number {
@@ -70,7 +66,6 @@ $break-medium: 720px;
   height: 50px;
   width: 50px;
   border-radius: 50%;
-=======
 }
 
 .answers-number {
@@ -88,7 +83,6 @@ $break-medium: 720px;
   align-items: center;
   justify-content: space-between;
   padding: 10px;
->>>>>>> 0c1702f8bb4997b57500c8165bcc51bf6737aaa1
 }
 
 .creator-avatar {
@@ -160,10 +154,7 @@ $break-medium: 720px;
 
 .answer {
   padding: 25px;
-  border: 2px solid lightgray;
   border-radius: 4px;
-  box-shadow: 1px 1px 3px rgba(0,0,0,0.05);
-  border: 1px solid rgba(0,0,0,0.1);
   background: rgba(0,0,0,0.01);
   margin-bottom: 50px;
 }
@@ -235,11 +226,13 @@ $break-medium: 720px;
 
 .show-comments {
   cursor: pointer;
-  text-align: center;
+  text-align: right;
   opacity: 0.6;
   margin-top: 20px;
   font-family: $headers-font;
-
+  font-weight: 200;
+  font-size: 14px;
+  padding-right: 20px;
 }
 
 .show-comments:hover {
@@ -248,11 +241,14 @@ $break-medium: 720px;
 
 .hide-comments {
   cursor: pointer;
-  text-align: center;
+  text-align: right;
   opacity: 0.6;
   display: none;
   margin-top: 20px;
   font-family: $headers-font;
+  font-weight: 200;
+  font-size: 14px;
+  padding-right: 20px;
 }
 
 .hide-comments:hover {
@@ -272,6 +268,7 @@ $break-medium: 720px;
   border-bottom: 1px solid lightgray;
   padding: 12px;
   font-weight: 300;
+  text-align: left;
 }
 
 .comment-content:last-child{
@@ -453,6 +450,20 @@ h4.plays-count {
   text-align: left;
   opacity: 0.6;
   padding-top: 10px;
+}
+
+.fa-minus {
+  color: $orange;
+  &:hover{
+    cursor: pointer;
+    opacity: 0.6;
+  }
+}
+
+.debut-answer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .show-collapse {

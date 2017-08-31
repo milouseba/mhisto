@@ -11,10 +11,27 @@ $(".show-collapse").click(function() {
   $(this).hide();
   $(this).parent().find(".hide-collapse").show();
 });
-$( ".hide-collapse" ).click(function() {
-  $(this).hide();
-  $(this).parent().find(".show-collapse").show();
+$( ".fa-minus" ).click(function() {
+  $(".hide-collapse").hide();
+  $(this).parents(".answer").find(".show-collapse").show();
 });
+
+$('.hide-comments').hide();
+
+$(".show-comments").click(function() {
+  $(this).parent().find(".answer-comments").show("fast");
+  $(this).hide();
+  $(this).parent().find(".hide-comments").show();
+});
+
+
+$( ".hide-comments" ).click(function() {
+  $(this).parent().find(".answer-comments").hide("fast");
+  $(this).hide();
+  $(this).parent().find(".show-comments").show();
+});
+
+$('abbr').hide();
 
 document.getElementById('text-copy').innerText = 'Bravo!';
 
