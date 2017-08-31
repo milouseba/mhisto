@@ -15,7 +15,6 @@ $break-medium: 1100px;
   background-position: center;
   color: white;
   position: relative;
-  box-shadow: 1px 1px 3px rgba(0,0,0,0.05);
   border-radius: 3px;
   margin-bottom: 20px;
   margin-top: 20px;
@@ -23,13 +22,13 @@ $break-medium: 1100px;
   margin-left: 0px;
   opacity: 1;
   border-radius: 3px;
-  border: 1px solid rgba(0,0,0,0.1);
+  border: 1px solid rgba(0,0,0,0.03);
+  background-color: rgba(0,0,0,0.02);
 }
 
 .card:hover {
-    opacity: 0.9;
     border: 1px solid $orange;
-    transition: 0.6s ease-in-out;
+    transition: 0.4s ease-in-out;
 }
 
 .card-banner {
