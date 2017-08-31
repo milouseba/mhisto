@@ -1,6 +1,8 @@
+<<<<<<< HEAD
 <!-- <div class="likes-comments" id='answer_id_<%= answer.id %>'> -->
     <!-- TODO grey when likes == 0 and change display on hover if user votes for it or not -->
-      <% if answer.votes_for.voters.include? current_user %>
+<% if answer.votes_for.voters.include? current_user %>
+
         <div class="liked">
             <i class="fa fa-heart" aria-hidden="true"></i>
             <%= answer.votes_for.size %>
@@ -13,5 +15,3 @@
           <% end %>
         </div>
       <% end %>
-
-    <!-- </div> -->

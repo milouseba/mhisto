@@ -63,9 +63,6 @@ class AnswersController < ApplicationController
       format.html { redirect_to exercice_path(@answer.exercice) }
       format.js  # <-- will render `app/views/reviews/create.js.erb`
     end
-
-
-    # redirect_to exercice_path(@answer.exercice)
   end
 
   private

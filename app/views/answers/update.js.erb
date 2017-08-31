@@ -5,6 +5,38 @@
   const new_answer = "<%= j render 'answers/show', answer: @answer %>";
   document.getElementById('answers-index').insertAdjacentHTML('afterbegin', new_answer );
 
+
+
+$(".show-collapse").click(function() {
+  $(this).hide();
+  $(this).parent().find(".hide-collapse").show();
+});
+$( ".fa-minus" ).click(function() {
+  $(".hide-collapse").hide();
+  $(this).parents(".answer").find(".show-collapse").show();
+});
+
+$('.hide-comments').hide();
+
+$(".show-comments").click(function() {
+  $(this).parent().find(".answer-comments").show("fast");
+  $(this).hide();
+  $(this).parent().find(".hide-comments").show();
+});
+
+
+$( ".hide-comments" ).click(function() {
+  $(this).parent().find(".answer-comments").hide("fast");
+  $(this).hide();
+  $(this).parent().find(".show-comments").show();
+});
+
+$('abbr').hide();
+
+document.getElementById('text-copy').innerText = "Vous avez réalisé l'exercice";
+document.getElementById('text-copy').style.opacity = 1;
+
+
 <% else %>
 
   document.getElementById('save-auto').innerText = "...";

@@ -1,12 +1,11 @@
 document.getElementById('answer_content').addEventListener('keyup', function(event) {
-
   var count = 0;
-  event.target.value.split(" ").forEach(function(val) {
-    if (val !== "") {
-      count++;
-    }
-  });
+
+  count = event.target.value.split(" ").length;
   document.getElementById('words-count').innerText = count;
+
+
+
   // document.getElementById('btn-publish').className.replace("link-visible", "link-hidden");
   document.getElementById('save-text-auto').click();
   // const token = document.querySelector('meta[name="csrf-token"]').content;
@@ -26,16 +25,10 @@ document.getElementById('answer_content').addEventListener('keyup', function(eve
   // });
 });
 
-document.getElementById('answer_content').addEventListener('click', function(event) {
-  event.target.classList.add("answer-content-grow");
+document.getElementById('answer_content').addEventListener('focusin', function(event) {
+  event.currentTarget.classList.add("answer-content-grow");
 });
 
-document.addEventListener('click', function(event) {
-  console.log(event.target.id);
-  if (event.target.className.indexOf("answer-content-grow") === -1) {
-    if (event.target.id != "save-text-auto") {
-      console.log('fjbkz');
-      document.getElementById('answer_content').classList.remove("answer-content-grow");
-     }
-  }
+document.getElementById("answer_content").addEventListener('focusout', function(event) {
+  event.currentTarget.classList.remove("answer-content-grow");
 });
