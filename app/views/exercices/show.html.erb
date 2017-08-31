@@ -2,38 +2,38 @@
   <div class="exercice-container text-center">
 
     <div class="instructions">
-
-      <div class="exercice-title">
-          <h3><%= @exercice.title %></h3>
-      </div>
-
-      <div class="exercice-status">
-        <% if @exercice.answers.where(user: current_user, status: "published").count >= 1 %>
-          <div class= "btn-done-answer">Vous avez réalisé l'exercice</div>
-        <% elsif @exercice.answers.where(user: current_user, status: "pending").count >= 1 %>
-          <div class= "btn-try">Vous n'avez pas encore publié votre réponse</div>
-        <% else %>
-          <div class= "btn-try" id="text-copy">À vous d'écrire entre les lignes !</div>
-        <% end %>
-      </div>
-
       <div class="exercice-infos">
-        <div class="answers-number">
-          <%= @exercice.answers.where(status: "published").count %>
-        </div>
-
         <div class="creator-avatar">
-          <%= image_tag @exercice.user.avatar, class: "avatar-answer" %>
-          <%= @exercice.user.username %>
+          <%= image_tag @exercice.user.avatar, class: "avatar-middle" %>
+          <%= @exercice.user.username %>, crée le
+          <%= @exercice.created_at.strftime("%m/%d/%y") %>
         </div>
-
+      </div>
+      <div class="exercice-title">
+        <h3><%= @exercice.title %></h3>
+      </div>
+      <div class="answers-number">
+        Nombre de participants: <%= @exercice.answers.where(status: "published").count %>
+      </div>
+      <div class="time-status">
         <div class="time-remaining">
           2 jours restants
         </div>
 
+        <div class="exercice-status">
+          <% if @exercice.answers.where(user: current_user, status: "published").count >= 1 %>
+            <div class= "btn-done-answer">Vous avez réalisé l'exercice
+            </div>
+          <% elsif @exercice.answers.where(user: current_user, status: "pending").count >= 1 %>
+            <div class= "btn-try">Vous n'avez pas encore publié votre réponse
+            </div>
+          <% else %>
+            <div class= "btn-try" id="text-copy">À vous d'écrire entre les lignes !
+            </div>
+          <% end %>
+        </div>
       </div>
-
-    </div>
+    </div
 
 
     <div class="answers">
