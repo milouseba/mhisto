@@ -1,5 +1,29 @@
-<%= simple_form_for [exercice, answer], html: {class: 'my-answer-form'}, remote: true do |a| %>
-  <%= a.input :content, required: false, label: false, placeholder: 'Écrivez votre réponse' %>
-  <%= a.submit 'Sauvegarder le texte', class: "orange_color", id: "save-text-auto", hidden: true %>
-  <%= a.submit 'Publier', name: "publish", class: "orange_color" %>
-<% end %>
+<div class="form-container">
+  <div class="begin-story">
+  <h6>Début</h6>
+  <%= @exercice.beginning_story %>
+  </div>
+
+  <div class="form-answer">
+    <div class="save-counter">
+
+            <div class="word-counter">
+              <p># de mots:&nbsp;</p><p id="words-count"></p>
+            </div>
+            <div id='save-auto' class='answer_auto_save'>
+            </div>
+
+          </div>
+    <%= simple_form_for [exercice, answer], html: {class: 'my-answer-form'}, remote: true do |a| %>
+      <%= a.input :content, required: false, label: false, placeholder: "À vous d'écrire le milieu", input_html: { spellcheck: false, autocorrect: "off" } %>
+      <%= a.submit 'Sauvegarder le texte', class: "orange_color", id: "save-text-auto", hidden: true %>
+  <div class="ending-story">
+    <h6>Fin</h6>
+    <%= @exercice.end_story %>
+  </div>
+  <div class="end-story">
+  </div>
+      <%= a.submit 'Publier', name: "publish", class: "orange_color" %>
+  </div>
+    <% end %>
+</div>

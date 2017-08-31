@@ -1,74 +1,70 @@
-<div class="exercice-content">
+<div id="exercice-show" class="wrapper">
+  <div class="exercice-container text-center">
 
-  <div class="instructions">
-    <div class="photo-exercice">
-      <% if !@exercice.photo.url.nil? %>
-        <%= cl_image_tag @exercice.photo, width: 379, height: 200, crop: :fill, gravity: :north %>
-      <% end  %>
-        <div class="photo-exercice-filter">
+    <div class="instructions">
+      <div class="exercice-infos">
+        <div class="creator-avatar">
+          <%= image_tag @exercice.user.avatar, class: "avatar-middle" %>
+          <%= @exercice.user.username %>, crée le
+          <%= @exercice.created_at.strftime("%m/%d/%y") %>
+        </div>
+      </div>
+      <div class="exercice-title">
         <h3><%= @exercice.title %></h3>
       </div>
-    </div>
-    <div class="exercice-info">
-      <h6>Début:</h6>
-      <p class="beginning-story"><%= @exercice.beginning_story %></p>
-      <div class="button-exercice">
-        <% if @exercice.answers.where(user: current_user, status: "published").count >= 1 %>
-          <div class= "btn-done-answer">Vous avez réalisé l'exercice</div>
-        <% elsif @exercice.answers.where(user: current_user, status: "pending").count >= 1 %>
-          <div class= "btn-try">Vous n'avez pas encore publié votre réponse</div>
-        <% else %>
-          <h6>Coeur de l'histoire:</h6>
-          <div class= "btn-try" id="text-copy">À vous d'écrire entre les lignes !</div>
-        <% end %>
+      <div class="answers-number">
+        Nombre de participants: <%= @exercice.answers.where(status: "published").count %>
       </div>
-      <div class="end-story">
-        <h6>Fin:</h6>
-        <%= @exercice.end_story %>
-      </div>
-    </div>
-  </div>
+      <div class="time-status">
+        <div class="time-remaining">
+          2 jours restants
+        </div>
 
-  <div class="answers">
-    <div class="answer-jour-restant">
-      <% if @answer.status != "published" %>
-        Complète le challenge avant lundi!
-      <% else %>
-        Challenge terminé! Bravo!
-      <% end %>
+        <div class="exercice-status">
+          <% if @exercice.answers.where(user: current_user, status: "published").count >= 1 %>
+            <div class= "btn-done-answer">Vous avez réalisé l'exercice
+            </div>
+          <% elsif @exercice.answers.where(user: current_user, status: "pending").count >= 1 %>
+            <div class= "btn-try">Vous n'avez pas encore publié votre réponse
+            </div>
+          <% else %>
+            <div class= "btn-try" id="text-copy">À vous d'écrire entre les lignes !
+            </div>
+          <% end %>
+        </div>
+      </div>
     </div>
-    <div id="answer-form-block">
-      <% if @answer.status == "pending" %>
+
+
+    <div class="answers">
+      <div id="answer-form-block">
+        <% if @answer.status == "pending" %>
         <div class="user-answer">
-        <div class="word-counter">
-          <p># de mots:&nbsp;</p> <p id="words-count"></p><p>&nbsp;(entre 50/150 mots)</p>
-        </div>
-        <div id='save-auto' class='answer_auto_save'>
-        </div>
           <div id="answer_form_wrapper">
             <%= render 'answers/form', exercice: @exercice, answer: @answer %>
           </div>
-        </div>
-      <% end %>
 
-    </div>
-    <div class="other-answers" id='answers-index'>
-      <ul>
-        <% if @answer.status == "published" %>
-          <div class="my-answer">
+        </div>
+        <% end %>
+
+
+      </div>
+      <div class="other-answers" id='answers-index'>
+        <ul>
+          <% if @answer.status == "published" %>
             <%= render 'answers/show', answer: @answer %>
-          </div>
-        <% end %>
-        <div class="text-reponses-other-user">Les réponses des autres utilisateurs</div>
-        <% @answers.each do |answer| %>
-          <% next if answer == @answer %>
-          <%= render 'answers/show', answer: answer %>
-        <% end %>
-      </ul>
+          <% end %>
+          <div class="other-users-intro"><h5>Réponses des autres utilisateurs...</h5></div>
+          <% @answers.each do |answer| %>
+            <% next if answer == @answer %>
+            <%= render 'answers/show', answer: answer %>
+          <% end %>
+
+        </ul>
+      </div>
     </div>
   </div>
 </div>
-
 
 
 

@@ -1,7 +1,4 @@
 
-console.log('hello');
+const likeAnswer = "<%= j render 'like', answer: @answer %>";
+document.getElementById('answer_id_<%= @answer.id %>').innerHTML = likeAnswer;
 
-  const likeAnswer = "<%= j render 'like', answer: @answer %>";
-  document.getElementById('answer_id_<%= @answer.id %>').innerHTML = likeAnswer;
-
-console.log('hellofin');

@@ -1,13 +1,12 @@
 <div class="answer">
-  <!-- <div class="answer-content">
-    <%= answer.content %>
-  </div> -->
+
   <div class="answer-infos">
     <div class="avatar-username">
       <h6><%= image_tag answer.user.avatar || answer.user.facebook_picture_url || 'https://api.adorable.io/avatars/285/abott@adorable.png', class: "avatar-answer" %>&nbsp;</h6>
       <h6 class="avatar-hidden"><%= link_to answer.user.username, user_path(answer.user) %></h6>
     </div>
-    <!-- recup max votes -->
+
+
     <% maxvote = 1 %>
     <% @exercice.answers.each do |ans| %>
       <% if ans.votes_for.size >= maxvote %>
@@ -16,16 +15,32 @@
     <% end %>
 
     <% if answer.votes_for.size == maxvote %>
-      <div class="congrats-winner">Félicitations <%= answer.user.username %>, tu es en tête des votes!</div>
+
+      <div class="congrats-winner">Félicitations à <%= answer.user.username %> qui est en tête des votes!</div>
     <%end %>
+
     <div class="likes-comments" id='answer_id_<%= answer.id %>'>
       <%= render 'answers/like', answer: answer %>
     </div>
   </div>
-
-  <div class="answer-content">
-    <%= simple_format answer.content %>
+  <div class="show-collapse">
+    <p><%= answer.content.first(310) %>...</p>
   </div>
+  <div class="hide-collapse" style="display: none;">
+    <div class="debut-answer">
+      <h6>Début</h6>
+      <i class="fa fa-minus" aria-hidden="true"></i>
+
+    </div>
+    <p><%= @exercice.beginning_story %></p>
+    <div id="answer_content_collapse"><%= answer.content %></div>
+    <h6>Fin</h6>
+    <p><%= @exercice.end_story %></p>
+  </div>
+
+<!--   <div class="answer-content">
+    <%= simple_format answer.content %>
+  </div> -->
 
 
   <div class="comments-container">
